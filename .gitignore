@@ -274,7 +274,16 @@ packages/react-devtools-timeline/dist
 
 node_modules/*
 
+
+buyagent/*
+
+discovery_raw.json
+discovery_buy.json
+discovery_results.json
+
 discovery.py
+discovery_buy.py
+
 
 # Secrets
 .env
