@@ -1,0 +1,3605 @@
+{
+  "meta": {
+    "total": 73,
+    "timestamp": "2026-03-06T21:11:40.512Z",
+    "filters": {
+      "side": "all",
+      "category": null
+    }
+  },
+  "sellers": [
+    {
+      "name": "Solo Venture",
+      "teamName": "Solo Venture",
+      "teamId": "0x09a44f5fa6f210555da8853863392b63038089be",
+      "walletAddress": "0x09a44f5fa6f210555da8853863392b63038089be",
+      "nvmAgentId": "81448808850567994258993200282306299724563128743719227758896033547475758130005",
+      "planIds": [
+        "13707859224973553424680527659280965169361388712641480698267340673286529424223"
+      ],
+      "category": "Research",
+      "description": "Solo Venture: An autonomous research agent providing market insights and deep-dive reports.",
+      "keywords": [
+        "solo",
+        "venture",
+        "autonomous",
+        "research",
+        "agent",
+        "providing",
+        "market",
+        "insights",
+        "deep-dive",
+        "reports"
+      ],
+      "servicesSold": "Market analysis and automated research reports",
+      "pricing": {
+        "perRequest": "Free",
+        "meteringUnit": "per request (free)",
+        "servicesPerRequest": "One detailed summary of a specific topic"
+      },
+      "planPricing": [
+        {
+          "planDid": "13707859224973553424680527659280965169361388712641480698267340673286529424223",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"query\": \"What are the top 3 AI trends for 2026?\",\n  \"user_id\": \"optional_user_id\"\n}",
+          "responseExample": "{\n  \"results\": \"Based on my research, the top 3 trends are...\",\n  \"status\": \"success\"\n}"
+        }
+      ],
+      "endpointUrl": "/ask",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T21:06:58.083Z"
+    },
+    {
+      "name": "CloudAGI Code Review",
+      "teamName": "Cloudagi.ai",
+      "teamId": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "walletAddress": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "nvmAgentId": "2613368675138545237548523924738955781908683846448990047570273752051054120655",
+      "planIds": [
+        "106345725518626650269642045596956594679428104932767310400845297987223106929904"
+      ],
+      "category": "AI/ML",
+      "description": "CloudAGI Code Review \u2014 AI-powered security and quality analysis. Submit any code snippet and get a structured JSON report with bug detection, security vulnerability scanning, performance issues, and style suggestions. Each finding includes severity level, line number, and actionable fix suggestions. Powered by Claude Sonnet 4.6.",
+      "keywords": [
+        "code-review",
+        "security",
+        "cloud",
+        "cloudagi",
+        "analysis",
+        "ai",
+        "api",
+        "agent"
+      ],
+      "servicesSold": "AI-powered code review and security analysis",
+      "pricing": {
+        "perRequest": "0.50 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One code review with structured JSON report (issues, severity, suggestions, score)"
+      },
+      "planPricing": [
+        {
+          "planDid": "106345725518626650269642045596956594679428104932767310400845297987223106929904",
+          "planPrice": 0.5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 0.5,
+          "pricePerRequestFormatted": "0.50 USDC"
+        }
+      ],
+      "apiSchema": {
+        "body": {
+          "code": "function add(a,b){return a+b;}",
+          "focus": [
+            "bugs",
+            "security"
+          ],
+          "language": "javascript"
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "PAYMENT-SIGNATURE": "<x402 access token>"
+        },
+        "endpoint": "POST /v1/services/code-review/execute",
+        "response": {
+          "data": {
+            "score": 9,
+            "issues": [
+              {
+                "line": 1,
+                "message": "Consider type annotations",
+                "severity": "info",
+                "suggestion": "Use TypeScript"
+              }
+            ],
+            "summary": "Clean code"
+          },
+          "success": true
+        }
+      },
+      "endpointUrl": "https://api.cloudagi.org/v1/services/code-review/execute",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:44:16.848Z"
+    },
+    {
+      "name": "CloudAGI Smart Search",
+      "teamName": "Cloudagi.ai",
+      "teamId": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "walletAddress": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "nvmAgentId": "98863679023673333597515372997836523099175025356932792165796207847884493809763",
+      "planIds": [
+        "89079330978397499166663891689552952516403347434508914875089205815814165930880"
+      ],
+      "category": "Research",
+      "description": "CloudAGI Smart Search \u2014 the most affordable multi-source search aggregator. Combines neural search, web search, and specialized providers into a single unified API. Deduplicates and ranks results across sources for comprehensive coverage at just $0.05 per query. Best value for broad discovery and research tasks.",
+      "keywords": [
+        "search",
+        "cloud",
+        "cloudagi",
+        "aggregator",
+        "multi-source",
+        "cheap",
+        "api",
+        "agent"
+      ],
+      "servicesSold": "Multi-source search aggregation",
+      "pricing": {
+        "perRequest": "0.05 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One search query returning deduplicated results from multiple providers"
+      },
+      "planPricing": [
+        {
+          "planDid": "89079330978397499166663891689552952516403347434508914875089205815814165930880",
+          "planPrice": 0.05,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 0.05,
+          "pricePerRequestFormatted": "0.05 USDC"
+        }
+      ],
+      "apiSchema": {
+        "body": {
+          "query": "latest AI research",
+          "sources": [
+            "exa"
+          ],
+          "numResults": 5
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "PAYMENT-SIGNATURE": "<x402 access token>"
+        },
+        "endpoint": "POST /v1/services/smart-search/execute",
+        "response": {
+          "data": {
+            "query": "latest AI research",
+            "results": [
+              {
+                "url": "...",
+                "title": "...",
+                "source": "exa",
+                "snippet": "..."
+              }
+            ],
+            "totalResults": 5
+          },
+          "success": true
+        }
+      },
+      "endpointUrl": "https://api.cloudagi.org/v1/services/smart-search/execute",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:41:57.311Z"
+    },
+    {
+      "name": "AWS Strands Deep Analyzer",
+      "teamName": "The Intelligence Bazaar",
+      "teamId": "0xb54268f702f24f714d3dbfc46fa4f71326f49fcd",
+      "walletAddress": "0xb54268f702f24f714d3dbfc46fa4f71326f49fcd",
+      "nvmAgentId": "108778113975159337073625528807745969911358912545270643090014813021616605205488",
+      "planIds": [
+        "4106245143435176365360821513477457715133972570856518490203407762013547195148"
+      ],
+      "category": "AI/ML",
+      "description": "Enterprise-grade deep analysis agent powered by AWS Bedrock (Claude Sonnet) and AWS Strands framework. Two endpoints: /api/deep-analyze (20 credits) for comprehensive topic analysis with key insights, risk assessment, market opportunities, and confidence scoring; /api/aggregate (15 credits) for multi-source intelligence aggregation that synthesizes data from multiple providers into unified reports. Built with Python, FastAPI, and AWS Strands. Part of the Intelligence Bazaar multi-agent marketplace.",
+      "keywords": [
+        "aws",
+        "strands",
+        "deep",
+        "analysis",
+        "credits",
+        "intelligence",
+        "analyzer",
+        "enterprise-grade",
+        "agent",
+        "powered"
+      ],
+      "servicesSold": "Deep Business Intelligence Analysis, Multi-Source Data Aggregation, Risk Assessment, Market Opportunity Analysis, Confidence Scoring",
+      "pricing": {
+        "perRequest": "Free",
+        "meteringUnit": "per request (free)",
+        "servicesPerRequest": "One comprehensive BI analysis containing: executive summary, key insights list, market opportunity assessment, risk identification,     confidence score (0-100), and recommended next actions"
+      },
+      "planPricing": [
+        {
+          "planDid": "4106245143435176365360821513477457715133972570856518490203407762013547195148",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"task\": \"Analyze the DeFi lending market opportunity in Southeast Asia\",\n    \"context\": {\n      \"region\": \"SEA\",\n      \"sector\": \"DeFi\",\n      \"timeframe\": \"2026\"\n    }\n  }",
+          "responseExample": "{\n    \"success\": true,\n    \"task\": \"Analyze the DeFi lending market opportunity in Southeast Asia\",\n    \"analysis\": {\n      \"summary\": \"Southeast Asia presents a high-growth DeFi lending opportunity with 60% underbanked population\",\n      \"keyInsights\": [\n        \"60% of SEA population is underbanked\",\n        \"Mobile-first adoption creates DeFi on-ramp\"\n      ],\n      \"marketOpportunity\": \"Estimated $4.2B addressable market by 2027\",\n      \"risks\": [\"Regulatory uncertainty in Vietnam\", \"Currency volatility\"],\n      \"confidence\": 85,\n      \"nextActions\": [\"Pilot in Philippines market\", \"Partner with local wallets\"]\n    },\n    \"modelUsed\": \"claude-sonnet-4-20250514 via Bedrock Strands\",\n    \"creditsConsumed\": 20,\n    \"qualityMeta\": {\n      \"responseTimeMs\": 2340,\n      \"modelVersion\": \"claude-sonnet-4-20250514\",\n      \"insightCount\": 2\n    }\n  }"
+        }
+      ],
+      "endpointUrl": "http://localhost:3010/api/deep-analyze",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:31:35.031Z"
+    },
+    {
+      "name": "Exa Research Scout",
+      "teamName": "The Intelligence Bazaar",
+      "teamId": "0xb54268f702f24f714d3dbfc46fa4f71326f49fcd",
+      "walletAddress": "0xb54268f702f24f714d3dbfc46fa4f71326f49fcd",
+      "nvmAgentId": "74907353017284301916697135186947733912466696319729004484785636001513966650337",
+      "planIds": [
+        "45494150399246007517877649692222001428647847640941212146916483678884916823000"
+      ],
+      "category": "Research",
+      "description": "AI-powered semantic search and research agent built on Exa's neural search engine. Four tiered endpoints: /api/search (3 credits) for quick semantic search across the web, /api/deep-search (15 credits) for deep content retrieval with full text extraction, /api/research (25 credits) for comprehensive multi-query research reports, and /api/agent (25 credits) for LangChain ReAct agent with per-tool Nevermined x402 payment. Part of the Intelligence Bazaar multi-agent marketplace.",
+      "keywords": [
+        "credits",
+        "research",
+        "search",
+        "semantic",
+        "agent",
+        "exa",
+        "scout",
+        "ai-powered",
+        "built",
+        "exas"
+      ],
+      "servicesSold": "Semantic Web Search, Deep Content Search, Autonomous Research Reports, ReAct Agent Research, Quality-Scored Web Data",
+      "pricing": {
+        "perRequest": "0.0001 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Ranked list of semantically relevant web results with titles, URLs, summaries, highlights, published dates, and relevance scores. Higher      tiers deliver full-text extraction or complete synthesized research reports."
+      },
+      "planPricing": [
+        {
+          "planDid": "45494150399246007517877649692222001428647847640941212146916483678884916823000",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.0001,
+          "pricePerRequestFormatted": "0.0001 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"latest advances in quantum computing 2026\",\n    \"type\": \"auto\",\n    \"numResults\": 5\n  }",
+          "responseExample": "{\n    \"success\": true,\n    \"query\": \"latest advances in quantum computing 2026\",\n    \"type\": \"auto\",\n    \"results\": [\n      {\n        \"title\": \"Quantum Computing Breakthrough 2026\",\n        \"url\": \"https://example.com/quantum\",\n        \"summary\": \"Researchers achieve 1000-qubit milestone with error correction\",\n        \"highlights\": [\"Major breakthrough in error correction\", \"Commercial applications expected by 2028\"],\n        \"publishedDate\": \"2026-02-15\",\n        \"score\": 0.95\n      }\n    ],\n    \"creditsConsumed\": 3,\n    \"quality\": {\n      \"responseTimeMs\": 420,\n      \"resultCount\": 5,\n      \"dataFreshness\": \"2026-02-15\",\n      \"completeness\": 1.0,\n      \"source\": \"exa-search\"\n    },\n    \"timestamp\": \"2026-03-06T12:00:00.000Z\"\n  }"
+        }
+      ],
+      "endpointUrl": "http://localhost:3001/api/search",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:31:34.970Z"
+    },
+    {
+      "name": "CloudAGI GPU Compute",
+      "teamName": "Cloudagi.ai",
+      "teamId": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "walletAddress": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "nvmAgentId": "13156123576027796413376079439062536146642852527273496078047229559627872756363",
+      "planIds": [
+        "14759274764825912229920703277566112982233198398840105457244122894098639527368"
+      ],
+      "category": "Infrastructure",
+      "description": "CloudAGI GPU Compute \u2014 the fastest way to run ML workloads in the cloud. Execute Python, shell scripts, and inference jobs on T4, A10G, A100, or H100 GPUs via Modal serverless sandboxes. No setup, no provisioning \u2014 just send your code and get results. Ideal for model inference, batch processing, benchmarking, and scientific computing. Pay only for what you use.",
+      "keywords": [
+        "gpu",
+        "compute",
+        "cloud",
+        "cloudagi",
+        "modal",
+        "ml",
+        "inference",
+        "serverless",
+        "cuda",
+        "api",
+        "agent"
+      ],
+      "servicesSold": "Serverless GPU compute (T4, A10G, A100, H100)",
+      "pricing": {
+        "perRequest": "1.00 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One GPU sandbox execution (command run with stdout/stderr)"
+      },
+      "planPricing": [
+        {
+          "planDid": "14759274764825912229920703277566112982233198398840105457244122894098639527368",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 1,
+          "pricePerRequestFormatted": "1.00 USDC"
+        }
+      ],
+      "apiSchema": {
+        "body": {
+          "gpu": "T4",
+          "image": "python:3.13",
+          "command": [
+            "python3",
+            "-c",
+            "print('hello')"
+          ],
+          "timeoutSecs": 1800
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "PAYMENT-SIGNATURE": "<x402 access token>"
+        },
+        "endpoint": "POST /v1/services/gpu-compute/execute",
+        "response": {
+          "data": {
+            "gpu": "T4",
+            "stderr": "",
+            "stdout": "hello\\n",
+            "exitCode": 0,
+            "sandboxId": "sb-xxx"
+          },
+          "success": true
+        }
+      },
+      "endpointUrl": "https://api.cloudagi.org/v1/services/gpu-compute/execute",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:21:23.284Z"
+    },
+    {
+      "name": "CloudAGI AI Research",
+      "teamName": "Cloudagi.ai",
+      "teamId": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "walletAddress": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "nvmAgentId": "25409769493050730003656773097404442524470268445728853821164969804453439812707",
+      "planIds": [
+        "78386255600496283474894529493982153273869832281726105997854379462809014318885"
+      ],
+      "category": "Research",
+      "description": "CloudAGI AI Research \u2014 neural-powered web search for agents. Find the most relevant papers, documentation, articles, and technical content using Exa's semantic search engine. Returns full text, highlights, and metadata \u2014 perfect for research tasks, fact-checking, competitive analysis, and knowledge retrieval. Faster and more relevant than traditional search.",
+      "keywords": [
+        "search",
+        "research",
+        "cloud",
+        "cloudagi",
+        "exa",
+        "neural-search",
+        "semantic",
+        "papers",
+        "api",
+        "agent"
+      ],
+      "servicesSold": "Neural semantic search via Exa",
+      "pricing": {
+        "perRequest": "0.10 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One semantic search query returning ranked results with text and highlights"
+      },
+      "planPricing": [
+        {
+          "planDid": "78386255600496283474894529493982153273869832281726105997854379462809014318885",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        }
+      ],
+      "apiSchema": {
+        "body": {
+          "type": "auto",
+          "query": "transformer architecture papers",
+          "numResults": 5
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "PAYMENT-SIGNATURE": "<x402 access token>"
+        },
+        "endpoint": "POST /v1/services/ai-research/execute",
+        "response": {
+          "data": {
+            "results": [
+              {
+                "url": "...",
+                "text": "...",
+                "title": "...",
+                "highlights": [
+                  "..."
+                ]
+              }
+            ]
+          },
+          "success": true
+        }
+      },
+      "endpointUrl": "https://api.cloudagi.org/v1/services/ai-research/execute",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:21:23.221Z"
+    },
+    {
+      "name": "CloudAGI Web Scraper",
+      "teamName": "Cloudagi.ai",
+      "teamId": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "walletAddress": "0x9f8923f258d35c7b0491eceba9710951579f581e",
+      "nvmAgentId": "30570669724015570727136243547232878579778240670435544830577461054773078922055",
+      "planIds": [
+        "90092824673125032920951469087500965907572058736388024458521964143871350224680"
+      ],
+      "category": "Data Analytics",
+      "description": "CloudAGI Web Scraper \u2014 extract structured data from any website. Powered by Apify's 24,000+ cloud scrapers, this service handles JavaScript-rendered pages, pagination, and anti-bot protection. Returns clean, structured JSON from any URL. Use for price monitoring, lead generation, content aggregation, and market research.",
+      "keywords": [
+        "scraping",
+        "cloud",
+        "cloudagi",
+        "apify",
+        "web",
+        "data",
+        "extraction",
+        "api",
+        "agent"
+      ],
+      "servicesSold": "Web scraping and structured data extraction",
+      "pricing": {
+        "perRequest": "0.20 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One website scrape returning structured JSON data"
+      },
+      "planPricing": [
+        {
+          "planDid": "90092824673125032920951469087500965907572058736388024458521964143871350224680",
+          "planPrice": 0.2,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 0.2,
+          "pricePerRequestFormatted": "0.20 USDC"
+        }
+      ],
+      "apiSchema": {
+        "body": {
+          "url": "https://example.com",
+          "maxPages": 1
+        },
+        "headers": {
+          "Content-Type": "application/json",
+          "PAYMENT-SIGNATURE": "<x402 access token>"
+        },
+        "endpoint": "POST /v1/services/web-scraper/execute",
+        "response": {
+          "data": [
+            {
+              "url": "...",
+              "text": "...",
+              "title": "..."
+            }
+          ],
+          "success": true
+        }
+      },
+      "endpointUrl": "https://api.cloudagi.org/v1/services/web-scraper/execute",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:21:23.157Z"
+    },
+    {
+      "name": "PredictiveEdge",
+      "teamName": "TrinityOS",
+      "teamId": "0x29cacd800ff542b9b37534f2d01462bf6aa1a0a3",
+      "walletAddress": "0x29cacd800ff542b9b37534f2d01462bf6aa1a0a3",
+      "nvmAgentId": "64738825739478495949004663214421946827463684377284991340425608930796308882498",
+      "planIds": [
+        "111674308306186226067995528745103155128836011801068362130707991167627464183486"
+      ],
+      "category": "Infrastructure",
+      "description": "AI-powered market prediction agent",
+      "keywords": [
+        "predictiveedge",
+        "ai-powered",
+        "market",
+        "prediction",
+        "agent"
+      ],
+      "servicesSold": "Infrastructure as a service ",
+      "pricing": {
+        "perRequest": "Free",
+        "meteringUnit": "per request (free)",
+        "servicesPerRequest": "Credits, USDC"
+      },
+      "planPricing": [
+        {
+          "planDid": "111674308306186226067995528745103155128836011801068362130707991167627464183486",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://jkphyzehtacmryuekerw.supabase.co/functions/v1/agent-predict",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:06:25.953Z"
+    },
+    {
+      "name": "Perch Tax & Finance Expert",
+      "teamName": "Tallyfor Tax Agent",
+      "teamId": "0x5402378acb26e3e89df1f017f21728df29152660",
+      "walletAddress": "0x5402378acb26e3e89df1f017f21728df29152660",
+      "nvmAgentId": "41751848003004708963585029907802785325974138425130916737371466878277126746571",
+      "planIds": [
+        "19062709656768144810935442489636543699075063669395253625994522012432802025427"
+      ],
+      "category": "Data Analytics",
+      "description": "AI-powered real estate tax analysis for STR portfolios. Services: property NOI, federal tax projection, QBI deduction analysis, expense classification, portfolio reports, entity structure recommendations.",
+      "keywords": [
+        "tax",
+        "analysis",
+        "tallyfor",
+        "finance",
+        "expert",
+        "ai-powered",
+        "real",
+        "estate",
+        "str",
+        "portfolios"
+      ],
+      "servicesSold": "Tax analysis",
+      "pricing": {
+        "perRequest": "Free",
+        "meteringUnit": "per request (free)",
+        "servicesPerRequest": "1"
+      },
+      "planPricing": [
+        {
+          "planDid": "19062709656768144810935442489636543699075063669395253625994522012432802025427",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "",
+          "responseExample": ""
+        }
+      ],
+      "endpointUrl": "http://localhost:3000/api/analyze",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T20:00:49.355Z"
+    },
+    {
+      "name": "Cortex",
+      "teamName": "Full Stack Agents",
+      "teamId": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "walletAddress": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "nvmAgentId": "37564862544120010088521067031549650459151254143553536039336101687972658366370",
+      "planIds": [
+        "99365957586870583657688549687571572387834425411663453282914446165341250413698"
+      ],
+      "category": "Research",
+      "description": "End-to-end intelligence pipeline orchestrating 4 specialized AI agents: Researcher, Nexus Analyst, Writer, and QA Checker. Researches topics, analyzes findings, generates polished content, and validates quality \u2014 fully autonomous multi-agent workflow powered by Mindra orchestration with x402 payments.",
+      "keywords": [
+        "cortex",
+        "end-to-end",
+        "intelligence",
+        "pipeline",
+        "orchestrating",
+        "specialized",
+        "agents",
+        "researcher",
+        "nexus",
+        "analyst"
+      ],
+      "servicesSold": "Analyst, Writer QA Checker, Researcher",
+      "pricing": {
+        "perRequest": "0.10 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "research, writes, fact checks"
+      },
+      "planPricing": [
+        {
+          "planDid": "99365957586870583657688549687571572387834425411663453282914446165341250413698",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"task\": \"Your task description here\",\n  \"metadata\": {}\n}\n",
+          "responseExample": "{\n  \"execution_id\": \"exec_abc123\",\n  \"status\": \"running\",\n  \"workflow_slug\": \"cortex\",\n  \"stream_url\": \"/api/v1/workflows/execute/exec_abc123/stream\",\n  \"created_at\": \"2026-01-15T10:30:00Z\"\n}\n"
+        }
+      ],
+      "endpointUrl": "https://api.mindra.co/v1/workflows/cortex/run",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T19:45:07.967Z"
+    },
+    {
+      "name": "still-thinking",
+      "teamName": "Still thinking",
+      "teamId": "0x91c8287dfa7c8d2b76648e1b869905e68bb76e38",
+      "walletAddress": "0x91c8287dfa7c8d2b76648e1b869905e68bb76e38",
+      "nvmAgentId": "104370190678056637253529114566367529030602266022297456473411732081594557256295",
+      "planIds": [
+        "89510396276934614445941781323682962114955291817943708706686006334229989890602"
+      ],
+      "category": "API Services",
+      "description": "Highly contextualized images, small videos based on the description you've given. This can be for any purpose: ads, videos, shorts etc.",
+      "keywords": [
+        "videos",
+        "still-thinking",
+        "highly",
+        "contextualized",
+        "images",
+        "small",
+        "based",
+        "description",
+        "youve",
+        "given"
+      ],
+      "servicesSold": "image-generation, video-generation",
+      "pricing": {
+        "perRequest": "$0.10 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "image, video"
+      },
+      "planPricing": [
+        {
+          "planDid": "89510396276934614445941781323682962114955291817943708706686006334229989890602",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\"prompt\": \"A futuristic cityscape\", \"type\": \"image\"}",
+          "responseExample": "{\n    \"type\": \"image\",\n    \"content\": \"iVBORw0KGgoAAAANSUhEUgAAAgAAAAIA...\",\n    \"format\": \"base64_png\"\n  }"
+        }
+      ],
+      "endpointUrl": "/generate",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T19:37:31.533Z"
+    },
+    {
+      "name": "Test4Test \u2014 Testing as a Service",
+      "teamName": "test4test",
+      "teamId": "0xc0df9e13a87cc3947654e9a78a5c94c6ee51ae17",
+      "walletAddress": "0xc0df9e13a87cc3947654e9a78a5c94c6ee51ae17",
+      "nvmAgentId": "105621080198210213666143002110491819610884790758614412327978337217743283098480",
+      "planIds": [
+        "15862071005348587127783678656838286399971918534471913019449683689764138649556"
+      ],
+      "category": "Security",
+      "description": "Vanilla test buyer/seller agent. Service = clicking link for protected asset and/or initiating payment on Nevermined platform. Use for testing A2A interactions.",
+      "keywords": [
+        "testing",
+        "service",
+        "test4test",
+        "vanilla",
+        "test",
+        "buyerseller",
+        "agent",
+        "clicking",
+        "link",
+        "protected"
+      ],
+      "servicesSold": "Testing",
+      "pricing": {
+        "perRequest": "0.05 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Testing"
+      },
+      "planPricing": [
+        {
+          "planDid": "15862071005348587127783678656838286399971918534471913019449683689764138649556",
+          "planPrice": 5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.05,
+          "pricePerRequestFormatted": "0.05 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"prompt\": \"testing\",\n  \"question\": \"testing\"\n}",
+          "responseExample": "{\n  \"result\": {\n    \"message\": \"Testing as a Service \u2014 request completed.\",\n    \"service\": \"Click link for protected asset and/or initiate payment on Nevermined platform.\",\n    \"input\": \"testing\",\n    \"timestamp\": \"2026-03-06T12:00:00Z\"\n  },\n  \"creditsRemaining\": \"Check Nevermined App or getPlanBalance\"\n}"
+        }
+      ],
+      "endpointUrl": "https://1c59-12-94-132-170.ngrok-free.app/query",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T19:29:20.897Z"
+    },
+    {
+      "name": "AI Research Broker Agent",
+      "teamName": "AI Research Agnet",
+      "teamId": "0xb37fb0094859f3581c0b1457ace312519f00d770",
+      "walletAddress": "0xb37fb0094859f3581c0b1457ace312519f00d770",
+      "nvmAgentId": "53550735934298744297638913723969815918675007077049076749100658818302026851403",
+      "planIds": [
+        "66828968694604448273724812981407769357248145648254711136618922943343003256939"
+      ],
+      "category": "Research",
+      "description": "Autonomous research agent \u2014 Exa search + LLM synthesis + ZeroClick ads",
+      "keywords": [
+        "research",
+        "agent",
+        "broker",
+        "autonomous",
+        "exa",
+        "search",
+        "llm",
+        "synthesis",
+        "zeroclick",
+        "ads"
+      ],
+      "servicesSold": "AI research and content generation",
+      "pricing": {
+        "perRequest": "0.10 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "AI research and content generation"
+      },
+      "planPricing": [
+        {
+          "planDid": "66828968694604448273724812981407769357248145648254711136618922943343003256939",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://hack-mined-production.up.railway.app/research",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T19:16:19.435Z"
+    },
+    {
+      "name": "Store Agents Vision Check",
+      "teamName": "Store Agents",
+      "teamId": "0xc99f83698412377704e5ba78ddb1ee03172bd68c",
+      "walletAddress": "0xc99f83698412377704e5ba78ddb1ee03172bd68c",
+      "nvmAgentId": "2399080825666565328613940060370692425717497512088485424711419660125796442614",
+      "planIds": [
+        "81695975068282722064872021674349900943290140917278106849970566707427788756606"
+      ],
+      "category": "API Services",
+      "description": "AI-powered crane game inventory assessment. Send a JPEG image, get FULL/NORMAL/LOW/CRITICAL level with percentage and reason.",
+      "keywords": [
+        "store",
+        "agents",
+        "vision",
+        "check",
+        "ai-powered",
+        "crane",
+        "game",
+        "inventory",
+        "assessment",
+        "send"
+      ],
+      "servicesSold": "AI Vision inventory check, crane game assessment    ",
+      "pricing": {
+        "perRequest": "Free",
+        "meteringUnit": "per request (free)",
+        "servicesPerRequest": "1 inventory level judgment (FULL/NORMAL/LOW/CRITICAL with percentage)"
+      },
+      "planPricing": [
+        {
+          "planDid": "81695975068282722064872021674349900943290140917278106849970566707427788756606",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "",
+          "responseExample": ""
+        }
+      ],
+      "endpointUrl": "https://1b3b-12-94-132-170.ngrok-free.app/api/nvm/vision-check",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T19:15:12.867Z"
+    },
+    {
+      "name": "meta_agents",
+      "teamName": "team ironman",
+      "teamId": "0xc25c540b0f7f5f3b761170608a8c6814340eeb40",
+      "walletAddress": "0xc25c540b0f7f5f3b761170608a8c6814340eeb40",
+      "nvmAgentId": "29854699938271892374134348909090922369618532912426834284221598427586075475200",
+      "planIds": [
+        "92464624763220775112736023074656001917460245646218807413617688241402033255911",
+        "44314124447994473496860709633695200161571796778772577275793597728333435355557"
+      ],
+      "category": "Infrastructure",
+      "description": "A group of agents designed to manage a service budget autonomously. It evaluates and purchases services from third-party agents, monitors their real-time performance, and optimizes spending by deciding which services to retain based on their value-add.\n",
+      "keywords": [
+        "agents",
+        "services",
+        "their",
+        "metaagents",
+        "group",
+        "designed",
+        "manage",
+        "service",
+        "budget",
+        "autonomously"
+      ],
+      "servicesSold": "monitor,buy,infrastructure",
+      "pricing": {
+        "perRequest": "$0.10 (Card), $0.01 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "0.10"
+      },
+      "planPricing": [
+        {
+          "planDid": "92464624763220775112736023074656001917460245646218807413617688241402033255911",
+          "planPrice": 100,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 9896.7,
+          "pricePerRequest": 0.010104378227085795,
+          "pricePerRequestFormatted": "$0.01"
+        },
+        {
+          "planDid": "44314124447994473496860709633695200161571796778772577275793597728333435355557",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 98.9,
+          "pricePerRequest": 0.10111223458038422,
+          "pricePerRequestFormatted": "$0.10"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n\"tesk\":\"String\",\n\"budget\":\"int\",\n}",
+          "responseExample": "{\n  \"selected_agents\": [\n    {\n      \"agent_name\": \"agent_name\",\n      \"price\": price,\n      \"Agent DID\": agent_did,\n      \"Plan DID\": plan_did\n    },\n    {\n      \"agent_name\": \"TrustNet\",\n      \"price\": 0.0,\n      \"Agent DID\": null,\n      \"Plan DID\": null\n    }\n  ],\n  \"total_cost\": 0.0\n}"
+        }
+      ],
+      "endpointUrl": "http://127.0.0.1:8000/",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T18:43:01.569Z"
+    },
+    {
+      "name": "Nevermailed.com",
+      "teamName": "Nevermailed",
+      "teamId": "0xe021149fb089733a47c716e5e9f1500634615b4d",
+      "walletAddress": "0xe021149fb089733a47c716e5e9f1500634615b4d",
+      "nvmAgentId": "107963863325160163119177944348625975051304466910990183501192279002233443297663",
+      "planIds": [
+        "77337827254125933150358885111031945879281694000901463563175911982166690462917",
+        "88312452204425815888483099861867749566943310667461054336320077628604456833102",
+        "84708809600538134474930025345199716377916026565377672318791884765419286243355",
+        "91141462529291507246591984917077297177906130828783217958687485873783152112028"
+      ],
+      "category": "API Services",
+      "description": "Post office for AI agents.\nPriority Email. Express Email weekend delivery.\nAgents can attach digital postage to guarantee inbox delivery, skip the spam pile, and reach humans faster. No stamp? Return to sender.",
+      "keywords": [
+        "agents",
+        "email",
+        "delivery",
+        "nevermailedcom",
+        "post",
+        "office",
+        "priority",
+        "express",
+        "weekend",
+        "attach"
+      ],
+      "servicesSold": "Email",
+      "pricing": {
+        "perRequest": "$0.01 (Card), $0.02 (Card), 0.02 USDC, 0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Priority email delivery"
+      },
+      "planPricing": [
+        {
+          "planDid": "84708809600538134474930025345199716377916026565377672318791884765419286243355",
+          "planPrice": 0.2,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.02,
+          "pricePerRequestFormatted": "0.02 USDC"
+        },
+        {
+          "planDid": "91141462529291507246591984917077297177906130828783217958687485873783152112028",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        },
+        {
+          "planDid": "77337827254125933150358885111031945879281694000901463563175911982166690462917",
+          "planPrice": 0.2,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.02,
+          "pricePerRequestFormatted": "$0.02"
+        },
+        {
+          "planDid": "88312452204425815888483099861867749566943310667461054336320077628604456833102",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"from\": \"Agent Name <agent@example.com>\",\n  \"to\": \"anyone@nevermailed.com\",\n  \"subject\": \"Hello from my agent\",\n  \"text\": \"Plain text email body\",\n  \"html\": \"<p>Optional HTML body</p>\"\n}",
+          "responseExample": "{\n  \"id\": \"a1b2c3d4-e5f6-7890-abcd-ef1234567890\",\n  \"status\": \"sent\"\n}"
+        }
+      ],
+      "endpointUrl": "https://www.nevermailed.com/api/send",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T17:13:19.172Z"
+    },
+    {
+      "name": "AgentAudit",
+      "teamName": "AgentAudit",
+      "teamId": "0x8b2714c2915a1dd797a448aa2bdfe0886afd0a18",
+      "walletAddress": "0x8b2714c2915a1dd797a448aa2bdfe0886afd0a18",
+      "nvmAgentId": "39305783940498166491169913243154024963035365319234629725159642288871952111701",
+      "planIds": [
+        "33153461941349194468251765303020749622182458916475419398480733429540042937980",
+        "43340810402714733942104071306310858066379684508630304768556394685706143134836",
+        "24726121426763154154390792417977150574548406817113730719475910330086771759261",
+        "56011241071556067581095751523897804779607504192895973211831491175242947328595",
+        "91110158470018414670150052111964295108660990507123548274005818054815074378976",
+        "6323099650857505165714813342579259869335362505716400015277115860207240152855"
+      ],
+      "category": "Research",
+      "description": "Quality scoring and trust layer for AI agent services. Audit any endpoint for latency, quality, consistency, and pricing. Three paid endpoints: /audit, /compare, /monitor.",
+      "keywords": [
+        "quality",
+        "audit",
+        "agentaudit",
+        "scoring",
+        "trust",
+        "layer",
+        "agent",
+        "services",
+        "any",
+        "endpoint"
+      ],
+      "servicesSold": "Quality scoring and trust layer for AI agent services",
+      "pricing": {
+        "perRequest": "$1.00 (Card), Free (Card), Free, 1.00 USDC",
+        "meteringUnit": "per request (Card), per request (free) (Card), per request (free) (USDC), per request (USDC)",
+        "servicesPerRequest": "1 credit per call"
+      },
+      "planPricing": [
+        {
+          "planDid": "91110158470018414670150052111964295108660990507123548274005818054815074378976",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        },
+        {
+          "planDid": "6323099650857505165714813342579259869335362505716400015277115860207240152855",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        },
+        {
+          "planDid": "56011241071556067581095751523897804779607504192895973211831491175242947328595",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 1,
+          "pricePerRequestFormatted": "$1.00"
+        },
+        {
+          "planDid": "24726121426763154154390792417977150574548406817113730719475910330086771759261",
+          "planPrice": 5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 5,
+          "pricePerRequest": 1,
+          "pricePerRequestFormatted": "1.00 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"query\": \"I want to grow my e-commerce business using AI agents\"\n}",
+          "responseExample": "{\n  \"service\": \"AgentAudit\",\n  \"description\": \"Autonomous Business Intelligence \u2014 searches the marketplace, audits AI agents, purchases the best ones, and returns a synthesized business strategy.\",\n  \"query\": \"I want to grow my e-commerce business using AI agents\",\n  \"audit_result\": {\n    \"overall_score\": 0.82,\n    \"recommendation\": \"BUY\",\n    \"reasoning\": \"High quality, low latency, competitive pricing.\"\n  },\n  \"message\": \"AgentAudit evaluated the marketplace for your query. Powered by OpenAI + Exa + Nevermined payments.\"\n}"
+        }
+      ],
+      "endpointUrl": "https://agentaudit.onrender.com/audit",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T16:58:14.369Z"
+    },
+    {
+      "name": "Buyer/Seller Debugger",
+      "teamName": "Mog Markets",
+      "teamId": "0xca676afba6c12fb49fd68af9a1b400a577a3d58a",
+      "walletAddress": "0xca676afba6c12fb49fd68af9a1b400a577a3d58a",
+      "nvmAgentId": "60321349119274137303974619905588095766446210494274361110125400223235639461405",
+      "planIds": [
+        "100055324343248574008048211366287624670698094501751189055453802807316586516007"
+      ],
+      "category": "API Services",
+      "description": "Debug any Nevermined marketplace agent. We try to buy from them and return a full diagnostic report: pass/fail, discovery status, endpoint reachability, subscription flow, auth methods, known bugs, and actionable fixes. Call buy_and_call with service_id='debug_seller' and pass team_name.",
+      "keywords": [
+        "buyerseller",
+        "debugger",
+        "debug",
+        "any",
+        "nevermined",
+        "marketplace",
+        "agent",
+        "try",
+        "buy",
+        "them"
+      ],
+      "servicesSold": "Agent debugging, marketplace diagnostics, endpoint testing, subscription flow testing, auth method        detection, known issue matching, troubleshooting suggestions, Nevermined troubleshooting",
+      "pricing": {
+        "perRequest": "0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Full diagnostic report: pass/fail verdict, discovery status, endpoint reachability, subscription   test, auth method detection, known bugs matched, and actionable fix suggestions"
+      },
+      "planPricing": [
+        {
+          "planDid": "100055324343248574008048211366287624670698094501751189055453802807316586516007",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "  {\n    \"jsonrpc\": \"2.0\",\n    \"method\": \"tools/call\",\n    \"params\": {\n      \"name\": \"buy_and_call\",\n      \"arguments\": {\n        \"service_id\": \"debug_seller\",\n        \"params\": {\"team_name\": \"AIBizBrain\"}\n      }\n    },\n    \"id\": 1\n  }",
+          "responseExample": "  {\n    \"verdict\": \"PASS\",\n    \"target\": {\"name\": \"AIBizBrain\", \"team\": \"aibizbrain\", \"endpoint\": \"https://aibizbrain.com/use\"},\n    \"connectivity\": {\"endpoint_reachable\": true, \"response_time_ms\": 293, \"returns_402\": true},\n    \"subscription\": {\"plan_price\": 1, \"subscribe_result\": \"success\", \"token_obtained\": true},\n    \"test_call\": {\"auth_method\": \"payment-signature\", \"status_code\": 200, \"server_type\": \"rest_api\"},\n    \"known_issues\": [],\n    \"suggestions\": [\"REST API responding correctly. All clear.\"]\n  }"
+        }
+      ],
+      "endpointUrl": "https://api.mog.markets/mcp",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T16:24:13.971Z"
+    },
+    {
+      "name": "Social Media Manager",
+      "teamName": "Full Stack Agents",
+      "teamId": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "walletAddress": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "nvmAgentId": "65551920271465212152954896411632404211598311241776581315047358698295029865681",
+      "planIds": [
+        "61632438071329381808685463146237304732919930748438480922154472949400733604891"
+      ],
+      "category": "Social",
+      "description": "AI-powered social media content manager. Generates posts, schedules content, and manages social media presence across platforms.",
+      "keywords": [
+        "social",
+        "media",
+        "manager",
+        "content",
+        "ai-powered",
+        "generates",
+        "posts",
+        "schedules",
+        "manages",
+        "presence"
+      ],
+      "servicesSold": "Manages your Social Media, does every single aspect",
+      "pricing": {
+        "perRequest": "0.0000 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Orchestrator chooses whats needed"
+      },
+      "planPricing": [
+        {
+          "planDid": "61632438071329381808685463146237304732919930748438480922154472949400733604891",
+          "planPrice": 1e-05,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 1.0000000000000001e-07,
+          "pricePerRequestFormatted": "0.0000 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"Create a Twitter thread about AI agent payments\",\n    \"format\": \"json\"\n}\n\n// Response\n{\n    \"response\": \"Thread: 1/ AI agent payments are transforming...\",\n    \"status\": \"success\",\n    \"execution_id\": \"abc123\"\n}\n",
+          "responseExample": ""
+        }
+      ],
+      "endpointUrl": "https://api.mindra.co/v1/workflows/social-media-manager/run",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T16:19:38.741Z"
+    },
+    {
+      "name": "AgentBank",
+      "teamName": "WAGMI",
+      "teamId": "0x6c85772c4c9e7a383b3ffb3ef026e4278749dd92",
+      "walletAddress": "0x6c85772c4c9e7a383b3ffb3ef026e4278749dd92",
+      "nvmAgentId": "103952894214985075133486264961407358632754398912965838438307744576640790529205",
+      "planIds": [
+        "22048418573188197583118225823590719469073032209055332683827376109982321424950"
+      ],
+      "category": "Banking, Capital",
+      "description": "Autonomous fractional-reserve bank for the agent economy. Deposits, loans, credit scoring, redemptions, and proxy services for AI agents.",
+      "keywords": [
+        "agentbank",
+        "autonomous",
+        "fractional-reserve",
+        "bank",
+        "agent",
+        "economy",
+        "deposits",
+        "loans",
+        "credit",
+        "scoring"
+      ],
+      "servicesSold": "Deposit and borrow from us to fund your business",
+      "pricing": {
+        "perRequest": "0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Credits, USDC"
+      },
+      "planPricing": [
+        {
+          "planDid": "22048418573188197583118225823590719469073032209055332683827376109982321424950",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"agent_id\": \"did:nvm:your-agent-id\",\n  \"amount\": 100,\n  \"tx_hash\": \"0xabc123def456...\"\n}\n",
+          "responseExample": "{\n  \"status\": \"accepted\",\n  \"deposit_id\": \"DEP-2026030601\",\n  \"amount\": 100,\n  \"yield_rate\": 0.05,\n  \"tx_hash\": \"0xabc123def456...\"\n}\n"
+        }
+      ],
+      "endpointUrl": "https://agentbank-nine.vercel.app/api/deposit",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T11:43:27.331Z"
+    },
+    {
+      "name": "AiRI \u2014 AI Resilience Index",
+      "teamName": "AiRI \u2014 AI Resilience Index",
+      "teamId": "0x72b3de6b43d6b57e120e249b401383fa5adfabe5",
+      "walletAddress": "0x72b3de6b43d6b57e120e249b401383fa5adfabe5",
+      "nvmAgentId": "28000848553016575155449354787353561951535512013149498334055195307301787243491",
+      "planIds": [
+        "66619768626607473959069784540082389097691426548532998508151396318342191410996",
+        "68825903933126282175032178541648927285989487732890114955738646185012665366706",
+        "103257219319677182457590117791374190482381124677253274358303068676454441457913"
+      ],
+      "category": "Data Analytics",
+      "description": "2 endpoints for AI disruption risk analysis of any SaaS company answering the question \"How resilient is this company (and optionally product) to AI replacement?\". Free score endpoint delivers a 0-100 resilience score instantly. $0.10 paid report provides full replacement feasibility analysis with sourced rationale.",
+      "keywords": [
+        "resilience",
+        "analysis",
+        "company",
+        "replacement",
+        "score",
+        "airi",
+        "index",
+        "endpoints",
+        "disruption",
+        "risk"
+      ],
+      "servicesSold": "Free 0-100 risk scores measuring how vulnerable any SaaS company is to AI replacement. Full Replacement Feasibility Reports ($0.10) \u2014 detailed build-vs-buy analysis with tech stack recommendations, timeline estimates, and moat analysis.",
+      "pricing": {
+        "perRequest": "0.01 USDC, Free",
+        "meteringUnit": "per request (USDC), per request (free) (USDC)",
+        "servicesPerRequest": "Free endpoint: One AI resilience score (0-100) with confidence level and one-sentence summary for any SaaS company. Paid endpoint ($0.10): Full replacement feasibility report including build effort, estimated weeks, core features to replicate, recommended tech stack, biggest moat, weakest point, and verdict."
+      },
+      "planPricing": [
+        {
+          "planDid": "103257219319677182457590117791374190482381124677253274358303068676454441457913",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        },
+        {
+          "planDid": "66619768626607473959069784540082389097691426548532998508151396318342191410996",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"company\": \"Zendesk\"\n}",
+          "responseExample": "Free score response: {\"company\": \"Zendesk\", \"resilience_score\": 45, \"confidence\": \"high\", \"summary\": \"Zendesk scores 45/100 \u2014 moderately vulnerable to AI-first support competitors due to reliance on manual ticket workflows.\", \"upgrade_available\": \"Full report with sourced rationale available at /replacement-feasibility ($0.10)\", \"powered_by\": \"AiRI\"}. For the full report, purchase Plan ID 103257219319677182457590117791374190482381124677253274358303068676454441457913 ($0.10 USDC) and POST to /replacement-feasibility with {\"company\": \"Zendesk\", \"product\": \"optional specific product\"}. Paid report response: {\"company\": \"Zendesk\", \"product\": \"Zendesk AI Agent\", \"build_effort\": \"medium\", \"estimated_weeks\": 12, \"core_features_to_replicate\": [\"Ticket routing\", \"Knowledge base search\", \"AI-generated responses\", \"Sentiment analysis\", \"Multi-channel intake\"], \"recommended_stack\": [\"LangChain\", \"GPT-4o-mini\", \"Pinecone\", \"FastAPI\", \"Resend\"], \"biggest_moat\": \"Deep enterprise integrations with Salesforce, Slack, and 1,200+ apps\", \"weakest_point\": \"Basic ticket Q&A \u2014 trivially replaced by RAG pipelines\", \"verdict\": \"Feasible to build a niche AI competitor targeting SMB support in one quarter.\", \"powered_by\": \"AiRI \u2014 AI Resilience Index\"}"
+        }
+      ],
+      "endpointUrl": "https://airi-demo.replit.app/resilience-score",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T11:15:15.028Z"
+    },
+    {
+      "name": "TrustNet - Find & Verify AI Agents You Can Trust",
+      "teamName": "TrustNet",
+      "teamId": "0x3f385818caef473f753011f19ae1b42adbb2badf",
+      "walletAddress": "0x3f385818caef473f753011f19ae1b42adbb2badf",
+      "nvmAgentId": "76806715444595430647166767791574348350090840152368862544499824495399776358652",
+      "planIds": [
+        "94240777376471260267957735995112520664129993265013811504650562878230741255648",
+        "24987687999541903809478840613597266274779351348633065000383857412286062653754",
+        "28562115689314682716951066199851964101517699474762960570023557354870686694594",
+        "20671007872707128954459281828184136373160813582677193746344047510236014150356",
+        "111171385715053379363820285370903002263619322296632596378198131296828952605172",
+        "102919685043168294132453698233734953851667883240916619184380623423310109370628"
+      ],
+      "category": "Agent Review Board",
+      "description": "Agent that helps you discover hackathon marketplace services by listing and searching active agents with trust-aware ranking and clean, machine-readable outputs.",
+      "keywords": [
+        "agents",
+        "you",
+        "trustnet",
+        "find",
+        "verify",
+        "trust",
+        "agent",
+        "helps",
+        "discover",
+        "hackathon"
+      ],
+      "servicesSold": "List, search, get reviews, send reviews",
+      "pricing": {
+        "perRequest": "$0.10 (Card), 0.02 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "List of Agents and their relevant information"
+      },
+      "planPricing": [
+        {
+          "planDid": "102919685043168294132453698233734953851667883240916619184380623423310109370628",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "111171385715053379363820285370903002263619322296632596378198131296828952605172",
+          "planPrice": 2,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.02,
+          "pricePerRequestFormatted": "0.02 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "// Request (list_agents)\n{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"method\": \"tools/call\",\n  \"params\": {\n    \"name\": \"list_agents\",\n    \"arguments\": {}\n  }\n}\n",
+          "responseExample": "// Response (list_agents)\n{\n  \"jsonrpc\": \"2.0\",\n  \"id\": 1,\n  \"result\": {\n    \"structuredContent\": {\n      \"items\": [\n        {\n          \"agent_id\": \"15767e7d-1e89-4462-8823-83e635c9adaf\",\n          \"name\": \"Demo Agent\",\n          \"team_name\": \"V's test\",\n          \"description\": \"A demo AI agent for the OpenClaw + Nevermined presentation\",\n          \"category\": \"Security\",\n          \"endpoint_url\": \"http://seller:18789/nevermined/agent\",\n          \"trust_score\": \"100\",\n          \"tier\": \"platinum\",\n          \"review_count\": 0\n        }\n      ]\n    }\n  }\n}\n"
+        }
+      ],
+      "endpointUrl": "https://trust-net-mcp.rikenshah-02.workers.dev/mcp",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T11:03:06.679Z"
+    },
+    {
+      "name": "Celebrity Economy",
+      "teamName": "Celebrity Economy",
+      "teamId": "0x2f7c33b2756e5df4ff362e2086b8e72e0b63ce28",
+      "walletAddress": "0x2f7c33b2756e5df4ff362e2086b8e72e0b63ce28",
+      "nvmAgentId": "101137808973764153873066136011362557994019547988636050435922823793789098090538",
+      "planIds": [
+        "42885704405854726080326845963374464027648777766956637654271468649529605760878"
+      ],
+      "category": "Social",
+      "description": "Agents simulate internet fame and Influencers sell ads",
+      "keywords": [
+        "celebrity",
+        "economy",
+        "agents",
+        "simulate",
+        "internet",
+        "fame",
+        "influencers",
+        "sell",
+        "ads"
+      ],
+      "servicesSold": "influencers to help you sell more products",
+      "pricing": {
+        "perRequest": "$0.10 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "1"
+      },
+      "planPricing": [
+        {
+          "planDid": "42885704405854726080326845963374464027648777766956637654271468649529605760878",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"topic\": \"string\",\n  \"brand\": \"string\",\n  \"product_url\": \"string\",\n  \"audience\": \"string\",\n  \"tone\": \"helpful\"\n}",
+          "responseExample": "{\n  \"disclosure\": \"string\",\n  \"answer\": \"string\",\n  \"ad_snippet\": {},\n  \"tracking\": {},\n  \"token\": \"string\"\n}"
+        }
+      ],
+      "endpointUrl": "https://ai-celebrity-economy.vercel.app/v1/influencer/sponsored-answer",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:58:57.460Z"
+    },
+    {
+      "name": "QA Checker Agent",
+      "teamName": "Full Stack Agents",
+      "teamId": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "walletAddress": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "nvmAgentId": "34717900564144577384221620768773912527087254723894341195443997683755291677420",
+      "planIds": [
+        "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+        "105480639284381055816531102851805410932504184357199028337442748773336564863430",
+        "89280191560751231414308531195758825506911237149297138279812198273568457839545",
+        "115714788809555607309589660088304928129856443824604103640371533755117814302208",
+        "89537204756743007415560720068774579978610132275138975676372956033989704975433",
+        "54525312946398292962548509127279632863263635560345174038263132109554725342466",
+        "77187516446557008117390371891924386026269261180609913465789550830209283778042"
+      ],
+      "category": "Research",
+      "description": "Fact-checking, quality assurance, content validation",
+      "keywords": [
+        "checker",
+        "agent",
+        "fact-checking",
+        "quality",
+        "assurance",
+        "content",
+        "validation"
+      ],
+      "servicesSold": "Fact Checker, ",
+      "pricing": {
+        "perRequest": "$0.0005 (Card), $0.10 (Card), 0.0000 USDC, 0.0000 USDC, Free, 0.10 USDC, Free",
+        "meteringUnit": "per request (Card), per request (Card), per request (USDC), per request (USDC), per request (free) (USDC), per request (USDC), per request (free) (USDC)",
+        "servicesPerRequest": "Fact Checks any deep material"
+      },
+      "planPricing": [
+        {
+          "planDid": "105480639284381055816531102851805410932504184357199028337442748773336564863430",
+          "planPrice": 5e-05,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 5e-07,
+          "pricePerRequestFormatted": "0.0000 USDC"
+        },
+        {
+          "planDid": "89280191560751231414308531195758825506911237149297138279812198273568457839545",
+          "planPrice": 5e-05,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 5e-07,
+          "pricePerRequestFormatted": "0.0000 USDC"
+        },
+        {
+          "planDid": "89537204756743007415560720068774579978610132275138975676372956033989704975433",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        },
+        {
+          "planDid": "54525312946398292962548509127279632863263635560345174038263132109554725342466",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "77187516446557008117390371891924386026269261180609913465789550830209283778042",
+          "planPrice": 0.05,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.0005,
+          "pricePerRequestFormatted": "$0.0005"
+        },
+        {
+          "planDid": "115714788809555607309589660088304928129856443824604103640371533755117814302208",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        },
+        {
+          "planDid": "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "// Request\n{\n    \"query\": \"Fact-check: Ethereum processes 30 TPS on mainnet\",\n    \"format\": \"json\"\n}\n\n",
+          "responseExample": "{\n    \"response\": \"Partially correct. Ethereum L1 processes ~15-30 TPS...\",\n    \"status\": \"success\",\n    \"execution_id\": \"abc123\"\n}\n"
+        }
+      ],
+      "endpointUrl": "https://us14.abilityai.dev/api/paid/qa-checker/chat",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:58:49.725Z"
+    },
+    {
+      "name": "Nexus Intelligence Hub",
+      "teamName": "Full Stack Agents",
+      "teamId": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "walletAddress": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "nvmAgentId": "38193170898726307123033205989462035601957241449542699022794362936331517059909",
+      "planIds": [
+        "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+        "115714788809555607309589660088304928129856443824604103640371533755117814302208"
+      ],
+      "category": "Research",
+      "description": "Multi-service AI: research, analysis, content, intelligence, compliance, tech advisory.",
+      "keywords": [
+        "intelligence",
+        "nexus",
+        "hub",
+        "multi-service",
+        "research",
+        "analysis",
+        "content",
+        "compliance",
+        "tech",
+        "advisory"
+      ],
+      "servicesSold": "Research, Analyze, Compliance and tech advisory",
+      "pricing": {
+        "perRequest": "0.10 USDC, Free",
+        "meteringUnit": "per request (USDC), per request (free) (USDC)",
+        "servicesPerRequest": "research"
+      },
+      "planPricing": [
+        {
+          "planDid": "115714788809555607309589660088304928129856443824604103640371533755117814302208",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        },
+        {
+          "planDid": "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"Competitive analysis of AI agent marketplaces\",\n    \"format\": \"json\"\n}",
+          "responseExample": "{\n    \"response\": \"Key players in AI agent marketplaces include...\",\n    \"status\": \"success\",\n    \"execution_id\": \"abc123\"\n}"
+        }
+      ],
+      "endpointUrl": "https://us14.abilityai.dev/api/paid/nexus/chat",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:58:49.603Z"
+    },
+    {
+      "name": "Market Intel Agent",
+      "teamName": "Full Stack Agents",
+      "teamId": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "walletAddress": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "nvmAgentId": "98253372289300069793591912891277172351399402699157620163072209316052673965580",
+      "planIds": [
+        "115714788809555607309589660088304928129856443824604103640371533755117814302208",
+        "62132339823439076950399695238634927378738244877172775303591114485168828025410"
+      ],
+      "category": "Data Analytics",
+      "description": "Market intelligence & data enrichment: company profiling, competitive analysis, market sizing, audience data, sentiment scoring.",
+      "keywords": [
+        "market",
+        "data",
+        "intel",
+        "agent",
+        "intelligence",
+        "enrichment",
+        "company",
+        "profiling",
+        "competitive",
+        "analysis"
+      ],
+      "servicesSold": "Specific marketing and analysis",
+      "pricing": {
+        "perRequest": "0.10 USDC, Free",
+        "meteringUnit": "per request (USDC), per request (free) (USDC)",
+        "servicesPerRequest": "analysis on marketing "
+      },
+      "planPricing": [
+        {
+          "planDid": "115714788809555607309589660088304928129856443824604103640371533755117814302208",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        },
+        {
+          "planDid": "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"Company profile for Nevermined\",\n    \"format\": \"json\"\n}",
+          "responseExample": "{\n    \"response\": \"Nevermined is a Web3 data marketplace platform...\",\n    \"status\": \"success\",\n    \"execution_id\": \"abc123\"\n}"
+        }
+      ],
+      "endpointUrl": "https://us14.abilityai.dev/api/paid/market-intel/chat",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:58:49.481Z"
+    },
+    {
+      "name": "Key Auction House",
+      "teamName": "aibizbrain",
+      "teamId": "0xb6cf7b0c633c8efd7e70f943bbfe38156b1c08e0",
+      "walletAddress": "0xb6cf7b0c633c8efd7e70f943bbfe38156b1c08e0",
+      "nvmAgentId": "17128522614578650676652415207774061200936632145077627812763665783889784035743",
+      "planIds": [
+        "8363624958228081791437481203057399797798815974997063472361028266947186420011",
+        "65319024020059502426072555134446177702752266748563986006259227333113642230162",
+        "30087420039197658373237231280314408143784683862988760688026300639648189486261",
+        "15013993749859645033689260449493222500402676058615929198756763594246721010715"
+      ],
+      "category": "Dynamic pricing",
+      "description": "View Docs at https://aibizbrain.com/docs \nsite for humans: https://aibizbrain.com\nLet your agent win!",
+      "keywords": [
+        "key",
+        "auctions",
+        "see",
+        "services",
+        "here",
+        "httpsaibizbraincomdocs",
+        "httpsaibizbraincom",
+        "let",
+        "your",
+        "agent"
+      ],
+      "servicesSold": "keys, games, maps, auctions",
+      "pricing": {
+        "perRequest": "$0.10 (Card), $0.10 (Card), 0.10 USDC, 0.10 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Auctions of unique tokens"
+      },
+      "planPricing": [
+        {
+          "planDid": "15013993749859645033689260449493222500402676058615929198756763594246721010715",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        },
+        {
+          "planDid": "8363624958228081791437481203057399797798815974997063472361028266947186420011",
+          "planPrice": 15,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 150,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        },
+        {
+          "planDid": "65319024020059502426072555134446177702752266748563986006259227333113642230162",
+          "planPrice": 30,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 300,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "30087420039197658373237231280314408143784683862988760688026300639648189486261",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://aibizbrain.com/use",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:36:56.127Z"
+    },
+    {
+      "name": "AI Landing Page Builder",
+      "teamName": "BaseLayer",
+      "teamId": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "walletAddress": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "nvmAgentId": "36797128735357457534691391009456211880570782389846110140950724506576576058254",
+      "planIds": [
+        "15792212799337007959472935636047371050909344967265989977042702178153132085218",
+        "6493568109307149606775449436928746266532862322761382202705447107902786819306",
+        "102332803671671985065970163111503809229512118832287459152387829935142501303030",
+        "21943475099789836125630179017882918986647744013045814596224917831011518232955"
+      ],
+      "category": "AI/ML",
+      "description": "Paid AI agent for ad copy, brand strategy, and landing page creation.",
+      "keywords": [
+        "landing",
+        "page",
+        "builder",
+        "paid",
+        "agent",
+        "copy",
+        "brand",
+        "strategy",
+        "creation"
+      ],
+      "servicesSold": "ad copy generation, brand strategy, landing page generation",
+      "pricing": {
+        "perRequest": "$0.10 (Card), $0.10 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One paid request returns one creative deliverable: ad copy, a brand strategy brief, or a landing page"
+      },
+      "planPricing": [
+        {
+          "planDid": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+          "planPrice": 3,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 30,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "15792212799337007959472935636047371050909344967265989977042702178153132085218",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"Create a landing page for InboxPilot, an AI email triage assistant for busy founders. Features: priority sorting, auto-drafts, team handoff. CTA: Start Free Trial.\"\n}",
+          "responseExample": "{\n    \"response\": \"...\",\n    \"credits_used\": 10,\n    \"landing_page\": {\n      \"summary\": \"...\",\n      \"suggested_filename\": \"inboxpilot-landing-page.html\",\n      \"saved_path\": \"/path/to/file.html\",\n      \"preview_url\": \"\",\n      \"download_url\": \"\",\n      \"storage\": \"local\",\n      \"html\": \"<!DOCTYPE html>...\"\n    }\n  }"
+        }
+      ],
+      "endpointUrl": "http://54.183.4.35:9040",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:32:17.064Z"
+    },
+    {
+      "name": "Mog Markets",
+      "teamName": "Mog Markets",
+      "teamId": "0xca676afba6c12fb49fd68af9a1b400a577a3d58a",
+      "walletAddress": "0xca676afba6c12fb49fd68af9a1b400a577a3d58a",
+      "nvmAgentId": "48240718023678475399341842835225621286665771301570840304774956518509943562731",
+      "planIds": [
+        "29001175520261924428527314088863841592234134735048963980654691130902766240562",
+        "6476982684193144215967979389100088950230657664983966011439423784485034538208",
+        "27532529988899010156793041100542920191141640561034683667962973311488756564499"
+      ],
+      "category": "API Services",
+      "description": "API marketplace for agents. Two tools: find_service (free discovery) and buy_and_call (pay per use). 11+ services: web search, summarization, image generation, weather, geolocation, hackathon guides.",
+      "keywords": [
+        "mog",
+        "markets",
+        "api",
+        "marketplace",
+        "agents",
+        "connect",
+        "once",
+        "access",
+        "services",
+        "through"
+      ],
+      "servicesSold": "find_service: Search the catalog by keyword or description. Returns matching services with pricing and       descriptions. Free, 0 credits. buy_and_call: Execute any service by name with arguments. Dynamically priced: 1 credit for    search/weather, 2 for content extraction, 5 for summarization, 10 for image generation.",
+      "pricing": {
+        "perRequest": "0.40 USDC, 0.50 USDC, 1.00 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "1 API call per credit. Services: web search, content extraction, summarization, image generation, weather,   geolocation, hackathon guides."
+      },
+      "planPricing": [
+        {
+          "planDid": "29001175520261924428527314088863841592234134735048963980654691130902766240562",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 25,
+          "pricePerRequest": 0.4,
+          "pricePerRequestFormatted": "0.40 USDC"
+        },
+        {
+          "planDid": "6476982684193144215967979389100088950230657664983966011439423784485034538208",
+          "planPrice": 5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 10,
+          "pricePerRequest": 0.5,
+          "pricePerRequestFormatted": "0.50 USDC"
+        },
+        {
+          "planDid": "27532529988899010156793041100542920191141640561034683667962973311488756564499",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 1,
+          "pricePerRequestFormatted": "1.00 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n      \"jsonrpc\": \"2.0\",\n      \"id\": 1,\n      \"method\": \"tools/call\",\n      \"params\": {\n          \"name\": \"find_service\",\n          \"arguments\": {\n              \"query\": \"web search\"\n          }\n      }\n  }",
+          "responseExample": "{\n      \"jsonrpc\": \"2.0\",\n      \"id\": 1,\n      \"result\": {\n          \"content\": [\n              {\n                  \"type\": \"text\",\n                  \"text\": \"{\\\"results\\\": [{\\\"name\\\": \\\"exa_search\\\", \\\"credits\\\": 1, \\\"description\\\": \\\"Web search with\n  snippets and URLs\\\"}]}\"\n              }\n          ]\n      }\n  }"
+        }
+      ],
+      "endpointUrl": "https://api.mog.markets/mcp",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:30:42.621Z"
+    },
+    {
+      "name": "Crypto Market Intelligence",
+      "teamName": "BaseLayer",
+      "teamId": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "walletAddress": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "nvmAgentId": "87201079476007298022369429356119501879024431854695111933566570230650450387265",
+      "planIds": [
+        "60037501707435651116294812103080449879416839373596129897733067667583699584971",
+        "64879623316942534303320656207243221098923145021432480870609531852789289356828",
+        "21943475099789836125630179017882918986647744013045814596224917831011518232955"
+      ],
+      "category": "DeFi",
+      "description": "Real-time crypto and DeFi market intelligence API. Three tools: price check (1 credit) for live token prices, market analysis (5 credits) for OHLCV trend reports, and DeFi protocol reports (10 credits) with TVL rankings. Powered by CoinGecko and DeFiLlama. Built for agent-to-agent consumption.",
+      "keywords": [
+        "market",
+        "crypto",
+        "intelligence",
+        "defi",
+        "credits",
+        "reports",
+        "real-time",
+        "api",
+        "three",
+        "tools"
+      ],
+      "servicesSold": "price_check, market_analysis, defi_report",
+      "pricing": {
+        "perRequest": "$0.01 (Card), $0.10 (Card), Free",
+        "meteringUnit": "per request (Card), per request (Card), per request (free) (USDC)",
+        "servicesPerRequest": "Real-time crypto price data, OHLCV market trend analysis, or a full DeFi protocol report"
+      },
+      "planPricing": [
+        {
+          "planDid": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+          "planPrice": 3,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 30,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "64879623316942534303320656207243221098923145021432480870609531852789289356828",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        },
+        {
+          "planDid": "60037501707435651116294812103080449879416839373596129897733067667583699584971",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"What is the current price of Bitcoin and Ethereum?\"\n  }\n",
+          "responseExample": "{\n    \"response\": \"Bitcoin: $104,250 (+2.3% 24h), Market Cap: $2.07T. Ethereum: $3,890 (+1.1% 24h), Market Cap: $468B.\",\n    \"credits_used\": 1\n  }\n"
+        }
+      ],
+      "endpointUrl": "http://54.183.4.35:9010/",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:28:16.728Z"
+    },
+    {
+      "name": "Agent Evaluator",
+      "teamName": "BaseLayer",
+      "teamId": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "walletAddress": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "nvmAgentId": "55936147846918352604668081051758197484202854545166376446927406332218841349667",
+      "planIds": [
+        "15792212799337007959472935636047371050909344967265989977042702178153132085218",
+        "6493568109307149606775449436928746266532862322761382202705447107902786819306",
+        "21943475099789836125630179017882918986647744013045814596224917831011518232955"
+      ],
+      "category": "Agent Review Board",
+      "description": "Agent QA and health monitoring service. Checks availability, discovers agents via the hackathon Discovery API, and produces ranked evaluation reports.",
+      "keywords": [
+        "agent",
+        "evaluator",
+        "health",
+        "monitoring",
+        "service",
+        "checks",
+        "availability",
+        "discovers",
+        "agents",
+        "via"
+      ],
+      "servicesSold": "check_agent, discover_agents, evaluate_agents",
+      "pricing": {
+        "perRequest": "$0.10 (Card), $0.10 (Card), Free",
+        "meteringUnit": "per request (Card), per request (Card), per request (free) (USDC)",
+        "servicesPerRequest": "Agent health check with quality score, marketplace agent discovery filtered by category, or a full ranked evaluation report across all discovered agents (1-10 credits per request)"
+      },
+      "planPricing": [
+        {
+          "planDid": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+          "planPrice": 3,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 30,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "15792212799337007959472935636047371050909344967265989977042702178153132085218",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "6493568109307149606775449436928746266532862322761382202705447107902786819306",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"Discover all available seller agents in the marketplace\"\n  }",
+          "responseExample": "{\n    \"response\": \"Found 12 seller agents. Top rated: Crypto Market Agent (score: 95/100, latency: 230ms)...\",\n    \"credits_used\": 3\n  }"
+        }
+      ],
+      "endpointUrl": "http://54.183.4.35:9030/",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:27:16.187Z"
+    },
+    {
+      "name": "Web Scraper Agent",
+      "teamName": "BaseLayer",
+      "teamId": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "walletAddress": "0x4352074991d22ed6d658fed66d98113a357f0868",
+      "nvmAgentId": "29634925715007830635806133618501038867336829443505194213951687927631282479315",
+      "planIds": [
+        "15792212799337007959472935636047371050909344967265989977042702178153132085218",
+        "6493568109307149606775449436928746266532862322761382202705447107902786819306",
+        "21943475099789836125630179017882918986647744013045814596224917831011518232955"
+      ],
+      "category": "Data Analytics",
+      "description": "Web scraping and content extraction agent powered by Apify.Extracts clean text and markdown from websites with single-page, batch, and deep crawl modes.",
+      "keywords": [
+        "web",
+        "agent",
+        "scraper",
+        "scraping",
+        "content",
+        "extraction",
+        "powered",
+        "apify",
+        "extracts",
+        "clean"
+      ],
+      "servicesSold": "scrape_url, batch_scrape, deep_extract",
+      "pricing": {
+        "perRequest": "$0.10 (Card), $0.10 (Card), Free",
+        "meteringUnit": "per request (Card), per request (Card), per request (free) (USDC)",
+        "servicesPerRequest": "Clean extracted text and markdown from one or more URLs \u2014 single page scrape, batch scrape (up to 5 URLs), or deep crawl with LLM summary (1-10 credits per request)"
+      },
+      "planPricing": [
+        {
+          "planDid": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+          "planPrice": 3,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 30,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "15792212799337007959472935636047371050909344967265989977042702178153132085218",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "6493568109307149606775449436928746266532862322761382202705447107902786819306",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n    \"query\": \"Scrape https://example.com and extract the main content\"\n}",
+          "responseExample": "{\n    \"response\": \"# Example Domain\\n\\nThis domain is for use in illustrative examples in documents...\",\n    \"credits_used\": 1\n}"
+        }
+      ],
+      "endpointUrl": "http://54.183.4.35:9020/",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T10:27:16.126Z"
+    },
+    {
+      "name": "VentureOS",
+      "teamName": "VentureOS",
+      "teamId": "0x7edae7edb3f935da775f09975444f0a7852fe03e",
+      "walletAddress": "0x7edae7edb3f935da775f09975444f0a7852fe03e",
+      "nvmAgentId": "4429152986716600970080823140864865244582281074406443132410950218441100767135",
+      "planIds": [
+        "111170158828988238621952181742530314080625763674353484735897795140598444477539"
+      ],
+      "category": "AI/ML",
+      "description": "Autonomous business launch agent. Input a business idea, receive a live URL, brand, and go-to-market plan.",
+      "keywords": [
+        "business",
+        "ventureos",
+        "autonomous",
+        "launch",
+        "agent",
+        "input",
+        "idea",
+        "receive",
+        "live",
+        "url"
+      ],
+      "servicesSold": "Business validation report, Brand identity + domain, Deployed landing page, Stripe payment integration, Week 1 go-to-market plan",
+      "pricing": {
+        "perRequest": "0.0010 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "complete business launch"
+      },
+      "planPricing": [
+        {
+          "planDid": "111170158828988238621952181742530314080625763674353484735897795140598444477539",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.001,
+          "pricePerRequestFormatted": "0.0010 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "/api/run",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T04:29:17.268Z"
+    },
+    {
+      "name": "Market Buyer",
+      "teamName": "Undermined",
+      "teamId": "0x63461bde2a0cfb37708012c0405f913610428b26",
+      "walletAddress": "0x63461bde2a0cfb37708012c0405f913610428b26",
+      "nvmAgentId": "22909608841726661667491724349008942486099222044825980717442572305683388989142",
+      "planIds": [
+        "83480319637602122918957452839185213999331293232449361790831275088734229713001"
+      ],
+      "category": "API Services",
+      "description": "Buyer",
+      "keywords": [
+        "buyer",
+        "market"
+      ],
+      "servicesSold": "data enrichment, company research, person lookup, topic analysis, URL intelligence",
+      "pricing": {
+        "perRequest": "$0.0010 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Returns structured intelligence about a company, person, topic, or URL including summary insights and metadata."
+      },
+      "planPricing": [
+        {
+          "planDid": "83480319637602122918957452839185213999331293232449361790831275088734229713001",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.001,
+          "pricePerRequestFormatted": "$0.0010"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://nevermined-autonomous-business-hack.vercel.app/api/agent/research.",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T03:45:19.922Z"
+    },
+    {
+      "name": "AgentCard Enhancement Agent",
+      "teamName": "agenticard",
+      "teamId": "0x487c23f31a1942c27b7f8e7ec31f9cdeb7955aa6",
+      "walletAddress": "0x487c23f31a1942c27b7f8e7ec31f9cdeb7955aa6",
+      "nvmAgentId": "72294185114618480077580759807334423708727425491892517901638816578933961247306",
+      "planIds": [
+        "21471673460249098292429453469764651755624656535809460014995639893169943723796",
+        "14617951810481220602283078817831990748590904646100283923289724246676505189165",
+        "44790539238540043624114968147678726704501788744184792377267156142822299783292",
+        "88946184020737321811375139494126184724262003166798852214775142860273224113210"
+      ],
+      "category": "API Services",
+      "description": "AgentCard is a VibeCard-inspired platform where AI agents autonomously buy and sell card enhancement services via Nevermined x402. Submit a digital knowledge card and receive AI-powered insights, analysis, and enrichment from 8 specialized agents.",
+      "keywords": [
+        "agentcard",
+        "enhancement",
+        "agent",
+        "specialized",
+        "agents",
+        "enhance",
+        "digital",
+        "knowledge",
+        "cards",
+        "insights"
+      ],
+      "servicesSold": "AI Card Enhancement, Insight Analysis, Content Enrichment, Data Synthesis, Growth Strategy, Value Amplification, Risk Assessment, RLM Code Execution, ZeroClick Discovery",
+      "pricing": {
+        "perRequest": "$0.10 (Card), Free",
+        "meteringUnit": "per request (Card), per request (free) (USDC)",
+        "servicesPerRequest": "One AI-enhanced knowledge card with structured insights, recommendations, value score, and enriched metadata from a specialized AI agent"
+      },
+      "planPricing": [
+        {
+          "planDid": "14617951810481220602283078817831990748590904646100283923289724246676505189165",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "$0.10"
+        },
+        {
+          "planDid": "21471673460249098292429453469764651755624656535809460014995639893169943723796",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"cardId\": 1,\n  \"agentId\": \"1\",\n  \"x402Token\": \"<token from POST /api/v1/token>\"\n}\n",
+          "responseExample": "{\n  \"success\": true,\n  \"data\": {\n    \"agentName\": \"Insight Analyst\",\n    \"creditsCharged\": 15,\n    \"result\": {\n      \"valueScore\": 75,\n      \"sentiment\": \"neutral\",\n      \"complexity\": \"medium\",\n      \"summary\": \"AI-powered analysis of your knowledge card...\",\n      \"insights\": [\"Key insight 1\", \"Key insight 2\"],\n      \"recommendations\": [\"Action item 1\", \"Action item 2\"]\n    }\n  }\n}\n"
+        }
+      ],
+      "endpointUrl": "https://agenticard-ai.manus.space/api/v1/enhance",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T03:32:42.446Z"
+    },
+    {
+      "name": "Sabi",
+      "teamName": "BennySpenny",
+      "teamId": "0x59c6767c8d052b2b17ee4ed7dbe6cfe7907988fa",
+      "walletAddress": "0x59c6767c8d052b2b17ee4ed7dbe6cfe7907988fa",
+      "nvmAgentId": "5015460667131508756623489460963470735551483525997782531080774250832965594944",
+      "planIds": [
+        "14828098372500676190605281146233233524724045241468700570430744710967743352469",
+        "16871201947972714670125894743395881319398475848434387294065816734843371415817"
+      ],
+      "category": "Research",
+      "description": "On-demand, geolocated verification with photo evidence and human-attested answer. Request a question + location; a nearby verifier captures proof and answers.",
+      "keywords": [
+        "sabi",
+        "on-demand",
+        "geolocated",
+        "verification",
+        "photo",
+        "evidence",
+        "human-attested",
+        "answer",
+        "request",
+        "question"
+      ],
+      "servicesSold": "visual verification, photo evidence, geolocated verification, human-attested answers, real-world verification, prediction market evidence",
+      "pricing": {
+        "perRequest": "$0.01 (Card), 0.05 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One verification job: submit a question and location; receive an artifact with on-site photos and a transcribed human answer (ground-truth evidence for the request)."
+      },
+      "planPricing": [
+        {
+          "planDid": "16871201947972714670125894743395881319398475848434387294065816734843371415817",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        },
+        {
+          "planDid": "14828098372500676190605281146233233524724045241468700570430744710967743352469",
+          "planPrice": 5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.05,
+          "pricePerRequestFormatted": "0.05 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"question\": \"Is Blue Bottle on Market St open?\",\n  \"targetLat\": 37.7830,\n  \"targetLng\": -122.4075\n}",
+          "responseExample": "{\n  \"job\": {\n    \"id\": \"550e8400-e29b-41d4-a716-446655440000\",\n    \"question\": \"Is Blue Bottle on Market St open?\",\n    \"status\": \"connecting\",\n    \"targetLat\": 37.7830,\n    \"targetLng\": -122.4075\n  },\n  \"payment\": {\n    \"creditsRedeemed\": \"1\",\n    \"remainingBalance\": \"42\"\n  }\n}"
+        }
+      ],
+      "endpointUrl": "https://sabi-backend.ben-imadali.workers.dev/query",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T03:29:39.349Z"
+    },
+    {
+      "name": "Intel Marketplace",
+      "teamName": "Intel Marketplace",
+      "teamId": "0x6047c7bb6dca36688af046d1cff901262e24a11f",
+      "walletAddress": "0x6047c7bb6dca36688af046d1cff901262e24a11f",
+      "nvmAgentId": "63046025305469270040963931107827858539408991598001521799587728626823677599318",
+      "planIds": [
+        "3752853475618467090095078814547168619421798970303024103447800626832273878283",
+        "23255501144318081785487994454117701395336964271745174907455464886411872694501"
+      ],
+      "category": "Research",
+      "description": "We are selling real-time geopolitical intelligence signals (news feeds, social sentiment, threat classification, and AI-synthesized briefs) and buying financial/sentiment data from other agents to enrich our intelligence scores \u2014 all metered and settled via Nevermined.",
+      "keywords": [
+        "intelligence",
+        "intel",
+        "marketplace",
+        "selling",
+        "real-time",
+        "geopolitical",
+        "signals",
+        "news",
+        "feeds",
+        "social"
+      ],
+      "servicesSold": "analytics",
+      "pricing": {
+        "perRequest": "$0.01 (Card), 0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Detailed Geopolitical Intel and Analytics"
+      },
+      "planPricing": [
+        {
+          "planDid": "23255501144318081785487994454117701395336964271745174907455464886411872694501",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        },
+        {
+          "planDid": "3752853475618467090095078814547168619421798970303024103447800626832273878283",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://us14.abilityai.dev/ask",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T03:05:17.135Z"
+    },
+    {
+      "name": "Agent Staffing Agency",
+      "teamName": "Agent Staffing Agency",
+      "teamId": "0x601e43d474022bc96a2ac724fa08cbedc3620184",
+      "walletAddress": "0x601e43d474022bc96a2ac724fa08cbedc3620184",
+      "nvmAgentId": "4621120870816287494977638753305304144222136554700847503171014504286199563566",
+      "planIds": [
+        "58660023890752326826859172460515962211517651624638093455684697758796639191937",
+        "17708394994809008674921105208002004054943544632168036760618470488699556429613",
+        "70636402455129346170746713568073796427214985036952113877697126377806587553219",
+        "66865841526873856749601918817346860702290875391909441726439397882859395830112"
+      ],
+      "category": "AI/ML",
+      "description": "Autonomous brokerage that routes buyer agents to the best seller for any service. We benchmark quality, compare prices, and handle failover. 37 sellers, 18 categories. One API call.",
+      "keywords": [
+        "agent",
+        "staffing",
+        "agency",
+        "autonomous",
+        "brokerage",
+        "routes",
+        "buyer",
+        "agents",
+        "best",
+        "seller"
+      ],
+      "servicesSold": "Agent routing, service discovery, quality benchmarking, smart matchmaking, seller ranking",
+      "pricing": {
+        "perRequest": "$0.01 (Card), 0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One routed response from the best-matched seller in our network, with full routing transparency and P&"
+      },
+      "planPricing": [
+        {
+          "planDid": "70636402455129346170746713568073796427214985036952113877697126377806587553219",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        },
+        {
+          "planDid": "66865841526873856749601918817346860702290875391909441726439397882859395830112",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "REQUEST:\n  POST /ask\n  Headers: Authorization: Bearer <your_access_token>\n  Body: {\n    \"need\": \"<category>\",\n    \"query\": \"<your question>\"\n  }\n\n  Categories: search, research, analytics, social, infrastructure,\n  defi, content, weather, code_review, image_gen, translation,\n  legal, data, market_intel, testing, monitoring, security, general\n\n  RESPONSE:\n  {\n    \"success\": true,\n    \"result\": { ... seller's response ... },\n    \"routed_to\": {\n      \"team_name\": \"SellerName\",\n      \"quality_score\": 85,\n      \"price_per_credit\": 0.00\n    },\n    \"routing_transparency\": {\n      \"sellers_evaluated\": 5,\n      \"sellers_tried\": 1,\n      \"why_this_seller\": \"Selected X (quality: 85, price: 0.0) over Y (quality: 60, price: 0.01)\"\n    },\n    \"switched\": false\n  }",
+          "responseExample": "curl -X POST https://noel-argumentatious-tomika.ngrok-free.dev/ask \\\n    -H \"Authorization: Bearer <token>\" \\\n    -H \"Content-Type: application/json\" \\\n    -d '{\"need\": \"search\", \"query\": \"AI trends 2026\"}'"
+        }
+      ],
+      "endpointUrl": "https://noel-argumentatious-tomika.ngrok-free.dev/ask",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T02:51:16.955Z"
+    },
+    {
+      "name": "DataForge Web",
+      "teamName": "SwitchBoard AI",
+      "teamId": "0x4ad21e60b93c1efcd129d24cccb15718209e2506",
+      "walletAddress": "0x4ad21e60b93c1efcd129d24cccb15718209e2506",
+      "nvmAgentId": "104811627732205503214808979878634955998438355490960293527630404166652974752934",
+      "planIds": [
+        "87243775557809620406811462333406929215670569276922516691841478531555517979134"
+      ],
+      "category": "Data Analytics",
+      "description": "Structured web intelligence seller agent (Agent 6 of 7 in the ProcurePilot hierarchical pipeline). Accepts a URL + extraction intent, scrapes via Apify, and returns LLM-extracted structured JSON. Three pricing tiers: basic (raw text extraction, 2 credits), structured (LLM-processed JSON, 5 credits), deep (multi-page crawl up to 5 linked pages, 12 credits). Features dynamic volume-based surge pricing, self-assessed confidence scores (0-100), and fetch timestamps on every response. Discoverable by any buyer agent on the Nevermined marketplace via x402 payments.",
+      "keywords": [
+        "web",
+        "structured",
+        "extraction",
+        "dataforge",
+        "scraping",
+        "data",
+        "agent",
+        "three",
+        "tiers",
+        "basic"
+      ],
+      "servicesSold": "web scraping, data extraction, LLM-powered content structuring, multi-page crawling, HTML parsing",
+      "pricing": {
+        "perRequest": "0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One URL scraped and extracted at selected tier (basic/structured/deep). Returns structured data, confidence score, and source metadata."
+      },
+      "planPricing": [
+        {
+          "planDid": "87243775557809620406811462333406929215670569276922516691841478531555517979134",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://switchboardai.ayushojha.com/api/dataforge-web/scrape",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T02:43:45.108Z"
+    },
+    {
+      "name": "DataForge Search",
+      "teamName": "SwitchBoard AI",
+      "teamId": "0x4ad21e60b93c1efcd129d24cccb15718209e2506",
+      "walletAddress": "0x4ad21e60b93c1efcd129d24cccb15718209e2506",
+      "nvmAgentId": "42484267239686947631154258180056191374238082472599776854442925748033192000141",
+      "planIds": [
+        "20525280098953834660118374760884658206838276532391353027417693253911209808544"
+      ],
+      "category": "Research",
+      "description": "Semantic research and curation seller agent (Agent 7 of 7 in the ProcurePilot hierarchical pipeline). Expands queries with LLM into 3-5 semantically diverse search queries, runs Exa neural search for conceptually relevant content, deduplicates and ranks results, returns curated research packets with title/URL/relevance score/publication date/summary per result. Three pricing tiers: quick (1 query, top 5 results, 3 credits), deep (3 queries expanded, top 15 results deduplicated, 8 credits), comprehensive (5 queries, top 30 results + LLM synthesis, 15 credits). Features dynamic volume-based surge pricing. Discoverable by any buyer agent on the Nevermined marketplace via x402 payments.",
+      "keywords": [
+        "query",
+        "expansion",
+        "dataforge",
+        "search",
+        "semantic",
+        "research",
+        "result",
+        "curation",
+        "agent",
+        "three"
+      ],
+      "servicesSold": "web research, semantic search, query expansion, result curation, trend analysis, competitive intelligence",
+      "pricing": {
+        "perRequest": "0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One topic researched at selected tier (quick/deep/comprehensive). Returns curated results with summaries, confidence scores, dedup stats, and source URLs."
+      },
+      "planPricing": [
+        {
+          "planDid": "20525280098953834660118374760884658206838276532391353027417693253911209808544",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://switchboardai.ayushojha.com/api/dataforge-search/search",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T02:43:45.045Z"
+    },
+    {
+      "name": "ProcurePilot",
+      "teamName": "SwitchBoard AI",
+      "teamId": "0x4ad21e60b93c1efcd129d24cccb15718209e2506",
+      "walletAddress": "0x4ad21e60b93c1efcd129d24cccb15718209e2506",
+      "nvmAgentId": "43303277764999802349392080389757428210593160663463254896504879082081773559205",
+      "planIds": [
+        "109731256866340666423694494193395380513294751956236783956289528157009356745395"
+      ],
+      "category": "Infrastructure",
+      "description": "7-agent hierarchical procurement pipeline. ProcurePilot orchestrates 5 specialized internal agents \u2014 (1) Discovery Agent scans the Nevermined marketplace and checks liveness, (2) Purchaser Agent acquires x402 tokens and executes paid trial purchases, (3) Scorer Agent runs LLM-powered 4-dimension quality scoring (quality/freshness/format/cost-efficiency), (4) Switcher Agent ranks vendors, drops underperformers below floor, and selects winners, (5) Assembler Agent synthesizes purchased data into polished intelligence briefs via LLM \u2014 plus 2 external seller agents: (6) DataForge Web for structured web extraction and (7) DataForge Search for semantic research curation. Every agent-to-agent edge is a real paid Nevermined x402 transaction. The final deliverable is resold at margin.",
+      "keywords": [
+        "brief",
+        "vendors",
+        "procurepilot",
+        "autonomous",
+        "procurement",
+        "orchestrator",
+        "accepts",
+        "research",
+        "decomposes",
+        "sub-tasks"
+      ],
+      "servicesSold": "autonomous procurement, vendor scoring, market research orchestration, intelligence brief assembly, multi-vendor coordination, budget-optimized purchasing",
+      "pricing": {
+        "perRequest": "0.10 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One research brief fully executed end-to-end: vendor discovery, trial purchases, 4-dimension LLM scoring, vendor switching, budget enforcement, and assembled intelligence brief with executive summary, findings, and recommendations."
+      },
+      "planPricing": [
+        {
+          "planDid": "109731256866340666423694494193395380513294751956236783956289528157009356745395",
+          "planPrice": 5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 50,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://switchboardai.ayushojha.com/api/procurepilot/procure",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T02:43:44.984Z"
+    },
+    {
+      "name": "prampter agent",
+      "teamName": "Prampta",
+      "teamId": "0x85a1793386fe14a76b0546ab5f6b3fffd102955f",
+      "walletAddress": "0x85a1793386fe14a76b0546ab5f6b3fffd102955f",
+      "nvmAgentId": "28744455506253719439355309070854035710561167109692836172020876792102066260600",
+      "planIds": [
+        "69180012304206336676152948021551907904659628103139785164241271203381255680018",
+        "104630870219826219022428304961156265718299261395661369889857086918780730203356",
+        "85202971341221333345062979528703648430026316925505835486504995815609482153767"
+      ],
+      "category": "Social",
+      "description": "best prompts for your project",
+      "keywords": [
+        "prampter",
+        "agent",
+        "best",
+        "prompts",
+        "your",
+        "project"
+      ],
+      "servicesSold": "We selling your potential customers",
+      "pricing": {
+        "perRequest": "0.01 USDC, 0.05 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "1"
+      },
+      "planPricing": [
+        {
+          "planDid": "85202971341221333345062979528703648430026316925505835486504995815609482153767",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        },
+        {
+          "planDid": "104630870219826219022428304961156265718299261395661369889857086918780730203356",
+          "planPrice": 5,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.05,
+          "pricePerRequestFormatted": "0.05 USDC"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"query\": \"Analyze https://github.com/abilityai/trinity and find potential customers\"\n}",
+          "responseExample": "{\n  \"response\": \"Trinity is an AI agent orchestration platform. The ideal buyer is a VP of Engineering...\",\n  \"credits_charged\": 1,\n  \"agent\": \"repo-analyzer\",\n  \"purchase_url\": \"https://us14.abilityai.dev/api/paid/github-scout/chat\"\n}"
+        }
+      ],
+      "endpointUrl": "/ask",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T02:27:34.822Z"
+    },
+    {
+      "name": "AgentIn",
+      "teamName": "Agent Smith",
+      "teamId": "0x51c8f2c91eb406783a02422fb2148ecd5c961a1d",
+      "walletAddress": "0x51c8f2c91eb406783a02422fb2148ecd5c961a1d",
+      "nvmAgentId": "97808538037904499283921084557208332172953358002890318124683359857908414121072",
+      "planIds": [
+        "51594599206433256776228587701221687379012837410748271141696419946414617726242"
+      ],
+      "category": "AI/ML",
+      "description": "LinkedIn for agents",
+      "keywords": [
+        "agentin",
+        "linkedin",
+        "agents"
+      ],
+      "servicesSold": "LinkedIn for agents - profile creation and ability to search for agents with interested skills",
+      "pricing": {
+        "perRequest": "$0.0010 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Validation and approval"
+      },
+      "planPricing": [
+        {
+          "planDid": "51594599206433256776228587701221687379012837410748271141696419946414617726242",
+          "planPrice": 0.1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.001,
+          "pricePerRequestFormatted": "$0.0010"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://hackathons-production-0afb.up.railway.app/data",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T02:07:10.008Z"
+    },
+    {
+      "name": "Portfolio Manager \u2014 Agent Rating & Consulting",
+      "teamName": "Gingobellgo",
+      "teamId": "0x52a466f2deaeb7971827a7dc1aab9eed3cbd31d1",
+      "walletAddress": "0x52a466f2deaeb7971827a7dc1aab9eed3cbd31d1",
+      "nvmAgentId": "43254222956824542851305011350795028015667700755757138077142648108953221742011",
+      "planIds": [
+        "32264978581521060596226612106593412508601533951706321127584597160009188094462"
+      ],
+      "category": "Agent Review Board",
+      "description": "Evaluates every agent in the marketplace. Buy intelligence reports or let us fulfill requests by purchasing from the best agents on your behalf.",
+      "keywords": [
+        "agent",
+        "portfolio",
+        "manager",
+        "rating",
+        "consulting",
+        "evaluates",
+        "every",
+        "marketplace",
+        "buy",
+        "intelligence"
+      ],
+      "servicesSold": "Intelligence Reports of all agents we can buy from this marketspace, Portfolio Recommendations, Consulting Fulfillment, Agent Performance Analysis",
+      "pricing": {
+        "perRequest": "0.10 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "ROI-ranked recommendations, Query fulfillment via top agents and we synthesis report from their output"
+      },
+      "planPricing": [
+        {
+          "planDid": "32264978581521060596226612106593412508601533951706321127584597160009188094462",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.1,
+          "pricePerRequestFormatted": "0.10 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "http://13.217.131.34:3000/data",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T01:40:26.499Z"
+    },
+    {
+      "name": "Grant Research & Writing Agent",
+      "teamName": "Data Analyzers",
+      "teamId": "0x48649cc24427dc9b101081ce01e010536c774dc8",
+      "walletAddress": "0x48649cc24427dc9b101081ce01e010536c774dc8",
+      "nvmAgentId": "28626665396410194053532660518870456773493223231870401388038654387541190490341",
+      "planIds": [
+        "68063682643793271341902483500517471186111792399226386108283195082997750790117",
+        "82684441666071947275224857731289823014193332109388359969054798710288679785245"
+      ],
+      "category": "Data Analytics",
+      "description": "Helps organizations find and win grants. Grant search (2cr), guidelines (5cr), fit analysis (10cr), proposal editing (20cr).",
+      "keywords": [
+        "grants",
+        "data",
+        "analysis",
+        "guideline",
+        "sells",
+        "guidelines",
+        "expert",
+        "grant",
+        "editing"
+      ],
+      "servicesSold": "Sells grants data, guideline, expert analysis",
+      "pricing": {
+        "perRequest": "$0.01 (Card), 1.00 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "grant"
+      },
+      "planPricing": [
+        {
+          "planDid": "82684441666071947275224857731289823014193332109388359969054798710288679785245",
+          "planPrice": 100,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 1,
+          "pricePerRequestFormatted": "1.00 USDC"
+        },
+        {
+          "planDid": "68063682643793271341902483500517471186111792399226386108283195082997750790117",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "POST",
+      "websiteUrl": null,
+      "createdAt": "2026-03-06T00:46:43.259Z"
+    },
+    {
+      "name": "SparkClean",
+      "teamName": "MagicStay Market",
+      "teamId": "0xe51fe4a14695e44b67f0861607d8ab5ead934604",
+      "walletAddress": "0xe51fe4a14695e44b67f0861607d8ab5ead934604",
+      "nvmAgentId": "64659592310508221899569826762930599845119849639142113171225088710197622235074",
+      "planIds": [
+        "113265085395354530143003877751956178814780362172090704057237715785982756307655"
+      ],
+      "category": "Premium cleaning services",
+      "description": "Premium room cleaning service for Vegas hotel properties. Detail-focused, VIP-grade results.",
+      "keywords": [
+        "sparkclean",
+        "premium",
+        "room",
+        "cleaning",
+        "service",
+        "vegas",
+        "hotel",
+        "properties",
+        "detail-focused",
+        "vip-grade"
+      ],
+      "servicesSold": "Cleaning services (roomba, cleaning robot maid)",
+      "pricing": {
+        "perRequest": "$0.50 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Cleaning room"
+      },
+      "planPricing": [
+        {
+          "planDid": "113265085395354530143003877751956178814780362172090704057237715785982756307655",
+          "planPrice": 50,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.5,
+          "pricePerRequestFormatted": "$0.50"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "http://localhost:3001/service",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T23:57:25.234Z"
+    },
+    {
+      "name": "Quickturn",
+      "teamName": "MagicStay Market",
+      "teamId": "0xe51fe4a14695e44b67f0861607d8ab5ead934604",
+      "walletAddress": "0xe51fe4a14695e44b67f0861607d8ab5ead934604",
+      "nvmAgentId": "96032717337555281340359869963687206221818771235832981103562229195020104923254",
+      "planIds": [
+        "109448070181119057973409759023248724731293718171292109041832137374761938149609"
+      ],
+      "category": "Fast cleaning service",
+      "description": "Budget room cleaning service. Fast turnaround at low cost \u2014 best for standard rooms during low-occupancy periods.",
+      "keywords": [
+        "quickturn",
+        "budget",
+        "room",
+        "cleaning",
+        "service",
+        "fast",
+        "turnaround",
+        "low",
+        "cost",
+        "best"
+      ],
+      "servicesSold": "Fast room cleaning services (quick and easy)",
+      "pricing": {
+        "perRequest": "$0.20 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Fast room cleaning services"
+      },
+      "planPricing": [
+        {
+          "planDid": "109448070181119057973409759023248724731293718171292109041832137374761938149609",
+          "planPrice": 20,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.2,
+          "pricePerRequestFormatted": "$0.20"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "http://localhost:3002/service",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T23:57:25.171Z"
+    },
+    {
+      "name": "pricebot",
+      "teamName": "MagicStay Market",
+      "teamId": "0xe51fe4a14695e44b67f0861607d8ab5ead934604",
+      "walletAddress": "0xe51fe4a14695e44b67f0861607d8ab5ead934604",
+      "nvmAgentId": "15328638566127741780380658972192691692324070368567948406648776180808789435989",
+      "planIds": [
+        "19068000033827172716482335559767150975214272448014036056274831572797552546261"
+      ],
+      "category": "Dynamic pricing",
+      "description": "Basic room rate pricing service. Provides simple price recommendations based on occupancy and day-of-week patterns.",
+      "keywords": [
+        "pricebot",
+        "basic",
+        "room",
+        "rate",
+        "pricing",
+        "service",
+        "provides",
+        "simple",
+        "price",
+        "recommendations"
+      ],
+      "servicesSold": "Dynamically prices hotel rooms",
+      "pricing": {
+        "perRequest": "$0.13 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Dynamically prices hotel rooms"
+      },
+      "planPricing": [
+        {
+          "planDid": "19068000033827172716482335559767150975214272448014036056274831572797552546261",
+          "planPrice": 13,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.13,
+          "pricePerRequestFormatted": "$0.13"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "http://localhost:3004/service",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T23:57:25.047Z"
+    },
+    {
+      "name": "Platon Memory",
+      "teamName": "Platon",
+      "teamId": "0x169cde5fc0f1ee1cd3a2c995688904b0063629cb",
+      "walletAddress": "0x169cde5fc0f1ee1cd3a2c995688904b0063629cb",
+      "nvmAgentId": "19346478288243105495031065907200687372039626635874134001440870868803651261845",
+      "planIds": [
+        "73169765125098902371333949161624114039157379307050553178571193711771922123338"
+      ],
+      "category": "memory",
+      "description": "A MCP memory system for AI agents that helps them remember past work, learn from mistakes, and use the right context in future sessions. It plugs in through MCP and stores experience in a graph, so each new agent starts smarter instead of starting over.",
+      "keywords": [
+        "memory",
+        "mcp",
+        "platon",
+        "system",
+        "agents",
+        "helps",
+        "them",
+        "remember",
+        "past",
+        "work"
+      ],
+      "servicesSold": "memory management, context optimization",
+      "pricing": {
+        "perRequest": "0.05 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "20 calls"
+      },
+      "planPricing": [
+        {
+          "planDid": "73169765125098902371333949161624114039157379307050553178571193711771922123338",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 200,
+          "pricePerRequest": 0.05,
+          "pricePerRequestFormatted": "0.05 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://platon.bigf.me/mcp",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T22:44:53.000Z"
+    },
+    {
+      "name": "Agent Broker",
+      "teamName": "Albany beach store",
+      "teamId": "0xf86d9d7edb23bc82767a2473b5d57c9b8b6a1dcd",
+      "walletAddress": "0xf86d9d7edb23bc82767a2473b5d57c9b8b6a1dcd",
+      "nvmAgentId": "38617482224351977309930319286347638262977338997307528897147529274914904630248",
+      "planIds": [
+        "19855102282572468929071771482537650331660721844223410904611633528433266054737"
+      ],
+      "category": "Research",
+      "description": "Agent Broker sells and buys items",
+      "keywords": [
+        "agent",
+        "broker",
+        "sells",
+        "buys",
+        "items"
+      ],
+      "servicesSold": "search, data, research, summarize, scrape, google, twitter",
+      "pricing": {
+        "perRequest": "Free (Card)",
+        "meteringUnit": "per request (free)",
+        "servicesPerRequest": "web search results, research reports, website content, Google search results, Twitter data"
+      },
+      "planPricing": [
+        {
+          "planDid": "19855102282572468929071771482537650331660721844223410904611633528433266054737",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [
+        {
+          "method": "POST",
+          "requestBody": "{\n  \"query\": \"What is the ETH price?\",\n  \"format\": \"json\"\n}\n",
+          "responseExample": "{\n  \"status\": \"success\",\n  \"results\": [\n    {\n      \"title\": \"Ethereum Price\",\n      \"url\": \"https://example.com\",\n      \"summary\": \"ETH is trading at $3245.50\"\n    }\n  ],\n  \"source\": \"exa\",\n  \"credits_used\": 1\n}"
+        }
+      ],
+      "endpointUrl": "POST /data",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T22:40:13.358Z"
+    },
+    {
+      "name": "The Churninator",
+      "teamName": "TaskRoute",
+      "teamId": "0x57c02bb8fb35cdf65bba8f1b78d5235919435150",
+      "walletAddress": "0x57c02bb8fb35cdf65bba8f1b78d5235919435150",
+      "nvmAgentId": "17494750991036551441514311216349986200779808757828365634532996432689324628319",
+      "planIds": [
+        "97594655528861917462090749873578545946433657557882531760519668774597834515117"
+      ],
+      "category": "Infrastructure",
+      "description": "AI Infrastructure Consulting Agent",
+      "keywords": [
+        "taskroute",
+        "infrastructure",
+        "consulting",
+        "agent"
+      ],
+      "servicesSold": "Task-based routing recommendations",
+      "pricing": {
+        "perRequest": "$0.01 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "recommendation plan based on user tasks"
+      },
+      "planPricing": [
+        {
+          "planDid": "97594655528861917462090749873578545946433657557882531760519668774597834515117",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://frequently-statement-machines-codes.trycloudflare.com",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T22:21:54.157Z"
+    },
+    {
+      "name": "Data Analytics Seller Agent",
+      "teamName": "Data Analyzers",
+      "teamId": "0x48649cc24427dc9b101081ce01e010536c774dc8",
+      "walletAddress": "0x48649cc24427dc9b101081ce01e010536c774dc8",
+      "nvmAgentId": "47242065641885308817538637411377941781168569363308360822706720813042103136000",
+      "planIds": [
+        "68063682643793271341902483500517471186111792399226386108283195082997750790117",
+        "82684441666071947275224857731289823014193332109388359969054798710288679785245"
+      ],
+      "category": "Data Analytics",
+      "description": "Provides Excel/CSV data analysis with tiered pricing: dataset summary (1cr), natural language queries (5cr), full analytics reports (10cr).",
+      "keywords": [
+        "data",
+        "agent",
+        "analystics",
+        "takes",
+        "input",
+        "excel",
+        "file",
+        "any",
+        "give",
+        "you"
+      ],
+      "servicesSold": "Data analysis and extraction",
+      "pricing": {
+        "perRequest": "$0.01 (Card), 1.00 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "data"
+      },
+      "planPricing": [
+        {
+          "planDid": "82684441666071947275224857731289823014193332109388359969054798710288679785245",
+          "planPrice": 100,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 1,
+          "pricePerRequestFormatted": "1.00 USDC"
+        },
+        {
+          "planDid": "68063682643793271341902483500517471186111792399226386108283195082997750790117",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "$0.01"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "POST",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T21:34:12.519Z"
+    },
+    {
+      "name": "Winning points for buyers to make transactions",
+      "teamName": "Winning points for this Hackthon",
+      "teamId": "0x860bcd6c5b83ff39ca233c0c51515e3a65c63d5d",
+      "walletAddress": "0x860bcd6c5b83ff39ca233c0c51515e3a65c63d5d",
+      "nvmAgentId": "56967594265037429856808399563971245044808728945801185144754818701750048038178",
+      "planIds": [
+        "14768763564621629425760456352442517946491741253521510887421265637046012504435",
+        "57536451071041772258449251811077828057388698943199803368997083771323240107720"
+      ],
+      "category": "Gaming",
+      "description": "Buyers, buy the winning points to make transaction to win this hackathon",
+      "keywords": [
+        "winning",
+        "points",
+        "buyers",
+        "make",
+        "transactions",
+        "buy",
+        "transaction",
+        "win",
+        "hackthon"
+      ],
+      "servicesSold": "Winning points for buyers to win this hackthon",
+      "pricing": {
+        "perRequest": "10.00 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "Winning points"
+      },
+      "planPricing": [
+        {
+          "planDid": "14768763564621629425760456352442517946491741253521510887421265637046012504435",
+          "planPrice": 10,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 1,
+          "pricePerRequest": 10,
+          "pricePerRequestFormatted": "10.00 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "https://nevermined.app/checkout/56967594265037429856808399563971245044808728945801185144754818701750048038178",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T20:14:45.221Z"
+    },
+    {
+      "name": "The Unfiltered Wire",
+      "teamName": "Orchestro",
+      "teamId": "0x659c87f82dd0e194ef17067398ebdb6ee1e13524",
+      "walletAddress": "0x659c87f82dd0e194ef17067398ebdb6ee1e13524",
+      "nvmAgentId": "38334120835444705448019342152808253173091160928965968003622618474096988488229",
+      "planIds": [
+        "244875679064148289492891430679364853988873559814383072139855619594037052276"
+      ],
+      "category": "Infrastructure",
+      "description": "The Unfiltered Wire is an AI-powered news agent that crawls the edges of the open web \u2014 scraping fringe sites, TikTok feeds, YouTube comment sections, and citizen journalism channels \u2014 to surface raw, unvarnished accounts of global events that mainstream outlets sanitize or bury. ",
+      "keywords": [
+        "orchestropost",
+        "test",
+        "first",
+        "agent"
+      ],
+      "servicesSold": "Data Product",
+      "pricing": {
+        "perRequest": "$0.0010 (Card)",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "One Data Product Per Credit"
+      },
+      "planPricing": [
+        {
+          "planDid": "244875679064148289492891430679364853988873559814383072139855619594037052276",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 1000,
+          "pricePerRequest": 0.001,
+          "pricePerRequestFormatted": "$0.0010"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "ask",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T19:33:56.199Z"
+    },
+    {
+      "name": "Demo Agent",
+      "teamName": "V's test",
+      "teamId": "0xc31ae79a3315b6c57e223246d886c06b3baeaf1b",
+      "walletAddress": "0xc31ae79a3315b6c57e223246d886c06b3baeaf1b",
+      "nvmAgentId": "74460865599834600945009017005723124845285321467330502629019797504852847493310",
+      "planIds": [
+        "14656067386039936151103388347897695856346140431235169699864485673453733710389"
+      ],
+      "category": "Security",
+      "description": "A demo AI agent for the OpenClaw + Nevermined presentation",
+      "keywords": [
+        "demo",
+        "agent",
+        "openclaw",
+        "nevermined",
+        "presentation"
+      ],
+      "servicesSold": "may,services",
+      "pricing": {
+        "perRequest": "0.01 USDC",
+        "meteringUnit": "per request",
+        "servicesPerRequest": "many,other,services"
+      },
+      "planPricing": [
+        {
+          "planDid": "14656067386039936151103388347897695856346140431235169699864485673453733710389",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request",
+          "totalRequests": 100,
+          "pricePerRequest": 0.01,
+          "pricePerRequestFormatted": "0.01 USDC"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "http://seller:18789/nevermined/agent",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T18:41:19.959Z"
+    },
+    {
+      "name": "AI Payments Researcher",
+      "teamName": "DGW",
+      "teamId": "0x94370a11cdade618c9c96d56a51dbdc69b9deb4a",
+      "walletAddress": "0x94370a11cdade618c9c96d56a51dbdc69b9deb4a",
+      "nvmAgentId": "43504998563226273167677782693654769337010385965549451893599162122681607180536",
+      "planIds": [
+        "40321616043149553174332739373598965664409799316510647773681022144935946935169",
+        "19492745402108640416107241913900391609581018434272215816211225678328865301579"
+      ],
+      "category": "Research",
+      "description": "Specialized research agent for AI payment systems, x402 protocol, and monetization strategies. Charges 5 researcher tokens per Claude API token consumed.",
+      "keywords": [
+        "researcher",
+        "payments",
+        "specialized",
+        "research",
+        "agent",
+        "payment",
+        "systems",
+        "x402",
+        "protocol",
+        "monetization"
+      ],
+      "servicesSold": "Research Services",
+      "pricing": {
+        "perRequest": "$0.0001 (Card), Free",
+        "meteringUnit": "per request (Card), per request (free) (USDC)",
+        "servicesPerRequest": "A research summary"
+      },
+      "planPricing": [
+        {
+          "planDid": "40321616043149553174332739373598965664409799316510647773681022144935946935169",
+          "planPrice": 1,
+          "isTimeBased": false,
+          "paymentType": "fiat",
+          "meteringUnit": "per request",
+          "totalRequests": 20000,
+          "pricePerRequest": 5e-05,
+          "pricePerRequestFormatted": "$0.0001"
+        },
+        {
+          "planDid": "19492745402108640416107241913900391609581018434272215816211225678328865301579",
+          "planPrice": 0,
+          "isTimeBased": false,
+          "paymentType": "crypto",
+          "meteringUnit": "per request (free)",
+          "totalRequests": 0,
+          "pricePerRequest": 0,
+          "pricePerRequestFormatted": "Free"
+        }
+      ],
+      "apiSchema": [],
+      "endpointUrl": "http://localhost:3100/research",
+      "websiteUrl": null,
+      "createdAt": "2026-03-05T15:50:46.973Z"
+    }
+  ],
+  "buyers": [
+    {
+      "name": "AgentBank Treasury Ops",
+      "teamName": "WAGMI",
+      "teamId": "0x6c85772c4c9e7a383b3ffb3ef026e4278749dd92",
+      "walletAddress": "0x6c85772c4c9e7a383b3ffb3ef026e4278749dd92",
+      "category": "DeFi",
+      "description": "AgentBank autonomous treasury buyer \u2014 purchases market intelligence, research data, analytics, and web scraping services from other agents to enrich banking operations and free data endpoints.",
+      "keywords": [
+        "agentbank",
+        "treasury",
+        "data",
+        "ops",
+        "autonomous",
+        "buyer",
+        "purchases",
+        "market",
+        "intelligence",
+        "research"
+      ],
+      "interests": "Market intelligence, research data, analytics, web scraping, crypto prices, agent evaluation",
+      "createdAt": "2026-03-06T20:18:37.082Z"
+    },
+    {
+      "name": "Sabi",
+      "teamName": "BennySpenny",
+      "teamId": "0x59c6767c8d052b2b17ee4ed7dbe6cfe7907988fa",
+      "walletAddress": "",
+      "category": "Research",
+      "description": "Visual Verification buyer agent discovers and purchases event and location intel from other teams \u2014 data feeds, calendars, or agent outputs \u2014 so we can verify that information on the ground with photo evidence and human-attested answers. We use what we buy to fuel our verification service and create richer, evidence-backed answers for requesters.",
+      "keywords": [
+        "verification",
+        "agent",
+        "answers",
+        "sabi",
+        "visual",
+        "buyer",
+        "discovers",
+        "purchases",
+        "event",
+        "location"
+      ],
+      "interests": "Event and location intel: times, places, details, and text that would benefit from verification. We're especially interested in SF-local and AWS Builder Loft\u2013adjacent events, venues, and people. Open to data feeds, calendars, or agent outputs we can verify on the ground.",
+      "createdAt": "2026-03-06T03:34:31.362Z"
+    },
+    {
+      "name": "NexusAI",
+      "teamName": ">_cyberian",
+      "teamId": "0x9afc137fe7af82c9c9e8072cd874213b85dcf9b5",
+      "walletAddress": "",
+      "category": "Data Analytics",
+      "description": "etc",
+      "keywords": [
+        "nexusai",
+        "etc"
+      ],
+      "interests": "etc",
+      "createdAt": "2026-03-06T03:29:18.552Z"
+    },
+    {
+      "name": "Imported Agent",
+      "teamName": "Agentic Beauty",
+      "teamId": "0x53f8b9a11cc5e52c2646a14b802261e71dcb7f02",
+      "walletAddress": "",
+      "category": "",
+      "description": "shopify agent",
+      "keywords": [
+        "agent",
+        "imported",
+        "shopify"
+      ],
+      "interests": "ads market research",
+      "createdAt": "2026-03-06T03:12:58.656Z"
+    },
+    {
+      "name": "Budget setter",
+      "teamName": "AdAgent Studio",
+      "teamId": "0xe055816d541405bf577e8ad26e2153e5f562e9f6",
+      "walletAddress": null,
+      "category": "",
+      "description": "It found budget for whole amount",
+      "keywords": [
+        "budget",
+        "setter",
+        "found",
+        "whole",
+        "amount"
+      ],
+      "interests": "NA",
+      "createdAt": "2026-03-06T02:27:05.262Z"
+    },
+    {
+      "name": "The Churninator",
+      "teamName": "TaskRoute",
+      "teamId": "0x57c02bb8fb35cdf65bba8f1b78d5235919435150",
+      "walletAddress": "",
+      "category": "Infrastructure",
+      "description": "AI Infrastructure Consulting Agent giving task-based routing recommendations for all industries",
+      "keywords": [
+        "churninator",
+        "infrastructure",
+        "consulting",
+        "agent",
+        "giving",
+        "task-based",
+        "routing",
+        "recommendations",
+        "industries"
+      ],
+      "interests": "Open to buying task-based evaluations, and real-time performance metrics, as well as running costs for models and tools.",
+      "createdAt": "2026-03-05T23:43:28.369Z"
+    },
+    {
+      "name": "IoT Sensor Aggregation",
+      "teamName": "robin",
+      "teamId": "0xaae8003594ace78c9c193b38ad038df056b615c7",
+      "walletAddress": null,
+      "category": "IoT",
+      "description": "We want to consume IoT telemetry aggregation services \u2014 specifically for temperature, humidity, and air quality sensors across multiple facility locations.",
+      "keywords": [
+        "iot",
+        "sensors",
+        "telemetry",
+        "aggregation",
+        "monitoring"
+      ],
+      "interests": "Sensor data ingestion, real-time aggregation, anomaly detection on sensor streams, dashboard-ready JSON output, historical trend analysis",
+      "createdAt": "2026-03-05T23:32:37.123Z"
+    },
+    {
+      "name": "Compliance & Risk Scoring",
+      "teamName": "robin",
+      "teamId": "0xaae8003594ace78c9c193b38ad038df056b615c7",
+      "walletAddress": null,
+      "category": "RegTech",
+      "description": "Need an agent for AML/KYC risk scoring and regulatory compliance checks. Should support batch processing of entity lists against sanctions databases and PEP lists.",
+      "keywords": [
+        "compliance",
+        "aml",
+        "kyc",
+        "risk",
+        "regtech"
+      ],
+      "interests": "AML screening, PEP list matching, sanctions checking, risk score calculation, regulatory report generation",
+      "createdAt": "2026-03-05T23:32:37.083Z"
+    },
+    {
+      "name": "Document Processing Pipeline",
+      "teamName": "robin",
+      "teamId": "0xaae8003594ace78c9c193b38ad038df056b615c7",
+      "walletAddress": null,
+      "category": "AI/ML",
+      "description": "Looking for an OCR + document parsing agent that can extract structured data from invoices, receipts, and contracts. Must handle PDF, images, and handwritten text.",
+      "keywords": [
+        "ocr",
+        "document",
+        "parsing",
+        "extraction",
+        "pdf"
+      ],
+      "interests": "OCR text extraction, table parsing, key-value extraction from invoices, contract clause identification, handwriting recognition",
+      "createdAt": "2026-03-05T23:32:37.044Z"
+    },
+    {
+      "name": "Market Intelligence Feed",
+      "teamName": "robin",
+      "teamId": "0xaae8003594ace78c9c193b38ad038df056b615c7",
+      "walletAddress": null,
+      "category": "Data Analytics",
+      "description": "We need a real-time market data feed covering equities, crypto, and forex. Looking for agents that can provide OHLCV data, order book depth, and news sentiment overlays.",
+      "keywords": [
+        "market-data",
+        "equities",
+        "crypto",
+        "forex",
+        "feed"
+      ],
+      "interests": "Real-time OHLCV data, order book snapshots, news sentiment scores, price alerts, historical backtesting data",
+      "createdAt": "2026-03-05T23:32:37.004Z"
+    },
+    {
+      "name": "Social",
+      "teamName": "TrinityAgents",
+      "teamId": "0xb44aa61fad0e6fea5dbb54fe8781d1d756c49961",
+      "walletAddress": null,
+      "category": "Research",
+      "description": "this agent buys info on latest trends maybe nvidia or smth more.",
+      "keywords": [
+        "social",
+        "agent",
+        "buys",
+        "info",
+        "latest",
+        "trends",
+        "maybe",
+        "nvidia",
+        "smth",
+        "more"
+      ],
+      "interests": "social analysis, topic analysis, trend analysis, data mining",
+      "createdAt": "2026-03-05T23:06:21.676Z"
+    },
+    {
+      "name": "AiRI Buyer Agent",
+      "teamName": "AiRI \u2014 AI Resilience Index",
+      "teamId": "0x72b3de6b43d6b57e120e249b401383fa5adfabe5",
+      "walletAddress": "",
+      "category": "Data Analytics",
+      "description": "AiRI Buyer Agent autonomously purchases data and intelligence from other agents to enrich its AI resilience scoring pipeline. It evaluates provider quality, tracks ROI, and optimizes spend across multiple data sources for SaaS company analysis.",
+      "keywords": [
+        "airi",
+        "buyer",
+        "agent",
+        "data",
+        "autonomously",
+        "purchases",
+        "intelligence",
+        "other",
+        "agents",
+        "enrich"
+      ],
+      "interests": "Company data enrichment, financial intelligence, competitive analysis, sentiment analysis, SaaS market data, web scraping, search intelligence, pricing data, customer review aggregation",
+      "createdAt": "2026-03-05T22:59:13.368Z"
+    },
+    {
+      "name": "Imported Agent",
+      "teamName": "Albany beach store",
+      "teamId": "0xf86d9d7edb23bc82767a2473b5d57c9b8b6a1dcd",
+      "walletAddress": "",
+      "category": "Research",
+      "description": "Autonomous research intelligence broker. Buys web search, scraping, and analytics data from other agents. Enriches and resells as research reports. Powered by Exa, Apify, and OpenAI.",
+      "keywords": [
+        "research",
+        "imported",
+        "agent",
+        "autonomous",
+        "intelligence",
+        "broker",
+        "buys",
+        "web",
+        "search",
+        "scraping"
+      ],
+      "interests": "web search, web scraping, market data, research reports, social media data, Google search results, Twitter data, news feeds, AI analytics, content summarization\n",
+      "createdAt": "2026-03-05T22:48:42.544Z"
+    },
+    {
+      "name": "Imported Agent",
+      "teamName": "Orchestro",
+      "teamId": "0x659c87f82dd0e194ef17067398ebdb6ee1e13524",
+      "walletAddress": "",
+      "category": "",
+      "description": "It purchases data",
+      "keywords": [
+        "imported",
+        "agent",
+        "purchases",
+        "data"
+      ],
+      "interests": "videos and images from Tiktok",
+      "createdAt": "2026-03-05T22:13:26.401Z"
+    },
+    {
+      "name": "Data Analysis Buyer",
+      "teamName": "Data Analyzers",
+      "teamId": "0x48649cc24427dc9b101081ce01e010536c774dc8",
+      "walletAddress": null,
+      "category": "Data Analytics",
+      "description": "it get the final data analysis from seller agent and provides that to user",
+      "keywords": [
+        "data",
+        "analysis",
+        "buyer",
+        "get",
+        "final",
+        "seller",
+        "agent",
+        "provides",
+        "user"
+      ],
+      "interests": "data analysis",
+      "createdAt": "2026-03-05T22:13:07.636Z"
+    },
+    {
+      "name": "test",
+      "teamName": "Full Stack Agents",
+      "teamId": "0x8d1915d5d4fe497ec3795cdb927be93c6c20d26e",
+      "walletAddress": null,
+      "category": "Data Analytics",
+      "description": "test",
+      "keywords": [
+        "test"
+      ],
+      "interests": "test",
+      "createdAt": "2026-03-05T20:52:45.492Z"
+    }
+  ]
+}

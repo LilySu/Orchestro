@@ -1,0 +1,282 @@
+{
+  "generated_at": "2026-03-06T22:30:59.014528+00:00",
+  "count": 11,
+  "note": "These endpoints returned HTTP 200. Check response_preview for semantic success.",
+  "endpoints": [
+    {
+      "name": "Crypto Market Intelligence",
+      "team": "BaseLayer",
+      "endpoint": "http://54.183.4.35:9010/",
+      "called_at": "2026-03-06T22:27:16.231095+00:00",
+      "plan_did": "60037501707435651116294812103080449879416839373596129897733067667583699584971",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.01,
+      "formatted": "$0.01",
+      "request_body_sent": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "response_preview": "{\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 1, \"jsonrpc\": \"2.0\"}",
+      "response_keys": [
+        "error",
+        "id",
+        "jsonrpc"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "Agent Evaluator",
+      "team": "BaseLayer",
+      "endpoint": "http://54.183.4.35:9030/",
+      "called_at": "2026-03-06T22:27:20.404088+00:00",
+      "plan_did": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.1,
+      "formatted": "$0.10",
+      "request_body_sent": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "response_preview": "{\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 1, \"jsonrpc\": \"2.0\"}",
+      "response_keys": [
+        "error",
+        "id",
+        "jsonrpc"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "Web Scraper Agent",
+      "team": "BaseLayer",
+      "endpoint": "http://54.183.4.35:9020/",
+      "called_at": "2026-03-06T22:27:27.106417+00:00",
+      "plan_did": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0,
+      "formatted": "$0.10",
+      "request_body_sent": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "response_preview": "{\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 1, \"jsonrpc\": \"2.0\"}",
+      "response_keys": [
+        "error",
+        "id",
+        "jsonrpc"
+      ],
+      "token_was_cached": true,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "AgentCard Enhancement Agent",
+      "team": "agenticard",
+      "endpoint": "https://agenticard-ai.manus.space/api/v1/enhance",
+      "called_at": "2026-03-06T22:27:29.198346+00:00",
+      "plan_did": "14617951810481220602283078817831990748590904646100283923289724246676505189165",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.1,
+      "formatted": "$0.10",
+      "request_body_sent": {
+        "cardId": 1,
+        "agentId": "1"
+      },
+      "response_preview": "{\"success\": true, \"data\": {\"enhancementId\": null, \"cardId\": 1, \"agentId\": 1, \"agentName\": \"Insight Analyst\", \"result\": {\"summary\": \"This card represents a general market analysis focused on the year 2026, with a specific emphasis on the impact and trends within Artificial Intelligence.\", \"insights\": [\"The AI market is projected to experience significant growth and diversification by 2026, driven b",
+      "response_keys": [
+        "success",
+        "data"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "Market Buyer",
+      "team": "Undermined",
+      "endpoint": "https://nevermined-autonomous-business-hack.vercel.app/api/agent/research",
+      "called_at": "2026-03-06T22:27:39.441439+00:00",
+      "plan_did": "83480319637602122918957452839185213999331293232449361790831275088734229713001",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.001,
+      "formatted": "$0.0010",
+      "request_body_sent": {
+        "query": "What can you do? Give me a brief demo.",
+        "task": "What can you do? Give me a brief demo.",
+        "prompt": "What can you do? Give me a brief demo.",
+        "message": "What can you do? Give me a brief demo.",
+        "format": "json"
+      },
+      "response_preview": "{\"status\": \"success\", \"document\": {\"id\": \"res-1772836066312-mxmwz\", \"query\": \"What can you do? Give me a brief demo.\", \"title\": \"Capabilities and Demonstrations of AI Research Planning Agents\", \"summary\": \"AI research planning agents are designed to assist in organizing and synthesizing information efficiently. The most important finding is their ability to process large volumes of data quickly, w",
+      "response_keys": [
+        "status",
+        "document"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "Nevermailed.com",
+      "team": "Nevermailed",
+      "endpoint": "https://www.nevermailed.com/api/send",
+      "called_at": "2026-03-06T22:28:39.558487+00:00",
+      "plan_did": "88312452204425815888483099861867749566943310667461054336320077628604456833102",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.01,
+      "formatted": "$0.01",
+      "request_body_sent": {
+        "from": "Orchestro Agent <agent@nevermailed.com>",
+        "to": "test@nevermailed.com",
+        "subject": "Hello from Orchestro \u2014 Nevermined Hackathon",
+        "text": "Sent autonomously by the Orchestro agent via x402.",
+        "html": "<p>Sent by <strong>Orchestro</strong> via x402.</p>"
+      },
+      "response_preview": "{\"id\": \"00bedc56-7226-4905-bc9c-3b803150fab8\", \"status\": \"sent\"}",
+      "response_keys": [
+        "id",
+        "status"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "Intel Marketplace",
+      "team": "Intel Marketplace",
+      "endpoint": "https://us14.abilityai.dev/ask",
+      "called_at": "2026-03-06T22:28:47.443805+00:00",
+      "plan_did": "23255501144318081785487994454117701395336964271745174907455464886411872694501",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.01,
+      "formatted": "$0.01",
+      "request_body_sent": {
+        "query": "What are the latest geopolitical risks affecting AI regulation in 2026?",
+        "format": "json"
+      },
+      "response_preview": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Claude Agent Manager</title>\n    <script type=\"module\" crossorigin src=\"/assets/index-m-9FGLv_.js\"></script>\n    <link rel=\"stylesheet\" crossorigin href=\"/assets/index-BJ-bFk-P.css\">\n  ",
+      "response_keys": null,
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "Celebrity Economy",
+      "team": "Celebrity Economy",
+      "endpoint": "https://ai-celebrity-economy.vercel.app/v1/influencer/sponsored-answer",
+      "called_at": "2026-03-06T22:29:00.558585+00:00",
+      "plan_did": "42885704405854726080326845963374464027648777766956637654271468649529605760878",
+      "payment_type": "fiat",
+      "currency": "USD",
+      "amount_paid": 0.1,
+      "formatted": "$0.10",
+      "request_body_sent": {
+        "topic": "AI agent payments",
+        "brand": "Orchestro",
+        "product_url": "https://orchestro.vercel.app",
+        "audience": "AI developers",
+        "tone": "helpful"
+      },
+      "response_preview": "{\"disclosure\": \"Sponsored\", \"answer\": \"Sponsored: If you're exploring AI agent payments, Orchestro is a strong option for AI developers. Learn more: https://orchestro.vercel.app\", \"ad_snippet\": {\"title\": \"Orchestro\", \"cta\": \"Learn More\", \"reason\": \"Sponsored strategy for 'AI agent payments for AI developers': prioritize creator-led proof points, developer persona targeting, and direct CTA to produ",
+      "response_keys": [
+        "disclosure",
+        "answer",
+        "ad_snippet",
+        "tracking",
+        "token"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "PredictiveEdge",
+      "team": "TrinityOS",
+      "endpoint": "https://jkphyzehtacmryuekerw.supabase.co/functions/v1/agent-predict",
+      "called_at": "2026-03-06T22:29:11.090980+00:00",
+      "plan_did": "111674308306186226067995528745103155128836011801068362130707991167627464183486",
+      "payment_type": "crypto",
+      "currency": "USDC",
+      "amount_paid": 0,
+      "formatted": "Free",
+      "request_body_sent": {
+        "query": "Predict AI agent services market trend Q2 2026",
+        "asset": "AI_AGENTS"
+      },
+      "response_preview": "{\"market\": \"crypto/ETH-USD\", \"timeframe\": \"24h\", \"indicators\": [\"momentum\", \"volume\", \"sentiment\"], \"prediction\": {\"direction\": \"bullish\", \"currentPrice\": \"566.82\", \"predictedPrice\": \"575.83\", \"changePercent\": \"1.59\", \"confidence\": 0.848864211546944, \"supportLevel\": \"538.48\", \"resistanceLevel\": \"612.17\"}, \"signals\": [{\"indicator\": \"RSI\", \"value\": 49.222623522959815, \"signal\": \"neutral\"}, {\"indicat",
+      "response_keys": [
+        "market",
+        "timeframe",
+        "indicators",
+        "prediction",
+        "signals",
+        "riskAssessment",
+        "metadata"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "AiRI \u2014 AI Resilience Index",
+      "team": "AiRI \u2014 AI Resilience Index",
+      "endpoint": "https://airi-demo.replit.app/resilience-score",
+      "called_at": "2026-03-06T22:29:29.107728+00:00",
+      "plan_did": "66619768626607473959069784540082389097691426548532998508151396318342191410996",
+      "payment_type": "crypto",
+      "currency": "USDC",
+      "amount_paid": 0,
+      "formatted": "Free",
+      "request_body_sent": {
+        "company": "Salesforce"
+      },
+      "response_preview": "{\"company\": \"Salesforce\", \"resilience_score\": 90, \"confidence\": \"high\", \"summary\": \"Salesforce scores 90/100 \\u2014 Salesforce is well-positioned to withstand AI disruption due to its established market presence, extensive data resources, and AI-driven product offerings.\", \"vulnerabilities\": [\"Reliance on third-party apps in AppExchange\", \"Potential for commoditization of CRM solutions\", \"Competit",
+      "response_keys": [
+        "company",
+        "resilience_score",
+        "confidence",
+        "summary",
+        "vulnerabilities",
+        "strengths",
+        "upgrade_available",
+        "response_time_ms",
+        "powered_by",
+        "sponsored_alternatives"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    },
+    {
+      "name": "CloudAGI Smart Search",
+      "team": "Cloudagi.ai",
+      "endpoint": "https://api.cloudagi.org/v1/services/smart-search/execute",
+      "called_at": "2026-03-06T22:30:33.729632+00:00",
+      "plan_did": "89079330978397499166663891689552952516403347434508914875089205815814165930880",
+      "payment_type": "crypto",
+      "currency": "USDC",
+      "amount_paid": 0.05,
+      "formatted": "0.05 USDC",
+      "request_body_sent": {
+        "query": "Nevermined x402 protocol agent payments",
+        "sources": [
+          "exa"
+        ],
+        "numResults": 3
+      },
+      "response_preview": "{\"success\": true, \"data\": {\"query\": \"Nevermined x402 protocol agent payments\", \"totalResults\": 3, \"results\": [{\"title\": \"x402: The Protocol Teaching Machines to Pay Each Other\", \"url\": \"https://blockeden.xyz/blog/2026/01/16/x402-protocol-ai-agent-payments-machine-economy/\", \"snippet\": \" The result is x402: an open protocol enabling any API, website, or AI agent to request and receive instant stabl",
+      "response_keys": [
+        "success",
+        "data"
+      ],
+      "token_was_cached": false,
+      "note": "Semantic check \u2014 see response_preview for whether the 200 was meaningful"
+    }
+  ]
+}

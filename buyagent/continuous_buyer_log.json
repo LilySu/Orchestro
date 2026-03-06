@@ -1,0 +1,317 @@
+{
+  "generated_at": "2026-03-06T22:46:31.262827+00:00",
+  "total": 20,
+  "successes": 15,
+  "failures": 5,
+  "total_usd": 0.321,
+  "total_usdc": 0,
+  "transactions": [
+    {
+      "round": 1,
+      "label": "CloudAGI Search",
+      "endpoint": "https://api.cloudagi.org/v1/services/smart-search/execute",
+      "success": false,
+      "note": "token_failed",
+      "price": 0,
+      "currency": "USDC",
+      "at": "2026-03-06T22:44:05.418658+00:00"
+    },
+    {
+      "round": 1,
+      "label": "PredictiveEdge",
+      "endpoint": "https://jkphyzehtacmryuekerw.supabase.co/functions/v1/agent-predict",
+      "success": false,
+      "note": "token_failed",
+      "price": 0,
+      "currency": "USDC",
+      "at": "2026-03-06T22:44:11.701716+00:00"
+    },
+    {
+      "round": 1,
+      "label": "Nevermailed",
+      "endpoint": "https://www.nevermailed.com/api/send",
+      "body": {
+        "from": "Orchestro Agent <agent@nevermailed.com>",
+        "to": "test@nevermailed.com",
+        "subject": "Hackathon Progress Update #1",
+        "text": "Automated round 1 by Orchestro agent via x402. Topic: AI in healthcare diagnostics.",
+        "html": "<p>Round <strong>1</strong> - neuromorphic computing</p>"
+      },
+      "success": true,
+      "note": "OK: {\"id\": \"cbee7499-09a8-4a8b-9539-76e73d4e2b97\", \"status\": \"sent\"}",
+      "price": 0.01,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:44:17.427256+00:00"
+    },
+    {
+      "round": 1,
+      "label": "AiRI",
+      "endpoint": "https://airi-demo.replit.app/resilience-score",
+      "body": {
+        "company": "Netflix"
+      },
+      "success": true,
+      "note": "OK: {\"company\": \"Netflix\", \"resilience_score\": 85, \"confidence\": \"high\", \"summary\": \"Netflix scores 85/1",
+      "price": 0,
+      "currency": "USDC",
+      "was_cached": false,
+      "at": "2026-03-06T22:44:43.335469+00:00"
+    },
+    {
+      "round": 1,
+      "label": "Celebrity Economy",
+      "endpoint": "https://ai-celebrity-economy.vercel.app/v1/influencer/sponsored-answer",
+      "body": {
+        "topic": "AI governance frameworks",
+        "brand": "NevermindAI",
+        "product_url": "https://orchestro.vercel.app",
+        "audience": "enterprise CTOs",
+        "tone": "professional"
+      },
+      "success": true,
+      "note": "OK: {\"disclosure\": \"Sponsored\", \"answer\": \"Sponsored: If you're exploring AI governance frameworks, Neve",
+      "price": 0.1,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:44:47.872527+00:00"
+    },
+    {
+      "round": 1,
+      "label": "BaseLayer Crypto Intel",
+      "endpoint": "http://54.183.4.35:9010/",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "success": false,
+      "note": "HTTP 402: {\"error\":{\"code\":-32001,\"message\":\"Validation error: Permission verification fai",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:44:52.511753+00:00"
+    },
+    {
+      "round": 1,
+      "label": "BaseLayer Agent Eval",
+      "endpoint": "http://54.183.4.35:9030/",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "success": true,
+      "note": "OK: {\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 1, \"jsonrpc\": \"2.0\"}",
+      "price": 0.1,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:44:57.621292+00:00"
+    },
+    {
+      "round": 1,
+      "label": "BaseLayer Web Scraper",
+      "endpoint": "http://54.183.4.35:9020/",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "success": true,
+      "note": "OK: {\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 1, \"jsonrpc\": \"2.0\"}",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:44:58.861675+00:00"
+    },
+    {
+      "round": 1,
+      "label": "Market Buyer",
+      "endpoint": "https://nevermined-autonomous-business-hack.vercel.app/api/agent/research",
+      "body": {
+        "query": "What are the top AI agent frameworks in 2026?",
+        "task": "Explain the benefits of agent-to-agent commerce."
+      },
+      "success": true,
+      "note": "OK: {\"status\": \"success\", \"document\": {\"id\": \"res-1772837103372-dba3i\", \"query\": \"What are the top AI ag",
+      "price": 0.001,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:45:26.576982+00:00"
+    },
+    {
+      "round": 1,
+      "label": "AgentCard",
+      "endpoint": "https://agenticard-ai.manus.space/api/v1/enhance",
+      "body": {
+        "cardId": 2,
+        "agentId": "2"
+      },
+      "success": true,
+      "note": "OK: {\"success\": true, \"data\": {\"enhancementId\": null, \"cardId\": 2, \"agentId\": 2, \"agentName\": \"Value Amp",
+      "price": 0.1,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:45:34.911592+00:00"
+    },
+    {
+      "round": 2,
+      "label": "CloudAGI Search",
+      "endpoint": "https://api.cloudagi.org/v1/services/smart-search/execute",
+      "success": false,
+      "note": "token_failed",
+      "price": 0,
+      "currency": "USDC",
+      "at": "2026-03-06T22:45:38.150044+00:00"
+    },
+    {
+      "round": 2,
+      "label": "PredictiveEdge",
+      "endpoint": "https://jkphyzehtacmryuekerw.supabase.co/functions/v1/agent-predict",
+      "body": {
+        "query": "Predict AI-powered customer support market trend Q2 2026",
+        "asset": "BTC"
+      },
+      "success": true,
+      "note": "OK: {\"market\": \"crypto/ETH-USD\", \"timeframe\": \"24h\", \"indicators\": [\"momentum\", \"volume\", \"sentiment\"], ",
+      "price": 0,
+      "currency": "USDC",
+      "was_cached": false,
+      "at": "2026-03-06T22:45:41.877797+00:00"
+    },
+    {
+      "round": 2,
+      "label": "Nevermailed",
+      "endpoint": "https://www.nevermailed.com/api/send",
+      "body": {
+        "from": "Orchestro Agent <agent@nevermailed.com>",
+        "to": "test@nevermailed.com",
+        "subject": "x402 Transaction Log \u2014 Cycle 2",
+        "text": "Automated round 2 by Orchestro agent via x402. Topic: generative AI art.",
+        "html": "<p>Round <strong>2</strong> - robotics automation</p>"
+      },
+      "success": true,
+      "note": "OK: {\"id\": \"daa1599b-6ee5-4c50-8754-29949549578a\", \"status\": \"sent\"}",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:45:42.495973+00:00"
+    },
+    {
+      "round": 2,
+      "label": "AiRI",
+      "endpoint": "https://airi-demo.replit.app/resilience-score",
+      "body": {
+        "company": "Databricks"
+      },
+      "success": true,
+      "note": "OK: {\"company\": \"Databricks\", \"resilience_score\": 90, \"confidence\": \"high\", \"summary\": \"Databricks score",
+      "price": 0,
+      "currency": "USDC",
+      "was_cached": true,
+      "at": "2026-03-06T22:46:02.220479+00:00"
+    },
+    {
+      "round": 2,
+      "label": "Celebrity Economy",
+      "endpoint": "https://ai-celebrity-economy.vercel.app/v1/influencer/sponsored-answer",
+      "body": {
+        "topic": "AI governance frameworks",
+        "brand": "SmartFlow",
+        "product_url": "https://orchestro.vercel.app",
+        "audience": "blockchain developers",
+        "tone": "casual"
+      },
+      "success": true,
+      "note": "OK: {\"disclosure\": \"Sponsored\", \"answer\": \"Sponsored: If you're exploring AI governance frameworks, Smar",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:46:03.613581+00:00"
+    },
+    {
+      "round": 2,
+      "label": "BaseLayer Crypto Intel",
+      "endpoint": "http://54.183.4.35:9010/",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/list",
+        "params": {}
+      },
+      "success": true,
+      "note": "OK: {\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 2, \"jsonrpc\": \"2.0\"}",
+      "price": 0.01,
+      "currency": "USD",
+      "was_cached": false,
+      "at": "2026-03-06T22:46:08.082033+00:00"
+    },
+    {
+      "round": 2,
+      "label": "BaseLayer Agent Eval",
+      "endpoint": "http://54.183.4.35:9030/",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/list",
+        "params": {}
+      },
+      "success": true,
+      "note": "OK: {\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 2, \"jsonrpc\": \"2.0\"}",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:46:09.341253+00:00"
+    },
+    {
+      "round": 2,
+      "label": "BaseLayer Web Scraper",
+      "endpoint": "http://54.183.4.35:9020/",
+      "body": {
+        "jsonrpc": "2.0",
+        "id": 2,
+        "method": "tools/list",
+        "params": {}
+      },
+      "success": true,
+      "note": "OK: {\"error\": {\"code\": -32601, \"message\": \"Method not found\"}, \"id\": 2, \"jsonrpc\": \"2.0\"}",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:46:11.631773+00:00"
+    },
+    {
+      "round": 2,
+      "label": "Market Buyer",
+      "endpoint": "https://nevermined-autonomous-business-hack.vercel.app/api/agent/research",
+      "body": {
+        "query": "What are the key metrics for evaluating AI agent performance?",
+        "task": "What is the future of programmable payments for AI?"
+      },
+      "success": true,
+      "note": "OK: {\"status\": \"success\", \"document\": {\"id\": \"res-1772837172788-mkyxt\", \"query\": \"What are the key metri",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:46:30.463463+00:00"
+    },
+    {
+      "round": 2,
+      "label": "AgentCard",
+      "endpoint": "https://agenticard-ai.manus.space/api/v1/enhance",
+      "body": {
+        "cardId": 3,
+        "agentId": "3"
+      },
+      "success": false,
+      "note": "HTTP 404: {\"success\":false,\"error\":\"Card not found\"}",
+      "price": 0,
+      "currency": "USD",
+      "was_cached": true,
+      "at": "2026-03-06T22:46:30.959030+00:00"
+    }
+  ]
+}

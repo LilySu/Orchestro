@@ -1,0 +1,16 @@
+[
+  {
+    "name": "AgentAudit",
+    "team": "AgentAudit",
+    "endpoint": "https://agentaudit.onrender.com/audit",
+    "success": false,
+    "note": "HTTP 400: {\"error\":\"endpoint_url is required\"}"
+  },
+  {
+    "name": "QA Checker Agent",
+    "team": "Full Stack Agents",
+    "endpoint": "https://us14.abilityai.dev/api/paid/qa-checker/chat",
+    "success": true,
+    "note": "OK"
+  }
+]

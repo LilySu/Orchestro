@@ -1,0 +1,597 @@
+{
+  "generated_at": "2026-03-06T22:30:59.015961+00:00",
+  "count": 28,
+  "by_category": {
+    "UNKNOWN": [
+      "AgentAudit",
+      "QA Checker Agent",
+      "Agent Staffing Agency",
+      "AI Landing Page Builder",
+      "Store Agents Vision Check",
+      "Buyer/Seller Debugger",
+      "AgentBank",
+      "DataForge Web",
+      "DataForge Search",
+      "Test4Test \u2014 Testing as a Service",
+      "Platon Memory",
+      "CloudAGI AI Research",
+      "Cortex",
+      "AI Research Broker Agent",
+      "ProcurePilot",
+      "Portfolio Manager \u2014 Agent Rating & Consulting",
+      "CloudAGI Web Scraper",
+      "CloudAGI Code Review",
+      "CloudAGI GPU Compute"
+    ],
+    "SEMANTIC_ERROR": [
+      "AgentIn",
+      "TrustNet - Find & Verify AI Agents You Can Trust"
+    ],
+    "NEEDS_OWN_AUTH": [
+      "Sabi",
+      "Social Media Manager"
+    ],
+    "NETWORK_DOWN": [
+      "The Churninator"
+    ],
+    "SERVER_ERROR": [
+      "Key Auction House",
+      "Nexus Intelligence Hub",
+      "Market Intel Agent"
+    ],
+    "NOT_AN_API": [
+      "Winning points for buyers to make transactions"
+    ]
+  },
+  "endpoints": [
+    {
+      "name": "AgentAudit",
+      "team": "AgentAudit",
+      "endpoint": "https://agentaudit.onrender.com/audit",
+      "attempted_at": "2026-03-06T22:26:07.928866+00:00",
+      "plan_did": "6323099650857505165714813342579259869335362505716400015277115860207240152855",
+      "currency": "USD",
+      "amount_would_cost": 0,
+      "request_body_sent": {
+        "query": "I want to grow my e-commerce business using AI agents"
+      },
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: HTTP 404: {\"detail\":\"Not Found\"}"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "QA Checker Agent",
+      "team": "Full Stack Agents",
+      "endpoint": "https://us14.abilityai.dev/api/paid/qa-checker/chat",
+      "attempted_at": "2026-03-06T22:26:10.927170+00:00",
+      "plan_did": "77187516446557008117390371891924386026269261180609913465789550830209283778042",
+      "currency": "USD",
+      "amount_would_cost": 0.0005,
+      "request_body_sent": {
+        "message": "Fact-check: The x402 protocol enables AI agents to pay each other using HTTP headers.",
+        "format": "json"
+      },
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: HTTP 502: \n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#f"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "AgentIn",
+      "team": "Agent Smith",
+      "endpoint": "https://hackathons-production-0afb.up.railway.app/data",
+      "attempted_at": "2026-03-06T22:28:03.224914+00:00",
+      "plan_did": "51594599206433256776228587701221687379012837410748271141696419946414617726242",
+      "currency": "USD",
+      "amount_would_cost": 0.001,
+      "request_body_sent": {
+        "query": "Orchestro orchestration agent",
+        "format": "json"
+      },
+      "category": "SEMANTIC_ERROR",
+      "needs": [
+        "Send JSON-RPC 2.0 format: {jsonrpc, method, params, id}",
+        "Add 'method' field to request body"
+      ],
+      "affected_field": "method",
+      "fixable": true,
+      "fix_type": "send_jsonrpc_method_field",
+      "description": "Got 200 but response contains error \u2014 likely needs JSON-RPC method field"
+    },
+    {
+      "name": "Sabi",
+      "team": "BennySpenny",
+      "endpoint": "https://sabi-backend.ben-imadali.workers.dev/query",
+      "attempted_at": "2026-03-06T22:28:43.858467+00:00",
+      "plan_did": "16871201947972714670125894743395881319398475848434387294065816734843371415817",
+      "currency": "USD",
+      "amount_would_cost": 0.01,
+      "request_body_sent": {
+        "question": "Is the Nevermined hackathon still running?",
+        "targetLat": 37.7749,
+        "targetLng": -122.4194
+      },
+      "category": "NEEDS_OWN_AUTH",
+      "needs": [
+        "Obtain seller-specific API key (e.g. sabi_sk_... for Sabi)",
+        "Add Authorization: Bearer <key> header alongside PAYMENT-SIGNATURE"
+      ],
+      "affected_field": "Authorization header",
+      "fixable": false,
+      "fix_type": "external_api_key",
+      "description": "Endpoint uses its own auth system on top of x402 \u2014 needs their API key"
+    },
+    {
+      "name": "Agent Staffing Agency",
+      "team": "Agent Staffing Agency",
+      "endpoint": "https://noel-argumentatious-tomika.ngrok-free.dev/ask",
+      "attempted_at": "2026-03-06T22:28:50.482304+00:00",
+      "plan_did": "70636402455129346170746713568073796427214985036952113877697126377806587553219",
+      "currency": "USD",
+      "amount_would_cost": 0.01,
+      "request_body_sent": {
+        "need": "research",
+        "query": "What AI agent services are available on the Nevermined marketplace?"
+      },
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: HTTP 404: <!DOCTYPE html>\n<html class=\"h-full\" lang=\"en-US\" dir=\"ltr\">\n  <head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "The Churninator",
+      "team": "TaskRoute",
+      "endpoint": "https://frequently-statement-machines-codes.trycloudflare.com",
+      "attempted_at": "2026-03-06T22:28:53.526063+00:00",
+      "plan_did": "97594655528861917462090749873578545946433657557882531760519668774597834515117",
+      "currency": "USD",
+      "amount_would_cost": 0.01,
+      "request_body_sent": {
+        "query": "Infrastructure routing for AI orchestration platform?"
+      },
+      "category": "NETWORK_DOWN",
+      "needs": [
+        "Contact seller to restart their tunnel/server"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "wait_for_seller_to_restart",
+      "description": "DNS resolution failed \u2014 ngrok/cloudflare tunnel is expired or server is down"
+    },
+    {
+      "name": "TrustNet - Find & Verify AI Agents You Can Trust",
+      "team": "TrustNet",
+      "endpoint": "https://trust-net-mcp.rikenshah-02.workers.dev/mcp",
+      "attempted_at": "2026-03-06T22:28:57.398732+00:00",
+      "plan_did": "102919685043168294132453698233734953851667883240916619184380623423310109370628",
+      "currency": "USD",
+      "amount_would_cost": 0.1,
+      "request_body_sent": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+          "name": "submit_review",
+          "arguments": {
+            "agent_id": "orchestro",
+            "reviewer_address": "0x659c87f82dd0e194ef17067398ebdb6ee1e13524",
+            "verification_tx": "0x0000000000000000000000000000000000000000000000000000000000000001",
+            "score": 5
+          }
+        }
+      },
+      "category": "SEMANTIC_ERROR",
+      "needs": [
+        "Send JSON-RPC 2.0 format: {jsonrpc, method, params, id}",
+        "Add 'method' field to request body"
+      ],
+      "affected_field": "method",
+      "fixable": true,
+      "fix_type": "send_jsonrpc_method_field",
+      "description": "Got 200 but response contains error \u2014 likely needs JSON-RPC method field"
+    },
+    {
+      "name": "Key Auction House",
+      "team": "aibizbrain",
+      "endpoint": "https://aibizbrain.com/use",
+      "attempted_at": "2026-03-06T22:29:04.856132+00:00",
+      "plan_did": "65319024020059502426072555134446177702752266748563986006259227333113642230162",
+      "currency": "USD",
+      "amount_would_cost": 0.1,
+      "request_body_sent": {
+        "query": "What can you do? Give me a brief demo.",
+        "task": "What can you do? Give me a brief demo.",
+        "prompt": "What can you do? Give me a brief demo.",
+        "message": "What can you do? Give me a brief demo.",
+        "format": "json"
+      },
+      "category": "SERVER_ERROR",
+      "needs": [
+        "Wait for seller to fix their service",
+        "Report to seller team"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "wait_for_seller_fix",
+      "description": "500 Internal Server Error \u2014 seller's service is broken"
+    },
+    {
+      "name": "AI Landing Page Builder",
+      "team": "BaseLayer",
+      "endpoint": "http://54.183.4.35:9040",
+      "attempted_at": "2026-03-06T22:29:10.652136+00:00",
+      "plan_did": "21943475099789836125630179017882918986647744013045814596224917831011518232955",
+      "currency": "USD",
+      "amount_would_cost": 0.1,
+      "request_body_sent": {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/list",
+        "params": {}
+      },
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: HTTP 404: {\"detail\":\"Not Found\"}"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Store Agents Vision Check",
+      "team": "Store Agents",
+      "endpoint": "https://1b3b-12-94-132-170.ngrok-free.app/api/nvm/vision-check",
+      "attempted_at": "2026-03-06T22:29:19.208431+00:00",
+      "plan_did": "81695975068282722064872021674349900943290140917278106849970566707427788756606",
+      "currency": "USDC",
+      "amount_would_cost": 0,
+      "request_body_sent": {
+        "query": "What can you do? Give me a brief demo.",
+        "task": "What can you do? Give me a brief demo.",
+        "prompt": "What can you do? Give me a brief demo.",
+        "message": "What can you do? Give me a brief demo.",
+        "format": "json"
+      },
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: HTTP 400: {\"error\":\"image_base64 is required\"}"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Nexus Intelligence Hub",
+      "team": "Full Stack Agents",
+      "endpoint": "https://us14.abilityai.dev/api/paid/nexus/chat",
+      "attempted_at": "2026-03-06T22:29:53.379487+00:00",
+      "plan_did": "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+      "currency": "USDC",
+      "amount_would_cost": 0,
+      "request_body_sent": {
+        "message": "What is the competitive landscape for AI agent marketplaces in 2026?",
+        "format": "json"
+      },
+      "category": "SERVER_ERROR",
+      "needs": [
+        "Wait for seller to fix their service",
+        "Report to seller team"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "wait_for_seller_fix",
+      "description": "500 Internal Server Error \u2014 seller's service is broken"
+    },
+    {
+      "name": "Market Intel Agent",
+      "team": "Full Stack Agents",
+      "endpoint": "https://us14.abilityai.dev/api/paid/market-intel/chat",
+      "attempted_at": "2026-03-06T22:30:11.092489+00:00",
+      "plan_did": "62132339823439076950399695238634927378738244877172775303591114485168828025410",
+      "currency": "USDC",
+      "amount_would_cost": 0,
+      "request_body_sent": {
+        "message": "Give me a company profile for Nevermined.",
+        "format": "json"
+      },
+      "category": "SERVER_ERROR",
+      "needs": [
+        "Wait for seller to fix their service",
+        "Report to seller team"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "wait_for_seller_fix",
+      "description": "500 Internal Server Error \u2014 seller's service is broken"
+    },
+    {
+      "name": "Social Media Manager",
+      "team": "Full Stack Agents",
+      "endpoint": "https://api.mindra.co/v1/workflows/social-media-manager/run",
+      "attempted_at": "2026-03-06T22:30:21.438247+00:00",
+      "plan_did": "61632438071329381808685463146237304732919930748438480922154472949400733604891",
+      "currency": "USDC",
+      "amount_would_cost": 1.0000000000000001e-07,
+      "request_body_sent": {
+        "query": "Create a tweet about AI agents paying each other autonomously",
+        "format": "json"
+      },
+      "category": "NEEDS_OWN_AUTH",
+      "needs": [
+        "Endpoint requires additional Authorization header beyond x402 token",
+        "Contact seller for their auth scheme"
+      ],
+      "affected_field": "Authorization header",
+      "fixable": false,
+      "fix_type": "external_api_key",
+      "description": "Endpoint uses its own auth system on top of x402 \u2014 needs their API key"
+    },
+    {
+      "name": "Buyer/Seller Debugger",
+      "team": "Mog Markets",
+      "endpoint": "https://api.mog.markets/mcp",
+      "attempted_at": "2026-03-06T22:30:30.416505+00:00",
+      "plan_did": "100055324343248574008048211366287624670698094501751189055453802807316586516007",
+      "currency": "USDC",
+      "amount": 0.01,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-73148145-aae2-48f5-839c-4ac4d4babd8e\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:31.152Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "AgentBank",
+      "team": "WAGMI",
+      "endpoint": "https://agentbank-nine.vercel.app/api/deposit",
+      "attempted_at": "2026-03-06T22:30:31.217771+00:00",
+      "plan_did": "22048418573188197583118225823590719469073032209055332683827376109982321424950",
+      "currency": "USDC",
+      "amount": 0.01,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-a1670140-8cad-4e38-bfcb-e51a0f8fa8d6\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:31.949Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "DataForge Web",
+      "team": "SwitchBoard AI",
+      "endpoint": "https://switchboardai.ayushojha.com/api/dataforge-web/scrape",
+      "attempted_at": "2026-03-06T22:30:32.013552+00:00",
+      "plan_did": "87243775557809620406811462333406929215670569276922516691841478531555517979134",
+      "currency": "USDC",
+      "amount": 0.01,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-e4b4ce06-f5b5-4e42-9e0b-862a3d6811db\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:32.794Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "DataForge Search",
+      "team": "SwitchBoard AI",
+      "endpoint": "https://switchboardai.ayushojha.com/api/dataforge-search/search",
+      "attempted_at": "2026-03-06T22:30:32.858464+00:00",
+      "plan_did": "20525280098953834660118374760884658206838276532391353027417693253911209808544",
+      "currency": "USDC",
+      "amount": 0.01,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-c158fce4-2e34-424f-b1a4-53cf19e5c7ef\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:33.600Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Test4Test \u2014 Testing as a Service",
+      "team": "test4test",
+      "endpoint": "https://1c59-12-94-132-170.ngrok-free.app/query",
+      "attempted_at": "2026-03-06T22:30:47.528408+00:00",
+      "plan_did": "15862071005348587127783678656838286399971918534471913019449683689764138649556",
+      "currency": "USDC",
+      "amount": 0.05,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-23b13588-6591-49cc-b29c-038e16c607ca\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:48.390Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Platon Memory",
+      "team": "Platon",
+      "endpoint": "https://platon.bigf.me/mcp",
+      "attempted_at": "2026-03-06T22:30:48.453922+00:00",
+      "plan_did": "73169765125098902371333949161624114039157379307050553178571193711771922123338",
+      "currency": "USDC",
+      "amount": 0.05,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-3801cd3f-0675-4d4f-a517-5cbe6285caf7\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:49.186Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "CloudAGI AI Research",
+      "team": "Cloudagi.ai",
+      "endpoint": "https://api.cloudagi.org/v1/services/ai-research/execute",
+      "attempted_at": "2026-03-06T22:30:49.251031+00:00",
+      "plan_did": "78386255600496283474894529493982153273869832281726105997854379462809014318885",
+      "currency": "USDC",
+      "amount": 0.1,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-e880b705-c1bc-4b80-87c1-e397f2d46ba9\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:50.181Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Cortex",
+      "team": "Full Stack Agents",
+      "endpoint": "https://api.mindra.co/v1/workflows/cortex/run",
+      "attempted_at": "2026-03-06T22:30:50.244791+00:00",
+      "plan_did": "99365957586870583657688549687571572387834425411663453282914446165341250413698",
+      "currency": "USDC",
+      "amount": 0.1,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-5e1f06e6-05c1-41b2-838a-a790b9bdb17f\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:51.032Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "AI Research Broker Agent",
+      "team": "AI Research Agnet",
+      "endpoint": "https://hack-mined-production.up.railway.app/research",
+      "attempted_at": "2026-03-06T22:30:51.097119+00:00",
+      "plan_did": "66828968694604448273724812981407769357248145648254711136618922943343003256939",
+      "currency": "USDC",
+      "amount": 0.1,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-b7329071-ef37-42e5-848a-e6b4ae07601c\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:51.848Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "ProcurePilot",
+      "team": "SwitchBoard AI",
+      "endpoint": "https://switchboardai.ayushojha.com/api/procurepilot/procure",
+      "attempted_at": "2026-03-06T22:30:51.912370+00:00",
+      "plan_did": "109731256866340666423694494193395380513294751956236783956289528157009356745395",
+      "currency": "USDC",
+      "amount": 0.1,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-7505ddd5-f35f-4bdf-952d-1065bd6285e7\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:52.938Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Portfolio Manager \u2014 Agent Rating & Consulting",
+      "team": "Gingobellgo",
+      "endpoint": "http://13.217.131.34:3000/data",
+      "attempted_at": "2026-03-06T22:30:53.083493+00:00",
+      "plan_did": "32264978581521060596226612106593412508601533951706321127584597160009188094462",
+      "currency": "USDC",
+      "amount": 0.1,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-a48e433c-153b-47ae-afb4-0178674a0ab8\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:53.818Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "CloudAGI Web Scraper",
+      "team": "Cloudagi.ai",
+      "endpoint": "https://api.cloudagi.org/v1/services/web-scraper/execute",
+      "attempted_at": "2026-03-06T22:30:53.899107+00:00",
+      "plan_did": "90092824673125032920951469087500965907572058736388024458521964143871350224680",
+      "currency": "USDC",
+      "amount": 0.2,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-2f73e06e-1992-48aa-be1b-fc133abff854\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:56.985Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "CloudAGI Code Review",
+      "team": "Cloudagi.ai",
+      "endpoint": "https://api.cloudagi.org/v1/services/code-review/execute",
+      "attempted_at": "2026-03-06T22:30:57.053038+00:00",
+      "plan_did": "106345725518626650269642045596956594679428104932767310400845297987223106929904",
+      "currency": "USDC",
+      "amount": 0.5,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-65504f5d-d4da-4030-8dce-c76821c790bd\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:57.837Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "CloudAGI GPU Compute",
+      "team": "Cloudagi.ai",
+      "endpoint": "https://api.cloudagi.org/v1/services/gpu-compute/execute",
+      "attempted_at": "2026-03-06T22:30:57.905904+00:00",
+      "plan_did": "14759274764825912229920703277566112982233198398840105457244122894098639527368",
+      "currency": "USDC",
+      "amount": 1,
+      "category": "UNKNOWN",
+      "needs": [
+        "Raw error: Token error: Order failed: Unable to order plan. 500 - {\"uuid\":\"e-d83de14b-a221-4f92-9463-1d6f04b88471\",\"code\":\"BCK.PROTOCOL.0005\",\"message\":\"Error ordering plan\",\"date\":\"2026-03-06T22:30:58.939Z\",\"st"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "investigate",
+      "description": "Unclassified failure"
+    },
+    {
+      "name": "Winning points for buyers to make transactions",
+      "team": "Winning points for this Hackthon",
+      "endpoint": "https://nevermined.app/checkout/56967594265037429856808399563971245044808728945801185144754818701750048038178",
+      "attempted_at": "2026-03-06T22:30:59.009849+00:00",
+      "category": "NOT_AN_API",
+      "needs": [
+        "This is a web checkout page \u2014 skip or handle via browser"
+      ],
+      "affected_field": null,
+      "fixable": false,
+      "fix_type": "skip",
+      "description": "URL is a web checkout page, not an API endpoint"
+    }
+  ]
+}

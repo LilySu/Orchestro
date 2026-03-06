@@ -1,0 +1,275 @@
+[
+  {
+    "name": "AgentAudit",
+    "team": "AgentAudit",
+    "endpoint": "https://agentaudit.onrender.com/audit",
+    "success": true,
+    "note": "OK"
+  },
+  {
+    "name": "QA Checker Agent",
+    "team": "Full Stack Agents",
+    "endpoint": "https://us14.abilityai.dev/api/paid/qa-checker/chat",
+    "success": false,
+    "note": "HTTP 422: {\"detail\":[{\"type\":\"missing\",\"loc\":[\"body\",\"message\"],\"msg\":\"Field required\",\"input\":{\"query\":\"What can you do? Give me a brief demo.\",\"task\":\"What ca"
+  },
+  {
+    "name": "Crypto Market Intelligence",
+    "team": "BaseLayer",
+    "endpoint": "http://54.183.4.35:9010/",
+    "success": false,
+    "note": "HTTP 402: {\"error\":{\"code\":-32001,\"message\":\"Validation error: Permission verification failed. {'code': 'HTTP 502'}\"}}"
+  },
+  {
+    "name": "Agent Evaluator",
+    "team": "BaseLayer",
+    "endpoint": "http://54.183.4.35:9030/",
+    "success": true,
+    "note": "OK"
+  },
+  {
+    "name": "Web Scraper Agent",
+    "team": "BaseLayer",
+    "endpoint": "http://54.183.4.35:9020/",
+    "success": true,
+    "note": "OK"
+  },
+  {
+    "name": "AgentCard Enhancement Agent",
+    "team": "agenticard",
+    "endpoint": "https://agenticard-ai.manus.space/api/v1/enhance",
+    "success": true,
+    "note": "OK"
+  },
+  {
+    "name": "Market Buyer",
+    "team": "Undermined",
+    "endpoint": "https://nevermined-autonomous-business-hack.vercel.app/api/agent/research.",
+    "success": false,
+    "note": "HTTP 405: "
+  },
+  {
+    "name": "AgentIn",
+    "team": "Agent Smith",
+    "endpoint": "https://hackathons-production-0afb.up.railway.app/data",
+    "success": false,
+    "note": "HTTP 500: {\"error\":\"Internal server error\"}"
+  },
+  {
+    "name": "Nevermailed.com",
+    "team": "Nevermailed",
+    "endpoint": "https://www.nevermailed.com/api/send",
+    "success": false,
+    "note": "HTTP 500: {\"id\":\"7c64fe3f-2510-4251-bdae-c68d3f3d5a2b\",\"status\":\"failed\",\"error\":\"Not authorized to send emails from orchestro.vercel.app\"}"
+  },
+  {
+    "name": "Sabi",
+    "team": "BennySpenny",
+    "endpoint": "https://sabi-backend.ben-imadali.workers.dev/query",
+    "success": false,
+    "note": "HTTP 401: {\"error\":\"Unauthorized. Provide Authorization: Bearer sabi_sk_...\"}"
+  },
+  {
+    "name": "Intel Marketplace",
+    "team": "Intel Marketplace",
+    "endpoint": "https://us14.abilityai.dev/ask",
+    "success": false,
+    "note": "HTTP 405: <html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx/1.29.5</center>\r\n</body>\r\n</"
+  },
+  {
+    "name": "Agent Staffing Agency",
+    "team": "Agent Staffing Agency",
+    "endpoint": "https://noel-argumentatious-tomika.ngrok-free.dev/ask",
+    "success": true,
+    "note": "OK"
+  },
+  {
+    "name": "The Churninator",
+    "team": "TaskRoute",
+    "endpoint": "https://frequently-statement-machines-codes.trycloudflare.com",
+    "success": false,
+    "note": "Request error: [Errno 8] nodename nor servname provided, or not known"
+  },
+  {
+    "name": "TrustNet - Find & Verify AI Agents You Can Trust",
+    "team": "TrustNet",
+    "endpoint": "https://trust-net-mcp.rikenshah-02.workers.dev/mcp",
+    "success": false,
+    "note": "HTTP 401: {\"jsonrpc\":\"2.0\",\"error\":{\"code\":-32000,\"message\":\"Authorization header required. submit_review is the only unauthenticated MCP tool.\"},\"id\":1}"
+  },
+  {
+    "name": "Celebrity Economy",
+    "team": "Celebrity Economy",
+    "endpoint": "https://ai-celebrity-economy.vercel.app/v1/influencer/sponsored-answer",
+    "success": true,
+    "note": "OK"
+  },
+  {
+    "name": "Key Auction House",
+    "team": "aibizbrain",
+    "endpoint": "https://aibizbrain.com/use",
+    "success": false,
+    "note": "HTTP 500: Internal Server Error"
+  },
+  {
+    "name": "AI Landing Page Builder",
+    "team": "BaseLayer",
+    "endpoint": "http://54.183.4.35:9040",
+    "success": false,
+    "note": "HTTP 404: {\"detail\":\"Not Found\"}"
+  },
+  {
+    "name": "PredictiveEdge",
+    "team": "TrinityOS",
+    "endpoint": "https://jkphyzehtacmryuekerw.supabase.co/functions/v1/agent-predict",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Store Agents Vision Check",
+    "team": "Store Agents",
+    "endpoint": "https://1b3b-12-94-132-170.ngrok-free.app/api/nvm/vision-check",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "AiRI \u2014 AI Resilience Index",
+    "team": "AiRI \u2014 AI Resilience Index",
+    "endpoint": "https://airi-demo.replit.app/resilience-score",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Nexus Intelligence Hub",
+    "team": "Full Stack Agents",
+    "endpoint": "https://us14.abilityai.dev/api/paid/nexus/chat",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Market Intel Agent",
+    "team": "Full Stack Agents",
+    "endpoint": "https://us14.abilityai.dev/api/paid/market-intel/chat",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Social Media Manager",
+    "team": "Full Stack Agents",
+    "endpoint": "https://api.mindra.co/v1/workflows/social-media-manager/run",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Buyer/Seller Debugger",
+    "team": "Mog Markets",
+    "endpoint": "https://api.mog.markets/mcp",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "AgentBank",
+    "team": "WAGMI",
+    "endpoint": "https://agentbank-nine.vercel.app/api/deposit",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "DataForge Web",
+    "team": "SwitchBoard AI",
+    "endpoint": "https://switchboardai.ayushojha.com/api/dataforge-web/scrape",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "DataForge Search",
+    "team": "SwitchBoard AI",
+    "endpoint": "https://switchboardai.ayushojha.com/api/dataforge-search/search",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "CloudAGI Smart Search",
+    "team": "Cloudagi.ai",
+    "endpoint": "https://api.cloudagi.org/v1/services/smart-search/execute",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Test4Test \u2014 Testing as a Service",
+    "team": "test4test",
+    "endpoint": "https://1c59-12-94-132-170.ngrok-free.app/query",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Platon Memory",
+    "team": "Platon",
+    "endpoint": "https://platon.bigf.me/mcp",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "CloudAGI AI Research",
+    "team": "Cloudagi.ai",
+    "endpoint": "https://api.cloudagi.org/v1/services/ai-research/execute",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Cortex",
+    "team": "Full Stack Agents",
+    "endpoint": "https://api.mindra.co/v1/workflows/cortex/run",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "AI Research Broker Agent",
+    "team": "AI Research Agnet",
+    "endpoint": "https://hack-mined-production.up.railway.app/research",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "ProcurePilot",
+    "team": "SwitchBoard AI",
+    "endpoint": "https://switchboardai.ayushojha.com/api/procurepilot/procure",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Portfolio Manager \u2014 Agent Rating & Consulting",
+    "team": "Gingobellgo",
+    "endpoint": "http://13.217.131.34:3000/data",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "CloudAGI Web Scraper",
+    "team": "Cloudagi.ai",
+    "endpoint": "https://api.cloudagi.org/v1/services/web-scraper/execute",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "CloudAGI Code Review",
+    "team": "Cloudagi.ai",
+    "endpoint": "https://api.cloudagi.org/v1/services/code-review/execute",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "CloudAGI GPU Compute",
+    "team": "Cloudagi.ai",
+    "endpoint": "https://api.cloudagi.org/v1/services/gpu-compute/execute",
+    "success": false,
+    "note": "Token error: Invalid access token (HTTP 402)"
+  },
+  {
+    "name": "Winning points for buyers to make transactions",
+    "team": "Winning points for this Hackthon",
+    "endpoint": "https://nevermined.app/checkout/56967594265037429856808399563971245044808728945801185144754818701750048038178",
+    "success": false,
+    "note": "Skipped (checkout/non-API endpoint)"
+  }
+]
