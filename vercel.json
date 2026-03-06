@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/ask", "destination": "/api/agent" },
+      { "source": "/", "destination": "/index.html" }
+    ]
+  }

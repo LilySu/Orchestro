@@ -225,3 +225,4 @@ __marimo__/
 uv.lock
 
 *.toml
+.vercel

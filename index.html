@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buy</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --yellow: #FFD600;
+      --yellow-hover: #FFE033;
+      --yellow-glow: rgba(255, 214, 0, 0.35);
+      --text: #111;
+      --muted: #999;
+      --success-bg: #f0faf4;
+      --success-text: #1a7a3f;
+      --fail-bg: #fdf2f2;
+      --fail-text: #b03030;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'DM Sans', sans-serif;
+      background: #fff;
+      color: var(--text);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+    }
+
+    /* ── the BIG button ── */
+    .buy-btn {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      width: clamp(200px, 32vw, 280px);
+      height: clamp(200px, 32vw, 280px);
+      border-radius: 50%;
+      background: var(--yellow);
+      border: none;
+      cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: clamp(1.9rem, 4.5vw, 2.75rem);
+      font-weight: 700;
+      color: #1a1400;
+      letter-spacing: -0.03em;
+      box-shadow: 0 6px 48px var(--yellow-glow);
+      transition:
+        transform 0.14s cubic-bezier(.34,1.56,.64,1),
+        box-shadow 0.2s ease,
+        background 0.15s ease;
+      outline: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .buy-btn .word {
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .buy-btn .btn-price {
+      font-size: clamp(0.6rem, 1.2vw, 0.75rem);
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      color: rgba(26, 20, 0, 0.55);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .buy-btn:hover {
+      background: var(--yellow-hover);
+      transform: scale(1.05);
+      box-shadow: 0 10px 64px rgba(255,214,0,0.45);
+    }
+
+    .buy-btn:active {
+      transform: scale(0.95);
+      box-shadow: 0 3px 20px var(--yellow-glow);
+    }
+
+    @keyframes pulse-ring {
+      0%   { transform: scale(1);    opacity: 0.4; }
+      100% { transform: scale(1.6);  opacity: 0; }
+    }
+
+    .buy-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--yellow);
+      animation: pulse-ring 2.2s ease-out infinite;
+      pointer-events: none;
+    }
+
+    /* ── toast ── */
+    #toast {
+      position: fixed;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(12px);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.28s cubic-bezier(.34,1.56,.64,1);
+      z-index: 100;
+      white-space: nowrap;
+    }
+
+    #toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    #toast.success {
+      background: var(--success-bg);
+      color: var(--success-text);
+      border: 1px solid rgba(26,122,63,0.15);
+    }
+
+    #toast.fail {
+      background: var(--fail-bg);
+      color: var(--fail-text);
+      border: 1px solid rgba(176,48,48,0.15);
+    }
+  </style>
+</head>
+<body>
+
+<main class="page">
+  <button class="buy-btn" id="buyBtn" aria-label="Buy for $0.0010">
+    <span class="word">BUY</span>
+    <span class="btn-price">$0.0010 per click</span>
+  </button>
+</main>
+
+<div id="toast" role="alert" aria-live="assertive">
+  <span id="toastIcon"></span>
+  <span id="toastMsg"></span>
+</div>
+
+<script>
+  const btn = document.getElementById('buyBtn');
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+  const toastIcon = document.getElementById('toastIcon');
+  let timer = null;
+
+  function showToast(type) {
+    clearTimeout(timer);
+    toast.className = '';
+    void toast.offsetWidth;
+
+    if (type === 'success') {
+      toastIcon.textContent = '✓';
+      toastMsg.textContent = 'Payment successful — $0.0010 charged';
+      toast.className = 'success';
+    } else {
+      toastIcon.textContent = '✕';
+      toastMsg.textContent = 'Payment failed. Try again.';
+      toast.className = 'fail';
+    }
+
+    requestAnimationFrame(() => requestAnimationFrame(() => toast.classList.add('show')));
+    timer = setTimeout(() => toast.classList.remove('show'), 3500);
+  }
+
+  btn.addEventListener('click', async () => {
+    btn.disabled = true;
+    try {
+      const res = await fetch('/ask', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query: 'buy' })
+      });
+      showToast(res.ok ? 'success' : 'fail');
+    } catch (e) {
+      showToast('fail');
+    } finally {
+      btn.disabled = false;
+    }
+  });
+</script>
+
+</body>
+</html>

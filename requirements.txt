@@ -1,0 +1,4 @@
+fastapi
+payments-py
+python-dotenv
+httpx
