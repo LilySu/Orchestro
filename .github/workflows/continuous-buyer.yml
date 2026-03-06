@@ -1,23 +1,17 @@
 name: Continuous Buyer
 
 on:
-  # Manual trigger with configurable rounds
   workflow_dispatch:
     inputs:
       max_rounds:
-        description: "Number of buying rounds (0 = run until timeout)"
+        description: "Rounds per agent job"
         required: false
-        default: "50"
+        default: "500"
       loop_delay:
         description: "Seconds between rounds"
         required: false
-        default: "5"
-      call_delay:
-        description: "Seconds between individual agent calls"
-        required: false
-        default: "0.5"
+        default: "3"
 
-  # Run every 15 minutes automatically
   schedule:
     - cron: "*/15 * * * *"
 
@@ -26,33 +20,46 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 12
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    strategy:
+      fail-fast: false
+      matrix:
+        agent:
+          - "Celebrity Economy"
+          - "Market Buyer"
+          - "Nevermailed"
+          - "AgentCard"
+          - "BaseLayer Crypto Intel"
+          - "BaseLayer Agent Eval"
+          - "BaseLayer Web Scraper"
+          - "PredictiveEdge"
+          - "AiRI"
+          - "CloudAGI Search"
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install dependencies
-        run: |
-          pip install --quiet payments-py[fastapi] python-dotenv httpx
+        run: pip install --quiet payments-py[fastapi] python-dotenv httpx
 
-      - name: Run continuous buyer
+      - name: "Buy from: ${{ matrix.agent }}"
         env:
           NVM_API_KEY: ${{ secrets.NVM_API_KEY }}
           NVM_ENVIRONMENT: ${{ vars.NVM_ENVIRONMENT || 'sandbox' }}
-          MAX_ROUNDS: ${{ github.event.inputs.max_rounds || '50' }}
-          LOOP_DELAY: ${{ github.event.inputs.loop_delay || '5' }}
-          CALL_DELAY: ${{ github.event.inputs.call_delay || '0.5' }}
+          MAX_ROUNDS: ${{ github.event.inputs.max_rounds || '500' }}
+          LOOP_DELAY: ${{ github.event.inputs.loop_delay || '3' }}
+          CALL_DELAY: "0.3"
+          AGENT_FILTER: ${{ matrix.agent }}
         working-directory: buyagent
         run: python continuous_buyer.py
 
-      - name: Upload transaction log
+      - name: Upload log
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: buyer-log-${{ github.run_id }}
-          path: buyagent/continuous_buyer_log.json
+          name: log-${{ matrix.agent }}
+          path: buyagent/continuous_buyer_log-*.json
           retention-days: 30

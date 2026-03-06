@@ -44,6 +44,7 @@ CALL_DELAY      = float(os.getenv("CALL_DELAY", "0.5"))
 REQUEST_TIMEOUT = 45.0
 DISCOVERY_URL   = "https://nevermined.ai/hackathon/register/api/discover"
 MY_TEAM_ID      = "0x659c87f82dd0e194ef17067398ebdb6ee1e13524"
+AGENT_FILTER    = os.getenv("AGENT_FILTER", "")  # empty = all, or a label like "Celebrity Economy"
 
 if not NVM_API_KEY:
     print("ERROR: NVM_API_KEY not set")
@@ -340,7 +341,8 @@ def print_summary():
         for label, txns in sorted(by_agent.items(), key=lambda x: -len(x[1])):
             print(f"    {label:30s} x{len(txns):3d}")
 
-    log_path = "continuous_buyer_log.json"
+    suffix = f"-{AGENT_FILTER.replace(' ', '_')}" if AGENT_FILTER else ""
+    log_path = f"continuous_buyer_log{suffix}.json"
     with open(log_path, "w") as f:
         json.dump({
             "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -406,9 +408,12 @@ def main():
     if not card_pm:
         print("  WARNING: No card — fiat agents will be skipped")
 
-    # Load agents from live discovery
+    # Load agents from live discovery, apply filter if set
     data = fetch_discovery()
     agents = load_agents(data)
+    if AGENT_FILTER:
+        agents = [a for a in agents if a["label"] == AGENT_FILTER]
+        print(f"  Filter: {AGENT_FILTER}")
     fiat_count = sum(1 for a in agents if a["payment_type"] == "fiat")
     crypto_count = sum(1 for a in agents if a["payment_type"] == "crypto")
     print(f"  Agents: {fiat_count} fiat + {crypto_count} crypto = {len(agents)} total")
