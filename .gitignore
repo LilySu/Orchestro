@@ -273,3 +273,31 @@ packages/react-devtools-timeline/dist
 
 
 node_modules/*
+
+discovery.py
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local-only Python files
+client.py
+test.py
+index.py
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Node
+node_modules/
+.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+.env*.local

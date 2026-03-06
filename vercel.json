@@ -1,6 +1,8 @@
 {
-    "rewrites": [
-      { "source": "/ask", "destination": "/api/agent" },
-      { "source": "/", "destination": "/index.html" }
+    "framework": null,
+    "routes": [
+      { "src": "/ask", "dest": "/api/index" },
+      { "src": "/buy", "dest": "/api/index" },
+      { "src": "/(.*)", "dest": "/$1" }
     ]
   }
