@@ -1,5 +1,9 @@
 """
-continuous_buyer.py — Continuously buy from proven fiat (USD) agents.
+continuous_buyer.py — Continuously buy from marketplace agents.
+
+Discovers agents dynamically from the Nevermined discovery API and
+builds request bodies from their apiSchema. Falls back to curated
+overrides for agents where we know a better payload.
 
 Designed to run as a GitHub Actions workflow or locally.
 
@@ -9,6 +13,9 @@ Env vars:
   MAX_ROUNDS        — Number of rounds to run (default: 0 = unlimited)
   LOOP_DELAY        — Seconds between rounds (default: 5)
   CALL_DELAY        — Seconds between calls (default: 0.5)
+  AGENT_FILTER      — Only buy from this agent label (default: all)
+  CONSEC_FAIL_SKIP  — Skip agent after N consecutive failures (default: 10)
+  ALL_FAIL_EXIT     — Exit if all agents fail N rounds in a row (default: 20)
 
 Run locally:  python continuous_buyer.py
 Stop locally: Ctrl+C (prints summary on exit)
@@ -44,41 +51,30 @@ CALL_DELAY      = float(os.getenv("CALL_DELAY", "0.5"))
 REQUEST_TIMEOUT = 45.0
 DISCOVERY_URL   = "https://nevermined.ai/hackathon/register/api/discover"
 MY_TEAM_ID      = "0x659c87f82dd0e194ef17067398ebdb6ee1e13524"
-AGENT_FILTER    = os.getenv("AGENT_FILTER", "")  # empty = all, or a label like "Celebrity Economy"
+AGENT_FILTER    = os.getenv("AGENT_FILTER", "")
 
-if not NVM_API_KEY:
-    print("ERROR: NVM_API_KEY not set")
-    sys.exit(1)
+# Failure handling
+CONSEC_FAIL_SKIP    = int(os.getenv("CONSEC_FAIL_SKIP", "10"))
+CONSEC_FAIL_BACKOFF = int(os.getenv("CONSEC_FAIL_BACKOFF", "5"))
+MAX_BACKOFF         = float(os.getenv("MAX_BACKOFF", "60"))
+ALL_FAIL_EXIT       = int(os.getenv("ALL_FAIL_EXIT", "20"))
+REDISCOVERY_INTERVAL = int(os.getenv("REDISCOVERY_INTERVAL", "100"))
 
-payments = Payments.get_instance(
-    PaymentOptions(nvm_api_key=NVM_API_KEY, environment=NVM_ENVIRONMENT)
-)
+payments = None
 
-# ── Request body variety ─────────────────────────────────────────────────────
-TOPICS = [
-    "AI agent orchestration", "decentralized finance", "machine learning ops",
-    "autonomous vehicles", "quantum computing startups", "robotics automation",
-    "generative AI art", "AI drug discovery", "smart contract auditing",
-    "edge computing", "federated learning", "synthetic data generation",
-    "AI cybersecurity", "natural language processing", "computer vision APIs",
-    "AI-powered customer support", "predictive maintenance", "digital twins",
-    "AI governance frameworks", "neuromorphic computing", "AI chip design",
-    "multimodal AI models", "retrieval augmented generation", "AI agent payments",
-    "supply chain optimization with AI", "AI in healthcare diagnostics",
-]
-BRANDS = [
-    "Orchestro", "NevermindAI", "AgentHub", "SmartFlow", "DataPulse",
-    "CortexLabs", "SynapseAI", "AgentForge", "NeuralPay", "ChainMind",
-]
-AUDIENCES = [
-    "AI developers", "startup founders", "enterprise CTOs", "data scientists",
-    "blockchain developers", "product managers", "ML engineers", "DevOps teams",
-]
-COMPANIES = [
-    "Salesforce", "Google", "Microsoft", "Apple", "Amazon", "Meta", "Tesla",
-    "Nvidia", "OpenAI", "Anthropic", "Stripe", "Shopify", "Netflix", "Uber",
-    "Snowflake", "Databricks", "Palantir", "CrowdStrike", "Cloudflare",
-]
+def _init_payments():
+    global payments
+    if payments is not None:
+        return payments
+    if not NVM_API_KEY:
+        print("ERROR: NVM_API_KEY not set")
+        sys.exit(1)
+    payments = Payments.get_instance(
+        PaymentOptions(nvm_api_key=NVM_API_KEY, environment=NVM_ENVIRONMENT)
+    )
+    return payments
+
+# ── Variety pools for randomizing request bodies ─────────────────────────────
 QUERIES = [
     "What are the top AI agent frameworks in 2026?",
     "How does x402 protocol compare to traditional payment APIs?",
@@ -96,94 +92,171 @@ QUERIES = [
     "Explain the role of session keys in x402 payments.",
     "What security considerations apply to AI agent wallets?",
 ]
-EMAIL_SUBJECTS = [
-    "Orchestro Agent Update — Round {n}",
-    "Automated Purchase Confirmation #{n}",
-    "AI Agent Marketplace Report — Iteration {n}",
-    "x402 Transaction Log — Cycle {n}",
-    "Hackathon Progress Update #{n}",
+TOPICS = [
+    "AI agent orchestration", "decentralized finance", "machine learning ops",
+    "autonomous vehicles", "quantum computing startups", "robotics automation",
+    "generative AI art", "AI drug discovery", "smart contract auditing",
+    "edge computing", "federated learning", "synthetic data generation",
+    "AI cybersecurity", "natural language processing", "computer vision APIs",
+]
+COMPANIES = [
+    "Salesforce", "Google", "Microsoft", "Apple", "Amazon", "Meta", "Tesla",
+    "Nvidia", "OpenAI", "Anthropic", "Stripe", "Shopify", "Netflix", "Uber",
+    "Snowflake", "Databricks", "Palantir", "CrowdStrike", "Cloudflare",
+]
+
+# ── Endpoint patterns to always skip ────────────────────────────────────────
+SKIP_PATTERNS = [
+    "localhost", "127.0.0.1", "0.0.0.0", "http://seller:",
+    "nevermined.app/checkout",
+    "ngrok-free.dev", "ngrok-free.app",  # tunnels expire, always fail in CI
+    "trycloudflare.com",                 # same — ephemeral tunnels
 ]
 
 
-# ── Body generators per agent ────────────────────────────────────────────────
+# ── Curated body overrides: endpoint substring -> body or body_fn ────────────
+# These override the apiSchema when we know what actually works.
+# Use a callable (takes round_num) for variety, or a dict for static body.
 
-def make_celebrity_body(n):
+def _celebrity_body(n):
     return {
         "topic": random.choice(TOPICS),
-        "brand": random.choice(BRANDS),
+        "brand": random.choice(["Orchestro", "NevermindAI", "AgentHub", "SmartFlow", "DataPulse"]),
         "product_url": "https://orchestro.vercel.app",
-        "audience": random.choice(AUDIENCES),
+        "audience": random.choice(["AI developers", "startup founders", "enterprise CTOs", "data scientists"]),
         "tone": random.choice(["helpful", "professional", "casual", "authoritative"]),
     }
 
-def make_market_buyer_body(n):
-    return {"query": random.choice(QUERIES), "task": random.choice(QUERIES)}
-
-def make_nevermailed_body(n):
+def _nevermailed_body(n):
+    subjects = [
+        f"Orchestro Agent Update — Round {n}",
+        f"Automated Purchase Confirmation #{n}",
+        f"AI Agent Marketplace Report — Iteration {n}",
+    ]
     return {
         "from": "Orchestro Agent <agent@nevermailed.com>",
         "to": "test@nevermailed.com",
-        "subject": random.choice(EMAIL_SUBJECTS).format(n=n),
+        "subject": random.choice(subjects),
         "text": f"Automated round {n} by Orchestro agent via x402. Topic: {random.choice(TOPICS)}.",
         "html": f"<p>Round <strong>{n}</strong> - {random.choice(TOPICS)}</p>",
     }
 
-def make_agenticard_body(n):
-    return {"cardId": (n % 20) + 1, "agentId": str((n % 5) + 1)}
+def _market_buyer_body(n):
+    return {"query": random.choice(QUERIES), "task": random.choice(QUERIES)}
 
-def make_baselayer_body(n):
-    return {"jsonrpc": "2.0", "id": n, "method": "tools/list", "params": {}}
+def _agenticard_body(n):
+    # Only use card IDs 1-5 which are known to exist
+    return {"cardId": (n % 5) + 1, "agentId": str((n % 5) + 1)}
 
-def make_predictive_body(n):
-    assets = ["AI_AGENTS", "BTC", "ETH", "SOL", "MATIC", "LINK"]
+def _predictive_body(n):
     return {
         "query": f"Predict {random.choice(TOPICS)} market trend Q2 2026",
-        "asset": random.choice(assets),
+        "asset": random.choice(["AI_AGENTS", "BTC", "ETH", "SOL", "MATIC", "LINK"]),
     }
 
-def make_airi_body(n):
+def _airi_body(n):
     return {"company": random.choice(COMPANIES)}
 
-def make_cloudagi_search_body(n):
+def _cloudagi_search_body(n):
     return {"query": random.choice(QUERIES), "sources": ["exa"], "numResults": 3}
 
+def _cloudagi_research_body(n):
+    return {"query": random.choice(QUERIES), "type": "auto", "numResults": 3}
 
-# ── Agent registry: endpoint substring -> config ─────────────────────────────
-AGENT_CONFIGS = {
-    "ai-celebrity-economy.vercel.app": {
-        "body_fn": make_celebrity_body, "label": "Celebrity Economy",
-    },
-    "nevermined-autonomous-business-hack.vercel.app/api/agent/research": {
-        "body_fn": make_market_buyer_body, "label": "Market Buyer",
-    },
-    "nevermailed.com/api/send": {
-        "body_fn": make_nevermailed_body, "label": "Nevermailed",
-    },
-    "agenticard-ai.manus.space/api/v1/enhance": {
-        "body_fn": make_agenticard_body, "label": "AgentCard",
-    },
-    "54.183.4.35:9010": {
-        "body_fn": make_baselayer_body, "label": "BaseLayer Crypto Intel",
-    },
-    "54.183.4.35:9020": {
-        "body_fn": make_baselayer_body, "label": "BaseLayer Web Scraper",
-    },
-    "54.183.4.35:9030": {
-        "body_fn": make_baselayer_body, "label": "BaseLayer Agent Eval",
-    },
-    "supabase.co/functions/v1/agent-predict": {
-        "body_fn": make_predictive_body, "label": "PredictiveEdge",
-        "force_crypto": True,
-    },
-    "airi-demo.replit.app/resilience-score": {
-        "body_fn": make_airi_body, "label": "AiRI",
-        "force_crypto": True,
-    },
-    "api.cloudagi.org/v1/services/smart-search/execute": {
-        "body_fn": make_cloudagi_search_body, "label": "CloudAGI Search",
-        "force_crypto": True,
-    },
+def _cloudagi_code_review_body(n):
+    snippets = [
+        ("def add(a, b):\n    return a + b", "python"),
+        ("const fetch = async (url) => {\n  const r = await fetch(url);\n  return r.json();\n}", "javascript"),
+        ("fn main() {\n    println!(\"hello\");\n}", "rust"),
+    ]
+    code, lang = random.choice(snippets)
+    return {"code": code, "language": lang, "focus": ["bugs", "security"]}
+
+def _cloudagi_scraper_body(n):
+    urls = ["https://nevermined.io", "https://example.com", "https://httpbin.org"]
+    return {"url": random.choice(urls), "maxPages": 1}
+
+def _cloudagi_gpu_body(n):
+    return {
+        "gpu": "T4", "image": "python:3.13",
+        "command": ["python3", "-c", f"print('Hello from Orchestro round {n}!')"],
+        "timeoutSecs": 60,
+    }
+
+def _generic_query_body(n):
+    return {"query": random.choice(QUERIES)}
+
+def _generic_message_body(n):
+    return {"message": random.choice(QUERIES)}
+
+
+BODY_OVERRIDES = {
+    # Proven working payloads from successful_calls.json
+    "ai-celebrity-economy.vercel.app": {"body_fn": _celebrity_body, "force_crypto": False},
+    "nevermailed.com/api/send": {"body_fn": _nevermailed_body, "force_crypto": False},
+    "nevermined-autonomous-business-hack.vercel.app/api/agent/research": {"body_fn": _market_buyer_body, "force_crypto": False},
+    "agenticard-ai.manus.space/api/v1/enhance": {"body_fn": _agenticard_body, "force_crypto": False},
+    "supabase.co/functions/v1/agent-predict": {"body_fn": _predictive_body, "force_crypto": True},
+    "airi-demo.replit.app/resilience-score": {"body_fn": _airi_body, "force_crypto": True},
+    "api.cloudagi.org/v1/services/smart-search/execute": {"body_fn": _cloudagi_search_body, "force_crypto": True},
+    "api.cloudagi.org/v1/services/ai-research/execute": {"body_fn": _cloudagi_research_body, "force_crypto": True},
+    "api.cloudagi.org/v1/services/code-review/execute": {"body_fn": _cloudagi_code_review_body, "force_crypto": True},
+    "api.cloudagi.org/v1/services/web-scraper/execute": {"body_fn": _cloudagi_scraper_body, "force_crypto": True},
+    "api.cloudagi.org/v1/services/gpu-compute/execute": {"body_fn": _cloudagi_gpu_body, "force_crypto": True},
+
+    # Agents that need specific field names (from needs_info.json)
+    "us14.abilityai.dev/ask": {"body_fn": _generic_query_body, "force_crypto": False},
+    "us14.abilityai.dev/api/paid/qa-checker": {"body_fn": _generic_message_body, "force_crypto": False},
+    "us14.abilityai.dev/api/paid/nexus": {"body_fn": _generic_message_body, "force_crypto": False},
+    "us14.abilityai.dev/api/paid/market-intel": {"body_fn": _generic_message_body, "force_crypto": False},
+    "hack-mined-production.up.railway.app/research": {"body_fn": _generic_query_body, "force_crypto": False},
+
+    # Skip: these require their own auth or are known broken
+    "sabi-backend": {"skip": True, "reason": "Needs separate API key"},
+    "api.mindra.co": {"skip": True, "reason": "Needs separate auth"},
 }
+
+
+# ── Parse apiSchema to extract a usable request body ─────────────────────────
+
+def parse_api_schema(schema):
+    """Extract a request body dict from apiSchema (list or dict format)."""
+    if isinstance(schema, list):
+        for op in schema:
+            if not isinstance(op, dict):
+                continue
+            raw = op.get("requestBody", "")
+            if raw and isinstance(raw, str) and raw.strip():
+                try:
+                    parsed = json.loads(raw)
+                    if isinstance(parsed, dict) and parsed:
+                        return parsed
+                except (json.JSONDecodeError, TypeError):
+                    pass
+    elif isinstance(schema, dict):
+        body = schema.get("body")
+        if isinstance(body, dict) and body:
+            return body
+    return None
+
+
+def randomize_schema_body(body_template, round_num):
+    """Take a schema example body and inject variety into string fields."""
+    body = dict(body_template)
+    for key in body:
+        if key == "query" and isinstance(body[key], str):
+            body[key] = random.choice(QUERIES)
+        elif key == "task" and isinstance(body[key], str):
+            body[key] = random.choice(QUERIES)
+        elif key == "message" and isinstance(body[key], str):
+            body[key] = random.choice(QUERIES)
+        elif key == "prompt" and isinstance(body[key], str):
+            body[key] = random.choice(QUERIES)
+        elif key == "company" and isinstance(body[key], str):
+            body[key] = random.choice(COMPANIES)
+        elif key == "topic" and isinstance(body[key], str):
+            body[key] = random.choice(TOPICS)
+    return body
 
 
 # ── Discovery ────────────────────────────────────────────────────────────────
@@ -198,7 +271,6 @@ def fetch_discovery():
             return resp.json()
     except Exception as e:
         print(f"  Discovery fetch failed: {e}")
-        # Fall back to local file
         try:
             with open("discovery_raw.json") as f:
                 return json.load(f)
@@ -207,8 +279,30 @@ def fetch_discovery():
             sys.exit(1)
 
 
+def _should_skip_endpoint(endpoint):
+    """Return a reason string if the endpoint should be skipped, else None."""
+    if not endpoint:
+        return "empty"
+    if not (endpoint.startswith("http://") or endpoint.startswith("https://")):
+        return "not http"
+    for pat in SKIP_PATTERNS:
+        if pat in endpoint:
+            return f"matches skip pattern: {pat}"
+    # Check curated skips
+    for key, cfg in BODY_OVERRIDES.items():
+        if key in endpoint and cfg.get("skip"):
+            return cfg.get("reason", "curated skip")
+    return None
+
+
 def load_agents(data):
-    """Filter discovery data to only agents we know how to call."""
+    """Build agent list from discovery data.
+
+    For each agent:
+    1. If we have a curated override in BODY_OVERRIDES, use that body_fn
+    2. Else parse apiSchema for an example request body
+    3. Skip agents where we can't build any body
+    """
     all_entries = data.get("sellers", []) + data.get("buyers", [])
     agents = []
     seen = set()
@@ -220,26 +314,56 @@ def load_agents(data):
         endpoint = (entry.get("endpointUrl") or "").strip()
         if endpoint.endswith(".") and not endpoint.endswith(".."):
             endpoint = endpoint[:-1]
-        if not endpoint or endpoint in seen:
-            continue
-        if not (endpoint.startswith("http://") or endpoint.startswith("https://")):
-            continue
 
-        config = None
-        for key, cfg in AGENT_CONFIGS.items():
-            if key in endpoint:
-                config = cfg
-                break
-        if not config:
+        skip_reason = _should_skip_endpoint(endpoint)
+        if skip_reason:
+            continue
+        if endpoint in seen:
             continue
 
         plans = entry.get("planPricing", [])
         if not plans:
             continue
 
-        force_crypto = config.get("force_crypto", False)
-        target_type = "crypto" if force_crypto else "fiat"
-        matching = [p for p in plans if p.get("paymentType") == target_type]
+        name = entry.get("name", "?")
+
+        # Check for curated override
+        override = None
+        for key, cfg in BODY_OVERRIDES.items():
+            if key in endpoint:
+                override = cfg
+                break
+
+        if override and override.get("skip"):
+            continue
+
+        # Determine body function
+        if override and "body_fn" in override:
+            body_fn = override["body_fn"]
+        else:
+            # Try to parse apiSchema
+            schema_body = parse_api_schema(entry.get("apiSchema"))
+            if schema_body:
+                # Capture template in closure
+                template = dict(schema_body)
+                body_fn = lambda n, t=template: randomize_schema_body(t, n)
+            else:
+                # Last resort: generic multi-field body that covers common field names
+                body_fn = lambda n: {
+                    "query": random.choice(QUERIES),
+                    "task": random.choice(QUERIES),
+                    "message": random.choice(QUERIES),
+                }
+
+        # Pick best plan: prefer fiat unless override says force_crypto
+        force_crypto = override.get("force_crypto", False) if override else False
+        if force_crypto:
+            matching = [p for p in plans if p.get("paymentType") == "crypto"]
+        else:
+            # Prefer fiat, fall back to crypto
+            matching = [p for p in plans if p.get("paymentType") == "fiat"]
+            if not matching:
+                matching = [p for p in plans if p.get("paymentType") == "crypto"]
         if not matching:
             continue
         best = sorted(matching, key=lambda p: p.get("pricePerRequest", 999))[0]
@@ -247,14 +371,14 @@ def load_agents(data):
         seen.add(endpoint)
         agents.append({
             "endpoint": endpoint,
-            "name": entry.get("name", "?"),
+            "name": name,
             "agent_id": entry.get("nvmAgentId"),
             "plan_did": best["planDid"],
             "payment_type": best.get("paymentType", "fiat"),
             "price": best.get("pricePerRequest", 0),
             "formatted": best.get("pricePerRequestFormatted", "?"),
-            "body_fn": config["body_fn"],
-            "label": config["label"],
+            "body_fn": body_fn,
+            "label": name,
         })
 
     return agents
@@ -266,6 +390,7 @@ _ordered_plans = set()
 
 
 def get_or_create_token(agent, card_pm):
+    p = _init_payments()
     plan_did = agent["plan_did"]
     payment_type = agent["payment_type"]
 
@@ -288,7 +413,7 @@ def get_or_create_token(agent, card_pm):
         token_options = X402TokenOptions(scheme="nvm:erc4337")
         if plan_did not in _ordered_plans:
             try:
-                payments.plans.order_plan(plan_id=plan_did)
+                p.plans.order_plan(plan_id=plan_did)
                 _ordered_plans.add(plan_did)
             except Exception as e:
                 if "already" not in str(e).lower() and "subscriber" not in str(e).lower():
@@ -296,7 +421,7 @@ def get_or_create_token(agent, card_pm):
                 _ordered_plans.add(plan_did)
 
     try:
-        result = payments.x402.get_x402_access_token(
+        result = p.x402.get_x402_access_token(
             plan_did, agent_id=agent.get("agent_id"), token_options=token_options
         )
         token_cache[plan_did] = result["accessToken"]
@@ -317,6 +442,18 @@ def handle_sigint(sig, frame):
 
 
 signal.signal(signal.SIGINT, handle_sigint)
+
+# Per-agent consecutive failure counter
+consec_failures = {}   # label -> count
+skipped_agents = set() # labels that hit CONSEC_FAIL_SKIP
+all_fail_streak = 0    # rounds where every agent failed
+
+
+def backoff_delay(fails):
+    """Exponential backoff: 2^(fails - CONSEC_FAIL_BACKOFF) seconds, capped."""
+    if fails < CONSEC_FAIL_BACKOFF:
+        return 0
+    return min(2 ** (fails - CONSEC_FAIL_BACKOFF), MAX_BACKOFF)
 
 
 def print_summary():
@@ -374,7 +511,12 @@ def call_agent(agent, token, body, round_num):
 
     if resp.status_code == 200:
         try:
-            preview = json.dumps(resp.json())[:100]
+            data = resp.json()
+            # Check for semantic errors (HTTP 200 but error in body)
+            if isinstance(data, dict):
+                if data.get("error") and not data.get("success"):
+                    return False, f"Semantic error: {json.dumps(data)[:80]}"
+            preview = json.dumps(data)[:100]
         except Exception:
             preview = resp.text[:100]
         return True, f"OK: {preview}"
@@ -396,9 +538,10 @@ def main():
     print("=" * 64)
 
     # Card setup
+    p = _init_payments()
     card_pm = None
     try:
-        methods = payments.delegation.list_payment_methods()
+        methods = p.delegation.list_payment_methods()
         if methods:
             card_pm = methods[0]
             print(f"  Card: {card_pm.brand} *{card_pm.last4}")
@@ -425,32 +568,71 @@ def main():
         sys.exit(1)
 
     round_num = 0
+    global all_fail_streak
     while running:
         round_num += 1
         if MAX_ROUNDS and round_num > MAX_ROUNDS:
             break
 
+        # Periodic rediscovery to pick up new agents / drop dead ones
+        if round_num > 1 and REDISCOVERY_INTERVAL and round_num % REDISCOVERY_INTERVAL == 0:
+            print("\n  [*] Re-running discovery...")
+            data = fetch_discovery()
+            new_agents = load_agents(data)
+            if AGENT_FILTER:
+                new_agents = [a for a in new_agents if a["label"] == AGENT_FILTER]
+            if new_agents:
+                agents = new_agents
+                # Reset failure counters for agents that reappeared
+                active_labels = {a["label"] for a in agents}
+                for label in list(skipped_agents):
+                    if label in active_labels:
+                        skipped_agents.discard(label)
+                        consec_failures.pop(label, None)
+                        print(f"    Re-enabled: {label}")
+                print(f"    Agents after rediscovery: {len(agents)}")
+
         ts = datetime.now(timezone.utc).strftime("%H:%M:%S")
         print(f"\n--- Round {round_num} [{ts}] ---")
 
         round_ok = 0
+        round_attempted = 0
         for agent in agents:
             if not running:
                 break
+            label = agent["label"]
+
+            # Skip agents that have been failing too much
+            if label in skipped_agents:
+                continue
+
             if agent["payment_type"] == "fiat" and not card_pm:
                 continue
 
+            # Apply backoff delay for agents with consecutive failures
+            fails = consec_failures.get(label, 0)
+            extra_delay = backoff_delay(fails)
+            if extra_delay > 0:
+                print(f"  [~] {label:25s} backoff {extra_delay:.0f}s (fails: {fails})")
+                time.sleep(extra_delay)
+
+            round_attempted += 1
             body = agent["body_fn"](round_num)
             token, was_cached = get_or_create_token(agent, card_pm)
             if not token:
+                consec_failures[label] = consec_failures.get(label, 0) + 1
+                if consec_failures[label] >= CONSEC_FAIL_SKIP:
+                    skipped_agents.add(label)
+                    print(f"  [x] {label:25s} token_failed — SKIPPING ({consec_failures[label]} consecutive failures)")
+                else:
+                    print(f"  [x] {label:25s} token_failed ({consec_failures[label]}/{CONSEC_FAIL_SKIP})")
                 transaction_log.append({
-                    "round": round_num, "label": agent["label"],
+                    "round": round_num, "label": label,
                     "endpoint": agent["endpoint"], "success": False,
                     "note": "token_failed", "price": 0,
                     "currency": "USD" if agent["payment_type"] == "fiat" else "USDC",
                     "at": datetime.now(timezone.utc).isoformat(),
                 })
-                print(f"  [x] {agent['label']:25s} token_failed")
                 continue
 
             try:
@@ -461,13 +643,21 @@ def main():
             currency = "USD" if agent["payment_type"] == "fiat" else "USDC"
             price = agent["price"] if success and not was_cached else 0
             icon = "+" if success else "x"
-            print(f"  [{icon}] {agent['label']:25s} {note[:70]}")
 
             if success:
                 round_ok += 1
+                consec_failures[label] = 0
+                print(f"  [{icon}] {label:25s} {note[:70]}")
+            else:
+                consec_failures[label] = consec_failures.get(label, 0) + 1
+                if consec_failures[label] >= CONSEC_FAIL_SKIP:
+                    skipped_agents.add(label)
+                    print(f"  [{icon}] {label:25s} {note[:50]} — SKIPPING ({consec_failures[label]} consecutive failures)")
+                else:
+                    print(f"  [{icon}] {label:25s} {note[:50]} ({consec_failures[label]}/{CONSEC_FAIL_SKIP})")
 
             transaction_log.append({
-                "round": round_num, "label": agent["label"],
+                "round": round_num, "label": label,
                 "endpoint": agent["endpoint"], "body": body,
                 "success": success, "note": note,
                 "price": price, "currency": currency,
@@ -478,6 +668,22 @@ def main():
 
         total_ok = sum(1 for t in transaction_log if t["success"])
         print(f"  Round {round_num}: {round_ok} ok | Total: {total_ok}/{len(transaction_log)}")
+
+        # Track all-fail streaks for early exit
+        if round_attempted > 0 and round_ok == 0:
+            all_fail_streak += 1
+        else:
+            all_fail_streak = 0
+
+        # Early exit if all agents are skipped or all failing
+        active_agents = [a for a in agents if a["label"] not in skipped_agents]
+        if not active_agents:
+            print(f"\n  All agents skipped due to consecutive failures. Exiting early.")
+            break
+
+        if ALL_FAIL_EXIT and all_fail_streak >= ALL_FAIL_EXIT:
+            print(f"\n  All agents failed for {all_fail_streak} consecutive rounds. Exiting early.")
+            break
 
         if running and (not MAX_ROUNDS or round_num < MAX_ROUNDS):
             time.sleep(LOOP_DELAY)

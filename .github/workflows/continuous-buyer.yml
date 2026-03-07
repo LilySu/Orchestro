@@ -16,24 +16,63 @@ on:
     - cron: "*/15 * * * *"
 
 jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      agents: ${{ steps.discover.outputs.agents }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install --quiet payments-py[fastapi] python-dotenv httpx
+
+      - name: Discover live agents
+        id: discover
+        env:
+          NVM_API_KEY: ${{ secrets.NVM_API_KEY }}
+          NVM_ENVIRONMENT: ${{ vars.NVM_ENVIRONMENT || 'sandbox' }}
+        working-directory: buyagent
+        run: |
+          python -c "
+          import json, os, sys
+
+          # Re-use the discovery + filtering logic from continuous_buyer
+          from continuous_buyer import fetch_discovery, load_agents
+
+          data = fetch_discovery()
+          agents = load_agents(data)
+
+          # Output the labels of agents that were actually found
+          labels = sorted(set(a['label'] for a in agents))
+          print(f'Discovered {len(labels)} live agents: {labels}')
+          for a in agents:
+              print(f'  {a[\"label\"]:35s} [{a[\"payment_type\"]:6s}] {a[\"formatted\"]}  {a[\"endpoint\"][:60]}')
+
+          if not labels:
+              print('No agents found - skipping buy jobs')
+              labels = []
+
+          matrix_json = json.dumps(labels)
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'agents={matrix_json}\n')
+          "
+
   buy:
+    needs: discover
+    if: needs.discover.outputs.agents != '[]'
     runs-on: ubuntu-latest
     timeout-minutes: 12
 
     strategy:
       fail-fast: false
       matrix:
-        agent:
-          - "Celebrity Economy"
-          - "Market Buyer"
-          - "Nevermailed"
-          - "AgentCard"
-          - "BaseLayer Crypto Intel"
-          - "BaseLayer Agent Eval"
-          - "BaseLayer Web Scraper"
-          - "PredictiveEdge"
-          - "AiRI"
-          - "CloudAGI Search"
+        agent: ${{ fromJson(needs.discover.outputs.agents) }}
 
     steps:
       - uses: actions/checkout@v4
@@ -53,6 +92,9 @@ jobs:
           LOOP_DELAY: ${{ github.event.inputs.loop_delay || '3' }}
           CALL_DELAY: "0.3"
           AGENT_FILTER: ${{ matrix.agent }}
+          CONSEC_FAIL_SKIP: "10"
+          ALL_FAIL_EXIT: "20"
+          REDISCOVERY_INTERVAL: "100"
         working-directory: buyagent
         run: python continuous_buyer.py
 
